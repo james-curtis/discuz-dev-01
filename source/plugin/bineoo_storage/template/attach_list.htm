@@ -1,0 +1,57 @@
+{eval
+function attach_result($attach) {
+global $_G;
+}
+<!--{block return}-->
+<table class="attach-item">
+	<tbody>
+		<tr>
+			<td class="attswf">
+				<p id="attach{$attach['aid']}">
+					<span>$attach[filetype] <a href="javascript:;" class="xi2" id="attachname$attach[aid]" isimage="{if $attach['isimage']}1{else}0{/if}" onclick="{if $attach['isimage']}insertAttachimgTag('$attach[aid]');hideMenu('attach_preview_$attach[aid]_menu'){else}insertAttachTag('$attach[aid]'){/if};doane(event);" {if $attach['isimage']}onmouseout="hideMenu('attach_preview_$attach[aid]_menu');" onmouseover="showMenu({'ctrlid':this.id,'menuid':'attach_preview_$attach[aid]_menu','pos':'!'});"{/if}>$attach['filename']</a></span>
+				</p>
+				<span id="attachupdate{$attach['aid']}"></span>
+				<div id="attach_preview_$attach[aid]_menu" class="attach_preview" style="display:none"><img src="$attach['review_url']" id="image_$attach[aid]" cwidth="{if $attach[width] < 300}$attach[width]{else}300{/if}"/></div>
+			</td>
+			<td class="atds"><input type="text" name="attachnew[{$attach['aid']}][description]" class="px" value="" size="6"></td>
+			<td class="attv">
+				<!--{if $_G['cache']['groupreadaccess']}-->
+				<select class="ps" name="attachnew[{$attach['aid']}][readperm]" id="readperm" tabindex="1" style="width:90px">
+						<option value="">{lang bineoo_storage:attach_readperm_0}</option>
+						<!--{loop $_G['cache']['groupreadaccess'] $val}-->
+							<option value="$val[readaccess]">$val[grouptitle]</option>
+						<!--{/loop}-->
+						<option value="255">{lang bineoo_storage:attach_readperm_255}</option>
+				</select>
+				<!--{/if}-->
+			</td>
+			<td class="attpr"><input type="text" name="attachnew[{$attach['aid']}][price]" class="px" value="" size="1"></td>
+			<td class="attc"><a href="javascript:;" class="d" onclick="delete_upload(bineoo_jq(this),{$attach['aid']},1,false);return false;">{lang bineoo_storage:delete}</a></td>
+		</tr>
+	</tbody>
+</table>
+<!--{/block}-->
+<!--{eval return $return;}-->
+
+{eval
+}
+
+function image_result($attach) {
+global $_G;
+}
+<!--{block return}-->
+<a href="javascript:;" id="imageattach{$attach['aid']}"><img src="$attach['review_url']" id="image_{$attach['aid']}" onclick="insertAttachimgTag('{$attach['aid']}');doane(event);" width="110" cwidth="300"></a>
+<p class="mtn mbn xi2">
+	<a href="javascript:;" onclick="delete_upload(bineoo_jq(this),{$attach['aid']},1,true);return false;">{lang bineoo_storage:delete}</a>
+</p>
+<p class="imgf">
+	<input type="text" class="px xg2" value="{lang bineoo_storage:index_description}" onclick="this.style.display='none';$('image_desc_{$attach['aid']}').style.display='';$('image_desc_{$attach['aid']}').focus();">
+	<input type="text" name="attachnew[{$attach['aid']}][description]" class="px" style="display: none" id="image_desc_{$attach['aid']}">
+</p>
+<!--{/block}-->
+<!--{eval return $return;}-->
+
+{eval
+}
+
+}

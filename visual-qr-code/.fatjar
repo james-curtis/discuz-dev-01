@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Jan 03 11:02:45 CST 2018
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=visual-qr-code.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|visual-qr-code>~com/~boat/~test/;<jar|junit.jar>;<jar|org.hamcrest.core_1.3.0.v201303031735.jar>
+includes=

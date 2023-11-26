@@ -1,0 +1,207 @@
+{eval
+function tpl_upload_static() {
+global $_G;
+}
+<!--{block return}-->
+<link rel="stylesheet" href="source/plugin/bineoo_storage/static/upload.css" />
+<script src="source/plugin/bineoo_storage/static/jquery-3.2.1.min.js"></script>
+<!--{/block}-->
+<!--{eval return $return;}-->
+
+{eval
+}
+
+function tpl_upload_image_tab() {
+global $_G;
+}
+<!--{block return}-->
+<li id="e_btn_aliyun_image" class="current"><a href="javascript:;" onclick="switchImagebutton('aliyun_image');">{lang bineoo_storage:index_upload_image}</a></li>
+<!--{/block}-->
+<!--{eval return $return;}-->
+
+{eval
+}
+
+function tpl_upload_image_box($imagelist) {
+global $_G,$bineoo_upload_config;
+$imgexts = str_replace(array(';', '*.'), array(', ', ''), $bineoo_upload_config['imageexts']['ext']);
+$upload_image_tips = lang('plugin/bineoo_storage', 'upload_image_tips',array('size'=>round(($bineoo_upload_config['max']/1024),2).'MB','type'=>$imgexts));
+}
+<!--{block return}-->
+<div id="e_aliyun_image">
+	<div class="p_opt aliyun-image-box">
+		<div class="pbm bbda cl">
+			<div id="imgattach_notice" class="y"></div>
+			<span id="upload_image" class="upload-oss-btn">{lang bineoo_storage:index_chose_image}</span>
+		</div>
+		<!--{eval $i = 0;}-->
+		<div class="upfilelist upfl bbda">
+			<div id="imgattachlist">
+				<table cellspacing="0" cellpadding="0" class="imgl" style="margin-bottom: 0">
+					<tbody>
+						{if $imagelist}
+							<tr>
+						{/if}
+							{loop $imagelist $image}
+								<!--{eval $i++;}-->
+								<td valign="bottom" id="image_td_{$image['aid']}" width="25%">
+									<a href="javascript:;" id="imageattach{$image['aid']}"><img src="{$image['preview_url']}" id="image_{$image['aid']}" onclick="insertAttachimgTag('{$image['aid']}');doane(event);" width="110" cwidth="300"></a>
+									<p class="mtn mbn xi2">
+										<a href="javascript:;" onclick="delImgAttach({$image['aid']},1);return false;">{lang bineoo_storage:delete}</a>
+									</p>
+									<p class="imgf">
+										<input type="text" name="attachnew[{$image['aid']}][description]" class="px" id="image_desc_{$image['aid']}" value="{$image['description']}" placeholder="{lang bineoo_storage:index_description}">
+									</p>
+								</td>
+								<!--{if $i % 4 == 0 && isset($imagelist[$i])}--></tr><tr><!--{/if}-->
+							{/loop}
+							<!--{if ($imgpad = $i % 4) > 0}-->
+								{eval $html = str_repeat('<td width="25%"></td>', 4 - $imgpad);}
+								$html 
+							<!--{/if}-->
+						{if $imagelist}
+							</tr>
+						{/if}
+					</tbody>
+				</table>
+			</div>
+			<div id="unusedimgattachlist"></div>
+		</div>
+		<div class="notice upnf">
+			{$upload_image_tips}
+		</div>
+	</div>
+	<div class="o">
+		<button onclick="hideAttachMenu('image')" class="pn pnc"><strong>{lang bineoo_storage:sure}</strong></button>
+	</div>
+</div>
+<!--{/block}-->
+<!--{eval return $return;}-->
+
+{eval
+}
+
+function tpl_upload_attach_tab() {
+global $_G,$bineoo_upload_config;
+}
+<!--{block return}-->
+<li class="current" id="e_btn_aliyun_attach"><a href="javascript:;" onclick="switchAttachbutton('aliyun_attach');">{lang bineoo_storage:index_upload_attach}</a></li>
+<!--{/block}-->
+<!--{eval return $return;}-->
+
+{eval
+}
+
+function tpl_upload_attach_box($attachlist) {
+global $_G,$bineoo_upload_config;
+loadcache('groupreadaccess');
+$upload_attach_tips = lang('plugin/bineoo_storage', 'upload_attach_tips',array('size'=>round(($bineoo_upload_config['max']/1024),2).'MB'));
+}
+<!--{block return}-->
+
+<div class="p_opt upfl" id="e_aliyun_attach">
+	<div class="aliyun-attach-box">
+		<div class="pbm bbda"><span id="upload_attach" class="upload-oss-btn">{lang bineoo_storage:index_chose_attach}</span></div>
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" id="attach_tblheader" class="mtn bbs">
+			<tbody>
+				<tr>
+					<td class="atnu"></td>
+					<td class="atna pbn">{lang bineoo_storage:index_filename}</td>
+					<td class="atds pbn">{lang bineoo_storage:index_description}</td>
+					<td class="attv pbn">
+						{lang bineoo_storage:attach_readperm}
+					</td>
+					<td class="attp pbn">{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}</td>
+					<td class="attc"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="upfl">
+			<div id="attachlist"></div>
+			<div id="unusedattachlist"></div>
+			<div class="fieldset flash" id="fsUploadProgress">
+			</div>
+		</div>
+		<div class="attach-box">
+			<div class="progressWrapper">
+				{loop $attachlist $attach}
+					<table class="attach-item">
+						<tbody>
+							<tr>
+								<td class="attswf">
+									<p id="attach{$attach['aid']}">
+										<span>$attach[filetype] <a href="javascript:;" class="xi2" id="attachname$attach[aid]" isimage="{if $attach['isimage']}1{else}0{/if}" onclick="{if $attach['isimage']}insertAttachimgTag('$attach[aid]');hideMenu('attach_preview_$attach[aid]_menu'){else}insertAttachTag('$attach[aid]'){/if};doane(event);" title="{lang upload_msg}" {if $attach['isimage']}onmouseout="hideMenu('attach_preview_$attach[aid]_menu');" onmouseover="showMenu({'ctrlid':this.id,'menuid':'attach_preview_$attach[aid]_menu','pos':'!'});"{/if}>$attach['filename']</a></span>
+									</p>
+									<span id="attachupdate{$attach['aid']}"></span>
+									<!--{if $attach['isimage']}-->
+									<div id="attach_preview_$attach[aid]_menu" class="attach_preview" style="display:none"><img src="$attach['preview_url']" id="image_$attach[aid]" cwidth="{if $attach[width] < 300}$attach[width]{else}300{/if}"/></div>
+									<!--{/if}-->
+								</td>
+								<td class="atds">
+									<input type="text" name="attachnew[{$attach['aid']}][description]" class="px" value="{$attach['description']}" size="6">
+								</td>
+								<td class="attv">
+									<!--{if $_G['cache']['groupreadaccess']}-->
+									<select class="ps" name="attachnew[{$attach['aid']}][readperm]" id="readperm" tabindex="1" style="width:90px">
+											<option value="">{lang bineoo_storage:attach_readperm_0}</option>
+											<!--{loop $_G['cache']['groupreadaccess'] $val}-->
+												<option value="$val[readaccess]" title="{lang readperm}: $val[readaccess]" {if $attach[readperm] == $val[readaccess]} selected{/if}>$val[grouptitle]</option>
+											<!--{/loop}-->
+											<option value="255" {if $attach[readperm] == 255} selected{/if}>{lang bineoo_storage:attach_readperm_255}</option>
+									</select>
+									<!--{/if}-->
+								</td>
+								<td class="attpr">
+									<input type="text" name="attachnew[{$attach['aid']}][price]" class="px" value="{$attach['price']}" size="1">
+								</td>
+								<td class="attc">
+									<a href="javascript:;" class="d" onclick="delete_attach(jq(this),{$attach['aid']},1);return false;" title="{lang bineoo_storage:delete}">{lang bineoo_storage:delete}</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				{/loop}
+			</div>
+		</div>
+		<div class="notice upnf">{$upload_attach_tips}</div>
+	</div>
+</div>
+<script>
+	bineoo_jq(function(){
+		bineoo_jq('#e_btn_attachlist,#e_attachlist,#e_btn_imgattachlist,#e_imgattachlist,#e_btn_local,#e_local').remove();
+		bineoo_jq('.aliyun-attach-box').attr('id','e_attachlist');
+		bineoo_jq('.aliyun-image-box').attr('id','e_imgattachlist');
+		bineoo_jq('#e_btn_aliyun_image').addClass('current');
+		bineoo_jq('#e_aliyun_image').show();
+	});
+	function delete_upload(obj,aid,type,image){
+		bineoo_jq.ajax({
+			url:'plugin.php?id=bineoo_storage:misc',
+			data:{action:'delete_attach',aid:aid,formhash:'{FORMHASH}'},
+			success:function(s){}
+		});
+		if(image){
+			delImgAttach(aid,type);
+		}else{
+			delAttach(aid,type);
+			obj.parents('.progressWrapper').remove();
+		}
+	}
+	var upload_file_maxsize = "{$bineoo_upload_config['max']}kb",
+		{if $bineoo_upload_config['attachexts']['ext']}
+			attach_mime_types = [{extensions : "$bineoo_upload_config['attachexts']['ext']"}],
+		{else}
+			attach_mime_types = false,
+		{/if}
+		image_mime_types = [{extensions : "$bineoo_upload_config['imageexts']['ext']"}],
+		fid = $_G['fid'];
+</script>
+<script src="source/plugin/bineoo_storage/static/plupload.full.min.js"></script>
+<script src="source/plugin/bineoo_storage/static/upload.js"></script>
+<!--{/block}-->
+<!--{eval return $return;}-->
+{eval
+}
+
+
+}

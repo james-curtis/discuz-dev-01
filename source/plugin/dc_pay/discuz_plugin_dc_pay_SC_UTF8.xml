@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3.3]]></item>
+	<item id="Time"><![CDATA[2017-09-20 21:37]]></item>
+	<item id="From"><![CDATA[讯幻网（www.xhw6.cn）]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[[DC]通用支付API]]></item>
+			<item id="identifier"><![CDATA[dc_pay]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[dc_pay/]]></item>
+			<item id="copyright"><![CDATA[讯幻网（www.xhw6.cn）]]></item>
+			<item id="version"><![CDATA[v1.1.5]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[buycredit]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[充值]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[19]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[paylist]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[支付管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[hook]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[payorder]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[订单管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="4">
+					<item id="name"><![CDATA[supplement]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[人工补单]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="5">
+					<item id="name"><![CDATA[api]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[接口]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="6">
+					<item id="name"><![CDATA[security]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[安全密码]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[4]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5,X3,X3.1,X3.2,X3.3,X3.4,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[开启充值]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[open]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[页头是否显示充值入口]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[topshow]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[积分类型]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[extcredit]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[充值比率]]></item>
+				<item id="description"><![CDATA[设置真实货币现金(以人民币元为单位)与站点积分间的兑换比率，例如设置为 100，则 1 元人民币可以兑换 100 个单位的积分。]]></item>
+				<item id="variable"><![CDATA[bl]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[单次购买最小积分数额]]></item>
+				<item id="description"><![CDATA[0为不限制]]></item>
+				<item id="variable"><![CDATA[lower]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[单次购买最大积分数额]]></item>
+				<item id="description"><![CDATA[0为不限制]]></item>
+				<item id="variable"><![CDATA[larger]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[每月购买最大积分数额]]></item>
+				<item id="description"><![CDATA[0为不限制]]></item>
+				<item id="variable"><![CDATA[month_larger]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[开启手机端充值]]></item>
+				<item id="description"><![CDATA[只有存在wap支付的类型才可]]></item>
+				<item id="variable"><![CDATA[touchopen]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[手机端头部提示信息]]></item>
+				<item id="description"><![CDATA[支持html]]></item>
+				<item id="variable"><![CDATA[touchtips]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<p>最低充值金额5元，不限制最高充值金额</p>
+<p>充值付款后，如遇到积分不到账问题，请联系客服</p>
+]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[Return跳转提示]]></item>
+				<item id="description"><![CDATA[去除return通知业务处理，此为用户付款后，但因notify通知延迟，跳转回网站的提示信息]]></item>
+				<item id="variable"><![CDATA[returnmsg]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[对不起，网站还未接收到支付平台的支付信息，请等待！]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="isinstall"><![CDATA[已安装]]></item>
+				<item id="isnoinstall"><![CDATA[未安装]]></item>
+				<item id="title"><![CDATA[名称]]></item>
+				<item id="logo"><![CDATA[LOGO]]></item>
+				<item id="des"><![CDATA[描述]]></item>
+				<item id="version"><![CDATA[版本]]></item>
+				<item id="author"><![CDATA[作者]]></item>
+				<item id="caozuo"><![CDATA[操作]]></item>
+				<item id="edit"><![CDATA[编辑]]></item>
+				<item id="uninstall"><![CDATA[卸载]]></item>
+				<item id="install"><![CDATA[安装]]></item>
+				<item id="set"><![CDATA[设置]]></item>
+				<item id="yes"><![CDATA[是]]></item>
+				<item id="no"><![CDATA[否]]></item>
+				<item id="installerror"><![CDATA[安装出现错误]]></item>
+				<item id="installsucceed"><![CDATA[安装[{identify}]支付类型成功!]]></item>
+				<item id="intstallcheck"><![CDATA[是否安装[{identify}]支付类型?]]></item>
+				<item id="error"><![CDATA[出现错误]]></item>
+				<item id="delok"><![CDATA[删除成功!]]></item>
+				<item id="uninstallerror"><![CDATA[卸载出现错误]]></item>
+				<item id="uninstallsucceed"><![CDATA[卸载[{title}]支付类型成功!]]></item>
+				<item id="unintstallcheck"><![CDATA[是否卸载[{title}]支付类型?]]></item>
+				<item id="setsucceed"><![CDATA[设置成功!]]></item>
+				<item id="enable"><![CDATA[是否启用]]></item>
+				<item id="pay_succeed"><![CDATA[支付成功!]]></item>
+				<item id="api"><![CDATA[接口]]></item>
+				<item id="apitips"><![CDATA[<li>只有在这里显示的接口，才可正常使用在线支付功能。</li><li>插件开发人员在设计新的需在线支付类插件前请务必仔细阅读提供的接口调用文档</li>]]></item>
+				<item id="api_pluginname"><![CDATA[插件名称]]></item>
+				<item id="api_file"><![CDATA[类文件]]></item>
+				<item id="api_class"><![CDATA[类名]]></item>
+				<item id="api_notifymethod"><![CDATA[NOTIFY方法]]></item>
+				<item id="api_returnmethod"><![CDATA[RETURN方法]]></item>
+				<item id="order_list"><![CDATA[订单列表]]></item>
+				<item id="order_id"><![CDATA[订单号]]></item>
+				<item id="out_trade_on"><![CDATA[订单号(out_trade_on)]]></item>
+				<item id="order_price"><![CDATA[金额(￥)]]></item>
+				<item id="order_username"><![CDATA[用户名]]></item>
+				<item id="order_dateline"><![CDATA[订单时间]]></item>
+				<item id="order_finishdateline"><![CDATA[完成时间]]></item>
+				<item id="order_status"><![CDATA[状态]]></item>
+				<item id="order_api"><![CDATA[接口]]></item>
+				<item id="order_noapi"><![CDATA[未知接口]]></item>
+				<item id="order_ispay"><![CDATA[已支付]]></item>
+				<item id="order_nopay"><![CDATA[未支付]]></item>
+				<item id="order_payorderid"><![CDATA[付款单号]]></item>
+				<item id="cpsearch"><![CDATA[搜索]]></item>
+				<item id="paytips"><![CDATA[<li>本为第三方提供接口类基础插件，请不要随意卸载安装本插件！</li>
+			<li>在卸载本插件之前，请确保无其他插件调用本插件代码，否则因卸载导致接口注册信息丢失而导致其不可使用。</li>
+		]]></item>
+				<item id="upgrade"><![CDATA[升级]]></item>
+				<item id="ugradeerror"><![CDATA[升级出现错误]]></item>
+				<item id="ugradecheck"><![CDATA[是否升级[{title}]支付类型?]]></item>
+				<item id="ugradesucceed"><![CDATA[升级[{title}]支付类型成功!]]></item>
+				<item id="errorcode"><![CDATA[错误代码：]]></item>
+				<item id="add"><![CDATA[添加]]></item>
+				<item id="delete"><![CDATA[删除]]></item>
+				<item id="buycredit"><![CDATA[积分充值]]></item>
+				<item id="api_payok"><![CDATA[支付成功跳转页]]></item>
+				<item id="api_payok_msg"><![CDATA[如文件名：payok.inc.php,请填写 payok 即可]]></item>
+				<item id="api_isready"><![CDATA[插件【{pluginname}】的接口已存在，不可再添加]]></item>
+				<item id="api_noclassfile"><![CDATA[类文件不存在或者错误]]></item>
+				<item id="api_delcheck"><![CDATA[是否删除插件【{pluginname}】的接口？]]></item>
+				<item id="succeed"><![CDATA[成功!]]></item>
+				<item id="buycredit_msg"><![CDATA[充值{amount}元]]></item>
+				<item id="buycreditamounterror"><![CDATA[充值数额不正确，请正确填写！]]></item>
+				<item id="yuan"><![CDATA[元]]></item>
+				<item id="mobile"><![CDATA[是否启用WAP支付]]></item>
+				<item id="mobile_msg"><![CDATA[此针对手机端在线支付功能]]></item>
+				<item id="buycreditamounttolower"><![CDATA[充值数额不能少于]]></item>
+				<item id="buycreditamounttolarger"><![CDATA[充值数额不能大于]]></item>
+				<item id="securityempty"><![CDATA[对不起，您尚未设置安全密码，请先设置！]]></item>
+				<item id="securitytips"><![CDATA[<li>此可有效保证支付参数安全，防止被他人登陆后台对支付参数进行修改，从而造成不必要的损失</li><li><font color="#FF0000">请务必牢记此密码！</font>如遗忘请联系插件客服处理，QQ：2696034008</li>]]></item>
+				<item id="securitycode"><![CDATA[安全密码]]></item>
+				<item id="securitycode_0"><![CDATA[请输入原安全密码]]></item>
+				<item id="securitycode_1"><![CDATA[请输入安全密码]]></item>
+				<item id="securitycode_1_msg"><![CDATA[安全密码位数不得小于6位]]></item>
+				<item id="securitycode_2"><![CDATA[请再输入安全密码]]></item>
+				<item id="securitycodeerror"><![CDATA[输入的安全密码不正确，请重新输入]]></item>
+				<item id="securitycodererror"><![CDATA[输入的原安全密码不正确，请重新输入]]></item>
+				<item id="securitycodeseterror"><![CDATA[输入的两次安全密码不一致，请重新输入]]></item>
+				<item id="securitycodesetsucceed"><![CDATA[设置安全密码成功！]]></item>
+				<item id="order_wait"><![CDATA[未审核]]></item>
+				<item id="order_verify"><![CDATA[订单审核]]></item>
+				<item id="verify_order"><![CDATA[审核]]></item>
+				<item id="pass"><![CDATA[审核通过]]></item>
+				<item id="transferok"><![CDATA[提交成功，请等待账单审核通过！]]></item>
+				<item id="transfer_account"><![CDATA[付款账户]]></item>
+				<item id="transfer_payid"><![CDATA[付款单号]]></item>
+				<item id="transfer_type"><![CDATA[付款方式]]></item>
+				<item id="order_subject"><![CDATA[订单名称]]></item>
+				<item id="alias"><![CDATA[别称]]></item>
+				<item id="aliasmsg"><![CDATA[前台显示的支付方式名称]]></item>
+				<item id="supplement_title"><![CDATA[补单]]></item>
+				<item id="supplement_tips"><![CDATA[<li>对支付掉单的订单进行手工补单</li><li>补单完成后，自动处理该订单的逻辑业务信息</li>]]></item>
+				<item id="supplement_orderid_msg"><![CDATA[网站订单号]]></item>
+				<item id="supplement_error"><![CDATA[订单不存在，或已完成订单业务。]]></item>
+				<item id="supplementok"><![CDATA[补单成功！]]></item>
+				<item id="buycredituptomonth"><![CDATA[若加上本次购买，则本月购买积分数超过]]></item>
+				<item id="trade_no"><![CDATA[交易号(trade_no)]]></item>
+				<item id="pay_api"><![CDATA[支付API]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="buycredit"><![CDATA[积分充值]]></item>
+				<item id="mode_of_payment"><![CDATA[支付方式]]></item>
+				<item id="memcp_credits_addfunds"><![CDATA[充值]]></item>
+				<item id="yuan"><![CDATA[元]]></item>
+				<item id="buycreditamounttolower"><![CDATA[充值数额不能少于]]></item>
+				<item id="buycreditamounttolarger"><![CDATA[充值数额不能大于]]></item>
+				<item id="scanpay"><![CDATA[扫码支付]]></item>
+				<item id="transferaccount"><![CDATA[收款账户：]]></item>
+				<item id="transferprice"><![CDATA[付款金额：]]></item>
+				<item id="transferorderid"><![CDATA[订 单 号：]]></item>
+				<item id="transfer_1"><![CDATA[请使用【]]></item>
+				<item id="transfer_2"><![CDATA[】客户端二维码扫码支付]]></item>
+				<item id="transfer_account"><![CDATA[付款账户：]]></item>
+				<item id="transfer_payid"><![CDATA[付款单号：]]></item>
+				<item id="transfersubject"><![CDATA[订单名称：]]></item>
+				<item id="paydo"><![CDATA[提交]]></item>
+				<item id="transfer_0"><![CDATA[请正确填写以下付款信息，以便于管理员审核通过]]></item>
+				<item id="scantip_1"><![CDATA[请使用]]></item>
+				<item id="scantip_2"><![CDATA[扫一扫]]></item>
+				<item id="scantip_3"><![CDATA[扫描二维码支付]]></item>
+				<item id="scantip_4"><![CDATA[扫一扫付款（元）]]></item>
+				<item id="memcp_credits_addfunds_caculate_radio_0"><![CDATA[人民币 <span id="desamount">]]></item>
+				<item id="memcp_credits_addfunds_caculate_radio_1"><![CDATA[</span> 元]]></item>
+				<item id="memcp_credits_addfunds_rules_max"><![CDATA[单次最高充值]]></item>
+				<item id="memcp_credits_addfunds_rules_min"><![CDATA[单次最低充值]]></item>
+				<item id="memcp_credits_addfunds_rules_month"><![CDATA[本月最高充值]]></item>
+				<item id="memcp_credits_addfunds_rules_ratio"><![CDATA[人民币现金 <strong style="color: red;">1</strong> 元]]></item>
+				<item id="credits_need"><![CDATA[所需]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

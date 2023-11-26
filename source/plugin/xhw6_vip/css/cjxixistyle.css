@@ -1,0 +1,96 @@
+.hux_bank .right{
+	float:right;
+	width:25%;
+}
+
+.hux_bank .left{
+	float:left;
+	width:74%;
+}
+
+.hux_bank .right_cq{
+	float:right;
+	width:50%;
+}
+
+.hux_bank .left_cq{
+	float:left;
+	width:50%;
+}
+
+.hux_bank .high_cq{
+	height:60px;
+}
+
+.hux_bank .high_dh{
+	height:26px;
+}
+
+.hux_bank .pdleft{
+	padding-left:10px;
+}
+
+.hux_bank .txtstyle{
+	padding-top:5px;
+	padding-bottom:5px;
+	line-height:22px;
+}
+
+.hux_bank .txtstyle2{
+	line-height:30px;
+}
+
+.hux_bank .dashed{
+	border-bottom:1px dashed #CCC;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.hux_bank .solid{
+	border-bottom:1px solid #CCC;
+}
+
+.hux_bank .text-align_right{
+	text-align:right;
+}
+
+.hux_bank_clear{
+	clear:both;
+}
+.trfont{
+	font-size: 15px;
+	font-weight:bold;
+
+	
+}
+.trfontcontet{
+	font-size: 14px;
+}
+.notestyle{
+	font-size: 15px;
+}
+.pricestyle{
+	font-size: 15px;
+	color:red;
+	font-weight:bold;
+}
+.paytypediv{
+	width:450px;
+	height:250px;
+}
+.btn-ok {
+
+    background-position: 0 0;
+
+    border: 1px solid #D74C00;
+
+}
+
+
+/* ----------------------------------
+CSS file for Discuz! x3.2 By fx8.cc
+(C) ymg6.com
+http://www.fx8.cc
+Design QQ  2575.163.778
+update:2016-04-24 10:21
+---------------------------------- */

@@ -1,0 +1,1 @@
+php bin\rebuild.php tests\functioncore.php

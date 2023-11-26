@@ -1,0 +1,49 @@
+<link rel="stylesheet" type="text/css"
+	href="source/plugin/ymg6_vip/css/style.css" />
+<div class='paytypediv' id='maindiv'>
+	<div style="float: right" id='maindiv1'>
+		<a title="close" onclick="hideWindow('ymg6_vip')" class="flbc"
+			href="javascript:;">{lang ymg6_vip:closePage} </a>
+	</div>
+	<br />
+	<table>
+		<tr>
+			<td>&nbsp;&nbsp;
+				<font style="font-size: 15px; color: red; font-weight: bold;">{lang ymg6_vip:pay_type}$buyId:
+				</font>
+			</td>
+		</tr>
+		
+	 	<tr>
+			<td>&nbsp;</td>
+		</tr> 
+		
+		<tr>
+			<td>&nbsp;&nbsp;
+			<input name="bank_type" type="radio"
+					value="alipay" class="vm" id="apitype_alipay" checked
+					/> 
+			<label class="vm"
+					style="margin-right: 18px; width: 135px; height: 32px; background: #FFF url({STATICURL}image/common/alipay_logo.gif) no-repeat; border: 1px solid #DDD; display: inline-block;"
+					for="apitype_alipay"> </label>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;&nbsp;
+			
+			<form id="payform"  action='plugin.php?id=ymg6_vip'   method='post' >
+			&nbsp;&nbsp;
+				<input type='hidden'  value='writeData'   name='action' />
+				<input type='hidden'  value='$buyIdKey'  name='IDKey'  /> 
+				<input type="hidden"  id="formhash"  name="formhash" value="{FORMHASH}">
+			
+			<!-- <input type='hidden'  value=1000  name='IDKey'  />  -->
+				<button   id="livereplysubmit"   class="pn pnc vm"
+					  type="submit">
+					<strong>{lang ymg6_vip:fukuai}</strong>
+				</button>			
+				</form>
+			</td>
+		</tr>
+</table>
+</div>

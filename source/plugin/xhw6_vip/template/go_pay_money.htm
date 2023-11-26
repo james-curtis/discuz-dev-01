@@ -1,0 +1,44 @@
+<link rel="stylesheet" type="text/css"
+	href="source/plugin/xhw6_vip/css/style.css" />
+<h3 class="flb" id="fctrl_xhw6_vip" style="cursor: move;">
+    <em id="return_xhw6_vip" style=" font-weight:normal;" fwin="xhw6_vip"><b>请选择支付方式:
+    </b></em>
+    <span style="float:right;color:#999;">
+    <a href="javascript:;" class="flbc" onclick="hideWindow('xhw6_vip')" title="关闭" style="background-position:0 -20px;">关闭</a>
+    </span>
+</h3>
+<div class='paytypediv' id='maindiv' style="width: 570px;">
+	<table>
+	 	<tr>
+			<td>&nbsp;</td>
+		</tr> 
+		
+		<tr>
+			<!--{loop $all_pay_types $type $pay_info}-->
+            <td>&nbsp;&nbsp;
+                <input name="bank_type" type="radio"
+                       value="{$type}" class="vm" id="{$type}" <!--{if (array_values($all_pay_types)[0][title] == $pay_info[title])}-->checked<!--{/if}-->
+                />
+                <label class="vm"
+                       style="margin-right: 18px; width: 135px; height: 32px; background: #FFF url({$pay_info['logo']}) no-repeat; border: 1px solid #DDD; display: inline-block;"
+                       for="{$type}"></label>
+            </td>
+			<!--{/loop}-->
+		</tr>
+		<tr>
+			<td>&nbsp;&nbsp;
+			
+			<form id="payform"  action='plugin.php?id=xhw6_vip'   method='post' >
+			&nbsp;&nbsp;
+				<input type='hidden'  value='toPay'   name='action' />
+				<input type='hidden'  value='$buyIdKey'  name='IDKey'  /> 
+				<input type="hidden"  id="formhash"  name="formhash" value="{FORMHASH}">
+				<button   id="livereplysubmit"   class="pn pnc vm"
+					  type="submit">
+					<strong>{lang xhw6_vip:fukuai}</strong>
+				</button>			
+				</form>
+			</td>
+		</tr>
+</table>
+</div>

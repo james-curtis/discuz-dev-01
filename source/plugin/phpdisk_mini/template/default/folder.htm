@@ -1,0 +1,61 @@
+<!--{template common/header_ajax}-->
+<script type="text/javascript" src="{PHPDISK_PLUGIN_DIR}/includes/js/common.js"></script>
+<script type="text/javascript">
+function post(){
+	jq('#msgtips').show();
+	jq('#msgtips').html('<img src="{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif" align="absmiddle" border="0" />{lang phpdisk_mini:loading}');
+	jq.post("{eval echo urr("plugin","id=phpdisk_mini:folder&action=$action")}", jq("#codefrm").serialize(),
+		function(msg){
+		var arr = msg.split('|');
+		jq('#msgtips').hide();
+		if(arr[0]=='true'){
+			showPrompt(null, null, '<span class="txtwhite f14">'+arr[1]+'</span>', 1500);
+			setTimeout(function(){document.location.reload();},1500);
+		}else{
+			showDialog(msg, 'alert', '{lang phpdisk_mini:error tips}', null, 1);
+		}
+	});
+}	   
+</script>
+<div id="main_messaqge">
+<div class="f_c" style="height:100%;width:400px;">
+<div class="flb" style="padding-left: 0px; padding-right: 0px;">
+<ul class="tb tb_s cl">
+<li id="p_upbox" class="current"><a href="javascript:;">$box_title</a></li>
+<span class="flbc" onclick="hideWindow('$_G['gp_handlekey']');" title="{lang close}">{lang close}</span></li>
+</ul>
+</div>
+<div id="p_upbox_div">
+<div style="overflow:auto;overflow-x: hidden;width:100%;">
+<div id="container">
+<div class="box_style">
+<form id="codefrm">
+<input type="hidden" name="action" value="$action" />
+<input type="hidden" name="task" value="$action" />
+<input type="hidden" name="formhash" value="$formhash" />
+<input type="hidden" name="folder_id" value="$folder_id" />
+<!--{if $action=='del'}-->
+<div class="cfm_info" style="height:100px;">
+<li>{lang phpdisk_mini:del folder}:<img src="{PHPDISK_PLUGIN_DIR}/images/folder.gif" align="absmiddle" border="0" /><span class="txtgreen">$folder_name</span></li>
+<li class="txtred">{lang phpdisk_mini:del folder tips}</li>
+<li><input type="button" class="pnc pn" onclick="if(confirm('{lang phpdisk_mini:del folder confirm}')){post();}" value="{lang phpdisk_mini:btn_del}" />&nbsp;&nbsp;<input type="button" class="pn" onclick="hideWindow('$_G['gp_handlekey']');" value="{lang phpdisk_mini:btn_cancel}"/>&nbsp;&nbsp;<span id="msgtips"></span></li>
+</div>
+<!--{else}-->
+<div class="cfm_info" style="height:180px;">
+<li>{lang phpdisk_mini:up folder}:<select name="parent_id"><option value="0" style="color:#0000FF">{lang phpdisk_mini:root folder}</option>{$myfolder_option}</select></li>
+<li>{lang phpdisk_mini:folder name}:<input type="text" name="folder_name" value="{$p[folder_name]}" style="width:250px;" maxlength="50" /></li>
+<li>{lang phpdisk_mini:folder description}:<textarea name="folder_description" style="width:250px; height:60px;">{$p[folder_description]}</textarea></li>
+<li style="padding-left:50px;"><input type="button" class="pnc pn" onclick="post();" value="{lang phpdisk_mini:btn_submit}" />&nbsp;&nbsp;<input type="button" class="pn" onclick="hideWindow('$_G['gp_handlekey']');" value="{lang phpdisk_mini:btn_cancel}"/>&nbsp;&nbsp;<span id="msgtips"></span></li>
+</div>
+<!--{/if}-->
+</form>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<!--{template common/footer_ajax}-->

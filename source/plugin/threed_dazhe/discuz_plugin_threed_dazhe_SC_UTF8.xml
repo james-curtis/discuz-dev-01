@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="version"><![CDATA[X3,X3.1,X3.2,X3.3,X3.4]]></item>
+	<item id="Time"><![CDATA[2016-12-21 20:53]]></item>
+	<item id="From"><![CDATA[3D设计者(http://dz.3dcader.com)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[附件下载打折和限制]]></item>
+			<item id="identifier"><![CDATA[threed_dazhe]]></item>
+			<item id="description"><![CDATA[特定用户组下载附件时可打折，并且可以限制其每天下载数字。]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[threed_dazhe/]]></item>
+			<item id="copyright"><![CDATA[3D设计者]]></item>
+			<item id="version"><![CDATA[V6.6]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[help]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[安装帮助]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[cader]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[作者网站]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[threed_dazhe]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[mobile]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[28]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X3,X3.1,X3.2,X3.3,X3.4]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[帖内显示链接]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[thd_panurl]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[以上或 <a href="/plugin.php?id=vip:vip" target="_blank" rel="nofollow" style="text-decoration:none;"><font style="color:#CC0000 !important; font-size:14px;">VIP会员</font></a> &nbsp; <a  target="_blank" href="/plugin.php?id=vip:vip" rel="nofollow" class="xi2" style="text-decoration:none;">[购买VIP]</a> &nbsp; <a  target="_blank"href="/thread-465-1-1.html" rel="nofollow" class="xi2" style="text-decoration:none;">[充值铜板]</a> &nbsp;<a href="/thread-462-1-1.html" rel="nofollow" class="xi2" style="text-decoration:none;">[免费赚铜板]</a> ]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[开通版块]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[thd_forums]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[2]]></item>
+				</item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[免费附件是否允许游客插件]]></item>
+				<item id="description"><![CDATA[想让游客下载，除了这里设置为是以外，还需
+1、游客用户组必须设置为允许下载附件
+2、积分策略里下载扣积分为零
+3、版块权限设置里游客必须设置为允许下载
+4、上传附件时附件权限必须为不限。
+以上任何一个设置出错，游客都不能下载。]]></item>
+				<item id="variable"><![CDATA[thd_youke]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[打折配置。]]></item>
+				<item id="description"><![CDATA[请按此方法配置，多个配置用英文逗号,隔开用户组ID1|折扣率|24小时内下载限制数|超过限制的折扣率（0折代表免费下载。10代表原价，负数代表不允许下载）如：1|5|100|10 用户组ID为1，打5折，24小时内限下100次，超过次数后打10折（原价）]]></item>
+				<item id="variable"><![CDATA[thd_user]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[1|5|1|10,11|1|5|10,10|1|5|10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[积分不够提示]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[thd_credit]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[您的积分不够，赶快去充值吧，老大]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[权限不够提示]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[thd_power]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[抱歉，您所在的用户组没有购买内容权限！]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[作者得积分上限]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[thd_up]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[100]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[是否解析回帖？]]></item>
+				<item id="description"><![CDATA[选是，所有回帖的附件也会识别出来。]]></item>
+				<item id="variable"><![CDATA[thd_back]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+            <item id="8">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[使用哪套模板]]></item>
+				<item id="description"><![CDATA[提供四套模板给你用。
+设置好以后需要工具-更新缓存。]]></item>
+				<item id="variable"><![CDATA[thd_tmp]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[0=默认模板
+1=设计模板
+2=360模板]]></item>
+			</item>
+		</item>
+        <item id="language">
+			<item id="scriptlang">
+				<item id="downld2"><![CDATA[未定义操作或非常操作，请联系管理员]]></item>
+				<item id="downld3"><![CDATA[您需要登录才可以下载文件！]]></item>
+				<item id="downld4"><![CDATA[购买成功，您现在可以下载附件了]]></item>
+				<item id="downld5"><![CDATA[您已经购买过了，不用再买了]]></item>
+				<item id="downld7"><![CDATA[附件售价:]]></item>
+                <item id="index1"><![CDATA[次]]></item>
+                <item id="index2"><![CDATA[您今天的下载数已用完，请明天再来下吧，您每天的下载数为]]></item>
+                <item id="index3"><![CDATA[您每天的下载限额次数=]]></item>
+                <item id="index4"><![CDATA[,您已下载次数=]]></item>
+                <item id="attach1"><![CDATA[最高权限]]></item>
+                <item id="attach2"><![CDATA[不限]]></item>
+			</item>
+			<item id="templatelang">
+                <item id="style0"><![CDATA[下载地址]]></item>
+                <item id="style1"><![CDATA[网盘失效？举报有奖]]></item>
+                <item id="style2"><![CDATA[文件侵权？请与站长联系，24小时内删除。]]></item>
+                <item id="style3"><![CDATA[立即下载]]></item>
+                <item id="style4"><![CDATA[免费]]></item>
+                <item id="style5"><![CDATA[您已购买]]></item>
+                <item id="style6"><![CDATA[您未购买]]></item>
+                <item id="style7"><![CDATA[安全检测，请放心下载]]></item>
+                <item id="style8"><![CDATA[下载地址]]></item>
+                <item id="style9"><![CDATA[下载地址]]></item>
+                <item id="attach3"><![CDATA[查看状态：已购买或有权限]]></item>
+                <item id="attach4"><![CDATA[查看状态：需购买或无权限]]></item>
+                <item id="attach5"><![CDATA[查看状态：今天下载数已用完]]></item>
+                <item id="yuanjia"><![CDATA[原价:]]></item>
+				<item id="attachdown"><![CDATA[请点击此处下载]]></item>
+				<item id="attachdownreg"><![CDATA[请先注册会员后在进行下载]]></item>
+				<item id="attachdownlogin"><![CDATA[已注册会员，请先登录后下载]]></item>
+                	<item id="attachdownlogin_ok"><![CDATA[您的用户组是：]]></item>
+                    <item id="attachdownreg_pay"><![CDATA[需要先购买才能下载]]></item>
+				<item id="attachname"><![CDATA[文件名称:]]></item>
+				<item id="attachsize"><![CDATA[文件大小:]]></item>
+				<item id="attachprice"><![CDATA[售价:]]></item>
+				<item id="attachreadperm"><![CDATA[下载权限:]]></item>
+				<item id="attachdownloads"><![CDATA[下载次数:]]></item>	
+				<item id="attachpan"><![CDATA[网盘资源]]></item>
+				<item id="recorde"><![CDATA[记录]]></item>				
+				<item id="tmpay1"><![CDATA[购买附件]]></item>
+				<item id="tmpay2"><![CDATA[卖家]]></item>
+				<item id="tmpay3"><![CDATA[买家]]></item>
+				<item id="tmpay4"><![CDATA[售价]]></item>
+				<item id="tmpay5"><![CDATA[作者所得]]></item>
+				<item id="tmpay6"><![CDATA[购买后余额]]></item>
+				<item id="tmpay7"><![CDATA[需要先购买，后下载]]></item>
+				<item id="tmpay8"><![CDATA[购买]]></item>
+				<item id="tmpay9"><![CDATA[取消]]></item>
+                <item id="index1"><![CDATA[次]]></item>
+                <item id="index2"><![CDATA[您今天的下载数已用完，请明天再来下吧，您每天的下载数为]]></item>
+                <item id="index3"><![CDATA[您每天的优惠购买限额:]]></item>
+                <item id="index4"><![CDATA[,您已优惠购买:]]></item>
+				<item id="index5"><![CDATA[,您的优惠购买数用完.]]></item>
+                <item id="mobile1"><![CDATA[点击下载]]></item>
+                <item id="mobile2"><![CDATA[点击购买]]></item>
+                <item id="mobile3"><![CDATA[您今天的下载数已用完]]></item>
+		<item id="mobile4"><![CDATA[您无权限下载]]></item>
+			</item>
+			<item id="installlang">
+				<item id="0"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

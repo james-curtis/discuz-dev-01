@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+	<item id="Time"><![CDATA[2016-08-12 01:46]]></item>
+	<item id="From"><![CDATA[Ñ¶»ÃÍø£¨www.xhkj5.com£©]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[Ñ¶»ÃÍø_DC¸½¼þÏÂÔØÏÞÖÆ]]></item>
+			<item id="identifier"><![CDATA[dc_downlimit]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[dc_downlimit/]]></item>
+			<item id="copyright"><![CDATA[Ñ¶»ÃÍø£¨www.xhkj5.com£©]]></item>
+			<item id="version"><![CDATA[v1.1.1]]></item>
+			<item id="__modules">
+				<item id="9">
+					<item id="name"><![CDATA[xhkj5]]></item>
+					<item id="menu"><![CDATA[<span style="color:#E53333;"><b>Ñ¶»ÃÍø</b></span>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="0">
+					<item id="name"><![CDATA[proset]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[ÏêÏ¸ÉèÖÃ]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[hook]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[ÊÇ·ñÆôÓÃ]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[open]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[ÏÂÔØÁ¿ÏÞÖÆÌáÊ¾]]></item>
+				<item id="description"><![CDATA[{count}ÎªÏÞÖÆÏÂÔØÁ¿]]></item>
+				<item id="variable"><![CDATA[msg]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[½ñÈÕÏÂÔØ´ÎÊýÒÑ´ïµ½ÏÞÖÆÖµ{count},ÇëÃ÷ÌìÔÙÀ´ÏÂÔØ]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[Ãâ»ý·ÖÏÂÔØÌáÊ¾]]></item>
+				<item id="description"><![CDATA[{total}Ãâ»ý·ÖÏÂÔØ×Ü´ÎÊý,{count}Ê£Óà´ÎÊý,{times}ÒÑÏÂÔØ´ÎÊý]]></item>
+				<item id="variable"><![CDATA[freemsg]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[½ñÈÕ±¾°æ¿éÊÕ·Ñ¸½¼þÃâ·ÑÏÂÔØÁ¿/Ê£Óà:{total}/<font color="#FF0000">{count}</font>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="log_xhkj5_com"><![CDATA[<h2 style="text-align:-webkit-center;">
+	<span style="color:#4C33E5;">ÍÆ¼öÒ»¸ödzÉÌ</span><span style="color:#4C33E5;">Òµ²å¼þÄ£°æÏÂÔØµÄ</span><span style="color:#4C33E5;"></span><span style="color:#4C33E5;">ÍøÕ¾¸ø´ó¼Ò</span><a href="http://www.xhkj5.com" target="_blank"><span style="color:#4C33E5;">Ñ¶»ÃÍø</span></a><span style="color:#4C33E5;">£¨www.xhkj5.com£©</span> 
+</h2>
+<h3 style="text-align:-webkit-center;">
+	<span style="color:#E53333;">Õâ</span><span style="color:#E53333;">ÊÇÒ»¸ö</span><span style="color:#E53333;">dzÉÌÒµ</span><a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=90" target="_blank"><span style="color:#337FE5;">²å</span><u><span style="color:#337FE5;"></span></u><span style="color:#337FE5;">¼þ</span></a><a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=93" target="_blank"><u><span style="color:#337FE5;">Ä£</span></u><u><span style="color:#337FE5;"></span></u><u><span style="color:#337FE5;">°æ</span></u></a><span style="color:#E53333;">×ÊÔ´ÆÆ½â·ÖÏíµÄÍøÕ¾£¬¶øÇÒ»¹ÓÐºÜ¶à¾«Æ·µÄÍøÕ¾Ô´ÂëÏÂÔØ</span> 
+</h3>
+<h3 style="text-align:-webkit-center;">
+	<span style="color:#E53333;">ËûÃÇ×ÊÔ´Ã¿Ìì¸üÐÂ£¬²¢ÇÒºÜ¶à¶¼ÊÇËûÃÇ×Ô¼º³öÇ®ÔÚÓ¦ÓÃÖÐÐÄ¹ºÂòºóÆÆ½â·ÖÏí³öÀ´µÄ</span><br />
+</h3>
+<h3>
+	<div style="text-align:center;">
+		<span style="color:#E53333;">²»¹ý»¹ÊÇÌæËûÃÇËµÒ»ÏÂ</span> 
+	</div>
+	<div style="text-align:center;">
+		<span style="color:#E53333;">&nbsp;ËûÃÇÕ¾ÏÂÔØµÄ×ÊÔ´Ö»ÏÞÓÚ×Ô¼ºÑ§Ï°ÑÐ¾¿ÄÚº¬µÄÉè¼ÆË¼ÏëºÍÔ­Àí ÇëÎðÓÐÈÎºÎÉÌÒµÓ¯ÀûÐÐÎª</span> 
+	</div>
+</h3>
+<h3 style="text-align:center;">
+	<span style="color:#999999;">½éÉÜÒ²½éÉÜÍêÁË£¬¸ø´ó¼Ò×ö¸öÐ¡µ¼º½°É</span> 
+</h3>
+<h3 style="text-align:center;">
+	<span style="color:#337FE5;"><a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=90" target="_blank">dzÉÌÒµÆÆ½â²å¼þÏÂÔØ</a> &nbsp; <a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=93" target="_blank">dzÉÌÒµ·ç¸ñÄ£°æÏÂÔØ</a> &nbsp; &nbsp;<a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=72" target="_blank">¾«Æ·ÍøÕ¾Ô´ÂëÏÂÔØ</a> &nbsp; &nbsp;<a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=73" target="_blank">¹¤¾ßËØ²ÄÏÂÔØ</a></span><span style="color:#337FE5;">&nbsp; &nbsp; <a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=94" target="_blank">¾«Ñ¡½Ì³ÌÇø</a></span> 
+</h3> ]]></item>
+				<item id="downinfo"><![CDATA[½ñÈÕÏÂÔØ´ÎÊýÒÑ´ïµ½ÏÞÖÆÖµ{count},ÇëÃ÷ÌìÔÙÀ´ÏÂÔØ]]></item>
+				<item id="freeinfo"><![CDATA[½ñÈÕ±¾°æ¿éÊÕ·Ñ¸½¼þÃâ·ÑÏÂÔØÁ¿/Ê£Óà:{total}/<font color="#FF0000">{count}</font>]]></item>
+				<item id="error"><![CDATA[³öÏÖ´íÎó]]></item>
+				<item id="succeed"><![CDATA[ÉèÖÃ³É¹¦]]></item>
+				<item id="group"><![CDATA[ÓÃ»§×é]]></item>
+				<item id="ddowns"><![CDATA[ÈÕÏÂÔØÁ¿,0»ò¿ÕÎª²»ÏÞÖÆ]]></item>
+				<item id="ddfree"><![CDATA[ÈÕÃâ»ý·ÖÏÂÔØÁ¿,0»ò¿ÕÎªÏµÍ³Ä¬ÈÏ]]></item>
+				<item id="xxset"><![CDATA[ÏêÏ¸ÉèÖÃ]]></item>
+				<item id="tips"><![CDATA[<li>´Ë¿î²å¼þÊÊÓÃÓÚ×ÊÔ´ÏÂÔØÕ¾,ÓÃÀ´ÏÞÖÆËûÈËÒ»´ÎÐÔ´óÁ¿ÏÂÔØ</li><li>°´°æ¿éÏÞÖÆ¸÷ÓÃ»§×éÏÂÔØÁ¿</li><li>Èç¹û°æ¿éÏÔÊ¾²»Õý³£,Çë¸üÐÂÏÂ<a href="admin.php?action=tools&operation=updatecache">ÏµÍ³»º´æ</a></li>]]></item>
+				<item id="ftips"><![CDATA[<li>´Ë´¦¿ÉÉèÖÃÈÕ°æ¿éÈÕÏÂÔØÁ¿¼°ÈÕÃâ»ý·ÖÏÂÔØÁ¿</li><li>ÈÕÃâ»ý·ÖÏÂÔØÁ¿±ØÐëÉèÖÃÏÂÔØ¿Û³ý»ý·Ö,·ñÔò´ËÏîÎÞÐ§</li><li>½¨ÒéÈÕÏÂÔØÁ¿ÉèÖÃÖµ´óÓÚÈÕÃâ»ý·ÖÏÂÔØÁ¿(<font color="#FF0000">ÈÕÏÂÔØÁ¿ÉèÖÃÖµÎª0Ê±,±íÊ¾ÎÞÇî´ó,¼´´óÓÚÈÕÃâ»ý·ÖÏÂÔØÁ¿</font>)</li>]]></item>
+				<item id="fid"><![CDATA[°å¿é]]></item>
+				<item id="nofid"><![CDATA[°å¿é²»´æÔÚ]]></item>
+				<item id="set"><![CDATA[ÉèÖÃ]]></item>
+				<item id="daylimit"><![CDATA[ÈÕÏÂÔØÁ¿ÏÞÖÆ¡¢ÈÕÃâ»ý·ÖÏÂÔØÁ¿]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

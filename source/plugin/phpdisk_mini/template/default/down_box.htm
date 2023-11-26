@@ -1,0 +1,31 @@
+<!--{template common/header_ajax}-->
+<div id="main_messaqge">
+<div class="f_c" style="height:100%;width:400px;">
+<div class="flb" style="padding-left: 0px; padding-right: 0px;">
+<ul class="tb tb_s cl">
+<li id="p_upbox" class="current"><a href="javascript:;">{lang phpdisk_mini:file addr}</a></li>
+<span class="flbc" onclick="hideWindow('$_G['gp_handlekey']');" title="{lang close}">{lang close}</span></li>
+</ul>
+</div>
+<div id="p_upbox_div">
+<div style="overflow:auto;overflow-x: hidden;width:100%;">
+<div id="container">
+<div class="box_style">
+
+<div class="cfm_info" style="height:100px;">
+<li>{lang phpdisk_mini:curr file}:$file_name&nbsp;&nbsp;
+<!--{if $file[in_share] && $file[is_checked]}-->
+<a href="$a_view" target="_blank">{lang phpdisk_mini:view share file}</a><!--{/if}--></li>
+<div class="dl_addr"><ul>$str</ul></div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<!--{template common/footer_ajax}-->

@@ -1,0 +1,92 @@
+<!--{subtemplate common/header}-->
+<div id="pt" class="cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em>{lang dc_pay:scanpay}
+	</div>
+</div>
+<style>
+.p-w-hd {
+    margin: 20px;
+    font-size: 18px;
+    font-family: "Microsoft Yahei";
+	border-bottom: 1px solid #CDCDCD;
+}
+.p-w-bd {
+    margin-bottom: 30px;
+}
+.p-w-box {
+    width: 300px;
+	margin: 0 auto;
+}
+.pw-box-hd {
+    margin-bottom: 20px;
+}
+.pw-box-ft {
+    height: 44px;
+    padding: 8px 0px 8px 70px;
+    background: url("source/plugin/dc_pay/images/icon-red.png") no-repeat scroll 30px 8px #FF7674;
+}
+.pw-box-ft p {
+    margin: 0px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFF;
+    font-weight: 700;
+}
+.qrcode-header {
+    display: block;
+    width: auto;
+    margin: 0;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    padding: 0;
+    margin-top: 25px;
+    margin-bottom: 16px;
+}
+.qrcode-header-money {
+    font-size: 26px;
+    font-weight: 700;
+    color: #f60;
+}
+</style>
+<div class="wp cl frame">
+<div class="pay">
+     <div class="p-w-hd">{lang dc_pay:transferorderid}{$orderid}&nbsp;&nbsp;&nbsp;{lang dc_pay:transfersubject}{$order['subject']}{$_lang['wxpay3']}</div>
+         <div class="p-w-bd">
+            <div class="p-w-box hm">
+				<div class="qrcode-header">
+					<div class="ft-center">{lang dc_pay:scantip_4}</div>
+					<div class="ft-center qrcode-header-money">{$order['price']}</div>
+				</div>
+                <div class="pw-box-hd">
+				<!--{if $payurl['isframe']}-->
+					<iframe frameborder="0" width="200" height="200" marginheight="0" marginwidth="0" scrolling="no" src='{$payurl[qrcode]}'></iframe>
+				<!--{else}-->
+                    <img src="{$payurl[qrcode]}" width="200" />
+				<!--{/if}-->
+                    </div>
+                        <div class="pw-box-ft">
+                            <p>{lang dc_pay:scantip_1}{$pt}{lang dc_pay:scantip_2}</p>
+                            <p>{lang dc_pay:scantip_3}</p>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="paycheck_return"></div>
+<script type="text/javascript">
+	var orderid = "{$orderid}";
+	chkint=window.setInterval(paycheck, 1000); 
+	function paycheck(){
+		var x = new Ajax();
+		var url = 'plugin.php?id=dc_pay:post&act=paycheck&orderid='+orderid;
+		x.get(url, function(s, x) {
+			if(s=='1'){
+				window.clearInterval(chkint);
+				window.location.href='plugin.php?id=dc_pay:return&orderid='+orderid;
+			}
+		});
+	}
+</script>
+<!--{subtemplate common/footer}-->

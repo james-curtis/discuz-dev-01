@@ -1,0 +1,2 @@
+<?php die('Permission denied');?>
+a:1:{s:27:"http://www.huzhan.com/code/";a:3:{s:4:"data";s:305:"%3Chtml%3E%0D%0A%3Chead%3E%3Ctitle%3E301%20Moved%20Permanently%3C%2Ftitle%3E%3C%2Fhead%3E%0D%0A%3Cbody%20bgcolor%3D%22white%22%3E%0D%0A%3Ccenter%3E%3Ch1%3E301%20Moved%20Permanently%3C%2Fh1%3E%3C%2Fcenter%3E%0D%0A%3Chr%3E%3Ccenter%3EWAF%2F2.4-12.1%3C%2Fcenter%3E%0D%0A%3C%2Fbody%3E%0D%0A%3C%2Fhtml%3E%0D%0A";s:7:"timeout";i:1534339303;s:3:"ttl";i:1800;}}

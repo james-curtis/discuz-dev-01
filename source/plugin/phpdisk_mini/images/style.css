@@ -1,0 +1,129 @@
+/**
+#	Project: PHPDISK File Storage Solution
+#	This is NOT a freeware, use is subject to license terms.
+#
+#	Site: http://www.phpdisk.com
+#
+#	$Id: style.css 32 2014-10-17 06:57:36Z along $
+#
+#	Copyright (C) 2008-2014 PHPDisk Team. All Rights Reserved.
+#
+*/
+BODY {
+	font-size:12px;
+}
+textarea,input,select{font-size:12px}
+form{margin:0; padding:0}
+
+ul,li{list-style:none}
+A{
+	COLOR: #2566a6; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.btn{ padding:2px;background:url("pn.png") repeat-x;border:1px #999999 solid}
+
+.p_box{ width:100%; height:auto; }
+
+#menu { height:26px; margin-bottom:5px;}
+#menu ul {margin: 0px;padding:0px;list-style-type: none;}
+#menu ul li { width:85px;float: left;text-align: center; margin-right:5px}
+#menu ul li a {text-align: center; display: block;height: 24px;width: 85px;text-decoration: none;overflow: hidden; padding:2px}
+#menu ul li a:hover {overflow: hidden;width: 85px;text-decoration: none;background:#E7F1F6;}
+#menu ul li{position:relative;}
+#menu ul li ul{display:none;margin:0;padding:0;position:absolute; left:0;width:85px;}
+#menu ul li ul li{width:85px;float:none; margin-top:-2px;}
+#menu ul li ul li a{width:85px;float:none;background:#FFF; }
+#menu ul li ul li a:hover{width:85px;margin-left:0;text-align:center;text-decoration: none;background:#E7F1F6;}
+#menu ul li:hover ul, #menu li.over ul{display:block;}
+
+.dl_addr{ margin:5px 0;}
+.dl_addr ul{list-style:none}
+.dl_addr ul li{ float:left; margin-right:5px;}
+.dl_addr ul li a{ background:url("pn.png"); display:block; text-align:center; width:auto; padding:2px; border:1px #999999 solid;}
+.dl_addr ul li a:hover{text-decoration:none}
+
+.fd_desc{padding:10px; border:1px #ccc dotted; width:95%; margin:auto; margin-bottom:5px}
+
+.p_box .p_r h2{ padding:5px;}
+.p_box .p_r .p_list{ height:18px; padding:5px; list-style:none; overflow:hidden;}
+.p_box .header_bar{ background:url("title_bar.png") repeat-x;}
+.p_box .p_r .p_list .pl-1{ float:left; width:65%;word-wrap: break-word;word-break: break-all;}
+.p_box .p_r .p_list .pl-2{ float:left; text-align:center; width:80px; }
+.p_box .p_r .p_list .pl-3{ float:left; text-align:center; width:80px; }
+.p_box .p_r .p_list .pl-4{ float:right;}
+.p_box .p_m{ width:5px; background:#dfdfdf; float:left; cursor:ew-resize}
+
+.p_box_fm .p_l{float:left; width:20%; border:1px #CCC solid; padding:3px; height:500px; overflow-y:scroll}
+.p_box_fm .p_r{float:left; width:78%; border:1px #CCC solid; padding-bottom:30px; height:476px; overflow-y:scroll}
+.p_box_nofm .p_l{float:left; width:20%; border:1px #CCC solid; padding:3px; height:auto;}
+.p_box_nofm .p_r{float:left; width:78%; border:1px #CCC solid; padding-bottom:30px; border:1px solid #ccc;}
+
+.td_line td{border-bottom:1px #CCCCCC dotted}
+.td_line td a{display:inline; background:#FFFFFF; border:0px; padding:0; color:#336699}
+.td_line td a:hover{text-decoration:underline}
+
+.v_box{}
+.v_box .vl{float:left; width:69.5%;}
+.v_box .vr{float:right; width:30%;}
+
+.rel_box{background: #E5EDF2;border:1px #CDCDCD solid; border-bottom:0; font-size:14px; margin-top:10px;}
+.rel_ctn ul{border:1px solid #CCC; height:170px;}
+.rel_ctn ul li{ float:left; width:48%; overflow:hidden; height:28px; line-height:28px; padding:0; margin:2px 0 1px 8px; border-bottom:1px #efefef dotted; margin-right:10px;}
+
+.p_cr{padding:5px; margin:auto}
+
+.clear{clear:both}
+.alt_bg{ background:#ebf4f8; border-bottom:1px #c0d2ec solid; padding:5px;}
+
+.txtwhite{color:#FFFFFF}
+.txtgray2{color:#CCC}
+.txtgray{color:#666}
+.txtred{color:#FF0000}
+.txtblue{color:#0000FF}
+.txtgreen{color:#008800}
+.bold{font-weight:bold}
+
+.f14{font-size:14px}
+
+#container {width: 100%; height:auto;margin:0px auto; margin-left:-5px;}
+#container .tit{ margin-left:15px; padding-left:10px; line-height:50px;font-size:20px; font-weight:bolder; height:50px; width:auto;}
+
+.box_style{padding:5px; background:#FFFFFF}
+.cfm_info{padding:10px; line-height:14px; height:14px; line-height:180%; margin-bottom:20px}
+.cfm_info li{ margin-top:5px;word-wrap:word-break;word-break: break-all;}
+.tb_box_msg{margin:8px;padding:10px; background:#FFFFDD; border:#FFCC00 1px solid; color:#008800}
+
+.rd_box{width:400px;height:150px;font-size:14px}
+.rd_box ul{padding:20px}
+/* upload css*/
+.store_nav{margin-bottom:5px}
+.store_nav a{color:#333333; text-decoration:none}
+.store_nav a:hover{text-decoration:underline}
+#up_msg_tips{ width:90%; padding:5px; background:#FFFFDD; border:#FFCC00 1px solid; color:#008800}
+
+/* myfile list */
+.l_box ul{list-style:none;padding-bottom:#E2EAEC 2px solid;}
+.l_box ul li{float:left; width:80px; display:block; padding:1px; margin-right:5px; border:#E2EAEC 2px solid; padding:5px; text-align:center; cursor:pointer}
+.l_box_hl{color:#0000FF; background:#efefef; padding:1px; border-bottom:2px #ffffff solid}
+
+.nav_bar{ margin:8px; margin-bottom:12px;}
+.nav_bar a{padding:3px; border:2px #CCC solid}
+.nav_bar a:hover{text-decoration:none}
+.hl_nav{color:#000000; background:#dfdfdf;}
+.sel_li{background-color:#DEEBF3;}
+
+.search {background: url(search_btn.gif) no-repeat 0px 0px;height: 30px;width: 174px;position: relative; float:right; margin-top:-2px;right:5px;}
+.search .txt-search  {height: 25px;width: 117px;position: absolute;background-color: transparent;border: none;line-height: 25px; font-size:12px; color:#333; right:55px; margin-top:3px;}
+.search .btn-search {display: block;position: absolute;right: 0px;width: 50px;height: 30px;overflow: hidden;line-height: 30px;}
+
+.pick_box{ background:url(pick_bg.png) no-repeat; width:383px; height:253px; margin:auto;}
+.pick_box .tips{ padding-top:80px; padding-left:42px; font-size:14px;}
+.pick_box #code_tips{ padding-top:10px; padding-left:42px;}
+.pick_box .wrap{ width:300px; margin:auto;}
+.pick_box .code{ width:200px; background:url(pick_bg.png) no-repeat 0 -254px;background-color: transparent;border: none;line-height: 37px; height:37px; font-size:16px; font-weight:700;}
+.pick_box .code_btn{ height:36px; width:60px; margin-top:-6px;}
+
+.s_item{ padding-bottom:10px; margin-bottom:3px; border-bottom:1px dotted #ccc}
+.s_item .s_tit{font-size:18px}

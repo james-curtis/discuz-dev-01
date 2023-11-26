@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+	<item id="Time"><![CDATA[2016-03-09 18:36]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://plugin/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[【ZMS】插件語言包編輯修改]]></item>
+			<item id="identifier"><![CDATA[zhanmishu_editlang]]></item>
+			<item id="description"><![CDATA[您購買了插件，時常想修改插件里面的文字吧，本插件可修改插件的模板、腳本語言包。]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[zhanmishu_editlang/]]></item>
+			<item id="copyright"><![CDATA[站秘書(成都智測科技有限公司)]]></item>
+			<item id="version"><![CDATA[v1.1.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[edit]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[編輯語言包]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[restore]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[恢復備份]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="pluginlanguage_script"><![CDATA[插件腳本語言包]]></item>
+				<item id="pluginlanguage_template"><![CDATA[插件模板語言包]]></item>
+				<item id="pluginlanguage_install"><![CDATA[插件安裝語言包]]></item>
+				<item id="please_choose_cat"><![CDATA[請選要編輯的插件語言包類別]]></item>
+				<item id="please_choose_plugin"><![CDATA[請選擇需要編輯語言包的插件]]></item>
+				<item id="backs"><![CDATA[備份列表]]></item>
+				<item id="somethingwrong"><![CDATA[發生了錯誤]]></item>
+				<item id="del_success"><![CDATA[刪除成功\]]></item>
+				<item id="restore_success"><![CDATA[恢復成功\]]></item>
+				<item id="please_edit"><![CDATA[點擊修改]]></item>
+				<item id="sendlog"><![CDATA[發送日志]]></item>
+				<item id="cannot_restore"><![CDATA[數據錯誤，無法恢復]]></item>
+				<item id="back_str"><![CDATA[備份真實路徑（可從文件中刪除備份）]]></item>
+				<item id="back_cat"><![CDATA[備份類別]]></item>
+				<item id="back_time"><![CDATA[備份時間]]></item>
+				<item id="act"><![CDATA[操作]]></item>
+				<item id="isrestore"><![CDATA[是否要恢復備份？，將覆蓋\當前數據]]></item>
+				<item id="isdel"><![CDATA[是否刪除？刪除無法恢復]]></item>
+				<item id="restore"><![CDATA[恢復備份]]></item>
+				<item id="del"><![CDATA[刪除備份]]></item>
+				<item id="editlangtips"><![CDATA[<li>本插件可修改插件語言包，對于模板緩存後的語言包，需要更新模板緩存才會生效</li>
+  <li>如插件開啟了開發模式，且插件安裝xml文件或者語言包文件還在，本插件可能無效，你可直接修改插件語言包即可</li><li>本插件分為免費版和商業版，免費版僅能修改站秘書插件，也就是我們自己開發的插件，商業版可修改所有活動（已經啟的插件）插件語言包</li>]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="mobile_lable"><![CDATA[手機號:]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

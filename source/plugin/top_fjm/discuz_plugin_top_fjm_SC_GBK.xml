@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+	<item id="Time"><![CDATA[2016-08-07 14:27]]></item>
+	<item id="From"><![CDATA[Ñ¶»ÃÍø£¨www.xhkj5.com£©]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[Ñ¶»ÃÍø_[ÌÏ²©]ÍøÕ¾¸½¼þÃûÇ°×º]]></item>
+			<item id="identifier"><![CDATA[top_fjm]]></item>
+			<item id="description"><![CDATA[[ÌÏ²©]ÍøÕ¾¸½¼þÃûÇ°×º£º¿ÉÉèÖÃÓÃ»§ÔÚÍøÕ¾ÏÂÔØµÄ¸½¼þÃû³ÆÇ°¼ÓÈÎºÎ¹ã¸æÐÅÏ¢£¬ÎªÍøÕ¾×öÐû´«¡£¾ÉÑÔ×ÊÔ´Íøwww.fulanlove.com]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[top_fjm/]]></item>
+			<item id="copyright"><![CDATA[Ñ¶»ÃÍø£¨www.xhkj5.com£©]]></item>
+			<item id="version"><![CDATA[2.0]]></item>
+			<item id="__modules">
+				<item id="9">
+					<item id="name"><![CDATA[mysitead]]></item>
+					<item id="menu"><![CDATA[<span style="color:#E53333;"><b>Ñ¶»ÃÍø</b></span>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="0">
+					<item id="name"><![CDATA[name]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[ÏÂÔØµÄ¸½¼þÃûÇ°×º]]></item>
+				<item id="description"><![CDATA[Ö§³ÖÖÐÎÄ£¬¿ÉÒÔÊÇÍøÕ¾µÄÃû³Æ¡¢ÍøÖ·µÈÐÅÏ¢¡£]]></item>
+				<item id="variable"><![CDATA[top_prefix]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[[ÌÏ²©Éè¼Æ×é]]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[ÔÊÐíÊ¹ÓÃµÄ°æ¿é]]></item>
+				<item id="description"><![CDATA[Ñ¡¿ÕÎª²»Ìí¼ÓÇ°×º]]></item>
+				<item id="variable"><![CDATA[top_fids]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[]]></item>
+				</item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[ÔÊÐíÊ¹ÓÃµÄÓÃ»§×é]]></item>
+				<item id="description"><![CDATA[±¾ÉèÖÃÇ¿ÁÒ½¨ÒéÈ«Ñ¡]]></item>
+				<item id="variable"><![CDATA[top_gids]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+	</item>
+</root>

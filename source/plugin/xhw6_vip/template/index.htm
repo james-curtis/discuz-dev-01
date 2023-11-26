@@ -1,0 +1,311 @@
+<!--{subtemplate common/header}-->
+
+	<div class="wp">
+		
+
+<link rel="stylesheet" type="text/css" href="source/plugin/xhw6_vip/css/cjxixistyle.css" />
+<link rel="stylesheet" type="text/css" href="source/plugin/xhw6_vip/css/a.css" />
+<link rel="stylesheet" type="text/css" href="source/plugin/xhw6_vip/css/b.css" />
+<div id="pt" class="bm cl" >
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+		<em>&rsaquo;</em><a href="./plugin.php?id=xhw6_vip">{lang xhw6_vip:buyGroup}</a>
+	</div>
+</div>
+<div class="hux_bank">
+	<div style="padding: 2px;"></div>
+	<div class="bm bw0">
+		<div class="left">
+			<div class="bm bmw fl hux_bank_clear">
+				<div class="bm_h cl">
+					<h2>
+						<a>{lang xhw6_vip:openGroup}</a>
+					</h2>
+				</div>
+				<div class="bm_c txtstyle">
+<center>
+<ul class="combo-content-list global-clearfix" node-type="product-item">
+						<!--{loop $rule $key $value}-->
+
+<li>
+<div class="image product$key" enter="0">
+<img src="" alt="" style="display:none;" />
+</div>
+<div class="detail global-clearfix">
+<div class="quota">
+<em node-type="product-quota">$value[0]</em><!--{if $value[6]=='hot'}--><img src='static/image/common/apphot.png' style="position:absolute;margin-top:-8px;"><!--{/if}-->
+
+<!--{if $value[6]!='noico' and $value[6]!='hot'}-->
+<img src="source/plugin/xhw6_vip/images/$value[6].png" style="position:absolute;margin-top:-46px;margin-left: 50px;">
+<!--{/if}-->
+
+</div>
+<div class="price">
+<em node-type="pay-price">￥$value[2]</em> / <!--{if $value[3]>0}-->
+<!--{if $value[3]==30}-->
+月
+<!--{elseif $value[3]==365}-->
+年
+<!--{else}-->
+$value[3]天
+<!--{/if}-->
+<!--{else}-->
+{lang xhw6_vip:validityinfo}
+<!--{/if}-->
+</div>
+</div>
+<div class="oldprice global-clearfix">
+<div class="save">
+送:<em>$value[4]</em>
+</div>
+<div class="old">
+<em></em>
+</div>
+</div>
+<a class="buy-btn" node-type="pay-submit"  id="livereplysubmit"  name="replysubmit"
+ href="javascript:;" onclick="showWindow('xhw6_vip', 'plugin.php?id=xhw6_vip&action=buy&buyId=$key');return false;">
+{lang xhw6_vip:buyButton}</a>
+
+</li>
+
+						<!--{/loop}-->
+						</ul></center>
+					<div class="text-align_right txtstyle">{$multi}</div>
+				</div>
+				<!--开始位置  -->
+				<div class="bm_h cl">
+					<h2>
+						<a><font color='red'>VIP特权总览</font></a>
+					</h2>
+				</div>
+
+
+<style>
+
+
+.shangyemain tr td.w11em {
+text-align: right;
+padding-right: 15px;
+width: 183px;
+border: 1px solid #eee;
+}
+.shangyemain tr td {
+border: 1px solid #eee;
+padding: 6px 0px;
+text-align: center;
+font-size: 13px;
+}
+
+</style>
+<div class="shangyemain">
+<style>
+
+
+				.baojia-table td.w11em3{ background:#F0FFF7;}
+				.baojia-table td.w11em4{ background:#F0FFF7;}
+</style>
+<table border="1" class="baojia-table" width="100%" cellpadding="0" cellspacing="1">
+				<tbody>
+					<tr class="hsd">
+						<td class="w11em h24s"  style="color:#555;font-size:14px;width: 20%;">
+							<b>特权对比</b></td>
+						<td class="h24s"  style="color:#888;font-size:14px;width: 20%;"><b>普通用户</b></td>
+						<td class="h24s"  style="color:#555;font-size:14px;width: 20%;">
+							<b>月费VIP</b>
+</td>
+						<td class="h24s"  style="color:red;font-size:14px;width: 20%;">
+							<b>年费VIP</b>
+</td>
+						<td class="h24s"  style="color:blue;font-size:14px;width: 20%;">
+							<b>终身VIP</b>
+</td>
+
+					</tr>
+					
+					<tr>
+						<td class="w11em">身份铭牌</td>
+						<td class="w11em1">/</td>
+						<td class="w11em2"><img src="data/attachment/common/3c/common_21_usergroup_icon.png"></td>
+						<td><img src="data/attachment/common/3c/common_22_usergroup_icon.png"></td>
+						<td class="w11em4"><img src="data/attachment/common/3c/common_23_usergroup_icon.png"></td>
+
+					</tr>
+					
+					<tr>
+						<td class="w11em">资源下载次数</td>
+						<td class="w11em3"><a style="color:red;" ><b>2</b></a>次/天/版块</td>
+						<td class="w11em3"><a style="color:red;" ><b>无限</b></a>次/天/版块</td>
+						<td class="w11em3"><a style="color:red;" ><b>无限</b></a>次/天/版块</td>
+						<td class="w11em4"><a style="color:red;" ><b>无限</b></a>次/天/版块</td>
+
+					</tr>
+					<tr>
+						<td class="w11em">收费资源免购买下载</td>
+						<td class="w11em1"><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td class="w11em3"><a style="color:red;" ><b>无限</b></a>个/天</td>
+						<td class="w11em3"><a style="color:red;" ><b>无限</b></a>个/天</td>
+						<td class="w11em4"><a style="color:red;" ><b>无限</b></a>个/天</td>
+					</tr>
+					
+					<tr>
+						<td class="w11em">免费资源下载</td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td class="w11em4"><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+					</tr>
+					<tr>
+						<td class="w11em">月费资源下载</td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td class="w11em4"><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+					</tr>
+					<tr>
+						<td class="w11em">年费资源下载</td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td class="w11em4"><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+					</tr>
+					<tr>
+						<td class="w11em">终身资源下载</td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td class="w11em4"><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+					</tr>
+
+                   <tr>
+						<td class="w11em">服务周期</td>
+						<td class="w11em1">/</td>
+						<td class="w11em3"><a style="color:red;" ><b>30</b></a>天</td>
+						<td class="w11em3"><a style="color:red;" ><b>365</b></a>天</td>
+						<td class="w11em4">/</td>
+				  </tr>	
+                   <tr>
+						<td class="w11em">服务费用原价</td>
+						<td class="w11em1">/</td>
+						<td class="w11em3"><a style="color:#999;font-size:14px;"><del><b>30元</b></del></a>/周期</td>
+						<td class="w11em3"><a style="color:#999;font-size:14px;"><del><b>128元</b></del></a>/周期</td>
+						<td class="w11em4"><a style="color:#999;font-size:14px;"><del><b>388元</b></del></a></td>
+				  </tr>	
+					<tr>				
+						<td class="w11em">折扣后价格</td>
+						<td class="w11em1">/</td>
+						<td class="w11em3"><a style="color:red;font-size:16px;"><b>38元</b></a>/周期</td>
+						<td class="w11em3"><a style="color:red;font-size:16px;"><b>88元</b></a>/周期</td>
+						<td class="w11em4"><a style="color:red;font-size:16px;"><b>158元</b></a></td>
+				  </tr>			
+					<tr>
+						<td class="w11em">新资源优先体验</td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td class="w11em4"><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+					</tr>
+					<tr>
+						<td class="w11em"><a style="color:red;">昵称红名显示</a></td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td class="w11em4"><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+					</tr>
+					<tr>
+						<td class="w11em4">无广告<a style="color:blue;font-size:9px;">(赞助商广告除外)</a></td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/c.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td class="w11em4"><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+					</tr>
+					<tr>
+						<td class="w11em">求资源</td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+						<td class="w11em4"><img src="source/plugin/xhw6_vip/images/sure.png"></td>
+					</tr>		
+					<tr>
+						<td class="w11em">补充说明:</td>
+						<td colspan="4">未完待续。。。<img src="source/plugin/xhw6_vip/images/sure.png">表示有权限，<img src="source/plugin/xhw6_vip/images/c.png">表示无权限</td>
+					</tr>
+					
+				</tbody>
+			</table>
+</div>
+
+	
+
+				
+				<!-- 结束位置 -->
+			</div>
+		</div>
+		<div class="right">
+			<div class="bm bmw fl">
+				<div class="bm_h cl">
+					<h2>
+						<a>{lang xhw6_vip:userinfo}</a>
+					</h2>
+				</div>
+				<!-- {if !$_G['uid']} -->
+				<div class='bm_c txtstyle'>
+					<br />
+					<br />
+					<center>
+						{lang xhw6_vip:loginoutinfo}<br /> <a
+							href="member.php?mod=logging&amp;action=login"
+							onclick="showWindow('login', this.href)" class="xi2">	{lang xhw6_vip:loginM}</a> | <a
+							href="member.php?mod=register" class="xi2">	{lang xhw6_vip:registerM}</a>
+					</center>
+					<br />
+					<br />
+				</div>
+				<!-- {else} -->
+				<div class='bm_c txtstyle'>
+					<div class="dashed">{lang xhw6_vip:notice05}: $myname</div>
+					<div class="dashed">{lang xhw6_vip:notice04}: $grouptitle</div>
+					
+					
+					<div class="dashed">$weiwangname: $myweiwang&nbsp;&nbsp;&nbsp;&nbsp;$moneyname: $mymoey&nbsp;&nbsp;&nbsp;&nbsp;$gongxianname: $mygongxian</div>						
+				</div>
+
+				<!--{/if}-->
+			</div>
+
+
+			<!-- {if $cjxixi_isshow==1} -->
+			<div class="bm bmw fl">
+<div class="middle" style="width:293px;height:293px;margin:0px;overflow:hidden;background:url(source/plugin/xhw6_vip/images/alipaynote.jpg);">
+</div>
+			</div>
+			<div class="bm bmw fl">
+				<div class="bm_h cl">
+					<h2>
+						<a>{lang xhw6_vip:notice03}</a>
+					</h2>
+				</div>
+				<div class='bm_c txtstyle'>
+		<!--{eval $i=0;}-->	
+		<!--{loop $order_completed_data $ordervalue}-->
+		
+					<div class="dashed">
+						$ordervalue['submitdate'] <font color="red">$ordervalue['username']</font> {lang xhw6_vip:notice02} <font color="blue">$ordervalue['group_name']</font> 
+					<!--{if $i<3}-->
+						<img src='source/plugin/xhw6_vip/images/new.gif'>
+					<!--{/if}-->
+					</div>
+					<!--{eval ++$i;}-->
+		<!--{/loop}-->	
+
+				</div>
+			</div>
+
+			<!-- {/if} -->
+		</div>
+
+	</div>
+</div>
+</div>
+<div class="hux_bank_clear"></div>
+
+<!--{subtemplate common/footer}-->

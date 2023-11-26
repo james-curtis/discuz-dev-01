@@ -1,0 +1,142 @@
+<!--{template common/header}-->
+<!--{template phpdisk_mini:default/header}-->
+<!--{template phpdisk_mini:default/nav_bar}-->
+<script type="text/javascript">
+function sw_box(){
+	if(jq('#p_l').is(":hidden")){
+		jq('#p_l').show();jq('#p_r').css({'width':'740px'});
+	}else{
+		jq('#p_l').hide();jq('#p_r').css({'width':'99%'});
+	}
+	
+}
+</script>
+<div class="p_l" id="p_l">
+<script type="text/javascript">
+jq(document).ready(function(){
+	jq(".p_list").mouseover(function(){
+		jq(this).addClass("alt_bg");
+	}).mouseout(function(){
+		jq(this).removeClass("alt_bg");
+	});
+	jq(".p_list").each(function(){
+		var obj = jq(this).find("span");
+		jq(this).mouseover(function(){
+			obj.css("display","");
+		}).mouseout(function(){
+			obj.css("display","none");
+		});
+	});
+	jq(".p_l div li").mouseover(function(){
+		jq(this).addClass("alt_bg");
+	}).mouseout(function(){
+		jq(this).removeClass("alt_bg");
+	});
+	jq(".p_l div li").each(function(){
+		var obj = jq(this).find("span");
+		jq(this).mouseover(function(){
+			obj.css("display","");
+		}).mouseout(function(){
+			obj.css("display","none");
+		});
+	});
+	jq("#cb_bat_del").click(function(){ 
+	var file_ids=""; 
+		jq("input[name='file_ids[]']:checkbox:checked").each(function(){ 
+			file_ids += jq(this).val()+','; 
+		}); 
+		if(file_ids){
+		showWindow('phpdisk_pbox', '{eval echo urr("plugin","id=phpdisk_mini:file&action=bat_del")}&file_ids='+file_ids,'get',1);
+		}else{
+		showDialog('{lang phpdisk_mini:please select operate file}', 'alert', '{lang phpdisk_mini:error tips}', null, 1);
+		}
+	}) ;
+	jq("#cb_bat_move").click(function(){ 
+	var file_ids=""; 
+		jq("input[name='file_ids[]']:checkbox:checked").each(function(){ 
+			file_ids += jq(this).val()+','; 
+		}); 
+		if(file_ids){
+		showWindow('phpdisk_pbox', '{eval echo urr("plugin","id=phpdisk_mini:file&action=bat_move")}&file_ids='+file_ids,'get',1);
+		}else{
+		showDialog('{lang phpdisk_mini:please select operate file}', 'alert', '{lang phpdisk_mini:error tips}', null, 1);
+		}
+	}) ;
+	jq("#cb_select_all").click(function(){
+		 jq("input[name='file_ids[]']").each(function(){
+			if(jq(this).attr("checked")){
+				jq(this).attr("checked",false);
+			}else{
+				jq(this).attr("checked",true);
+			}
+		 });
+	});
+	jq("#cb_select_cancel").click(function(){
+		 jq("input[name='file_ids[]']").attr("checked",false);
+	});
+});
+</script>
+<div>$folder_list</div>
+</div>
+<div id="p_m" class="p_m" onclick="sw_box()">&nbsp;</div>
+<div class="p_r" id="p_r">
+<h2><a href="{eval echo urr("plugin","id=phpdisk_mini:phpdisk")}"><img src="{PHPDISK_PLUGIN_DIR}/images/disk.gif" align="absmiddle" border="0" />{lang phpdisk_mini:mydisk}</a>&nbsp;&raquo;&nbsp;$nav_cp </h2>
+<!--{if $folder_description}-->
+<div class="fd_desc"><span>{lang phpdisk_mini:folder description}:</span> $folder_description</div>
+<!--{/if}-->
+	<!--{if $file_list || $sub_folder}-->
+	<div class="p_list header_bar">
+	<div class="pl-1 f14">{lang phpdisk_mini:file_name}</div>
+	<div class="pl-2 f14">{lang phpdisk_mini:download}/{lang phpdisk_mini:view}</div>
+	<div class="pl-3 f14">{lang phpdisk_mini:file size}</div>
+	<div class="pl-4 f14">{lang phpdisk_mini:upload time}</div>
+	</div>
+	<div class="clear"></div>
+	<!--{if $myset[show_subfolder]}-->
+		<!--{loop $sub_folder $v}-->
+			<div class="p_list">
+			<div class="pl-1">
+			<input type="checkbox" disabled="disabled" /><a href="{$v[a_view]}"><img src="{PHPDISK_PLUGIN_DIR}/images/folder.gif" align="absmiddle" border="0" /> $v[folder_name]</a></div>
+			<div class="pl-2 txtgray">-</div>
+			<div class="pl-3 txtgray">-</div>
+			<div class="pl-4 txtgray">$v[folder_time]</div>
+			</div>
+			<div class="clear"></div>
+		<!--{/loop}-->
+	<!--{/if}-->
+		<!--{loop $file_list $v}-->
+			<div class="p_list">
+			<div class="pl-1">
+			<span style="float:right;display:none">		
+			<!--{if $v[in_share]}-->	
+			<a href="{$v[a_view]}" target="_blank" title="{lang phpdisk_mini:view share file}"><img src="{PHPDISK_PLUGIN_DIR}/images/ico_share.gif" align="absmiddle" border="0"/></a>
+			<!--{/if}-->
+			<!--{if $v[file_pwd]}-->	
+			<a href="javascript:;" onclick="showWindow('phpdisk_pbox', '$v[a_pwd]','get',1);" title="{lang phpdisk_mini:share pwd}"><img src="{PHPDISK_PLUGIN_DIR}/images/ico_lock.gif" align="absmiddle" border="0" /></a>
+			<!--{/if}-->
+			<a href="$v[a_edit]" title="{lang phpdisk_mini:edit}" target="_blank"><img src="{PHPDISK_PLUGIN_DIR}/images/ico_edit.png" align="absmiddle" border="0" /></a>
+			<a href="javascript:;" onclick="showWindow('phpdisk_pbox', '$v[a_del]','get',1);" title="{lang phpdisk_mini:del}"><img src="{PHPDISK_PLUGIN_DIR}/images/ico_del.gif" align="absmiddle" border="0" /></a>
+			</span>
+			<input type="checkbox" name="file_ids[]" value="$v[file_id]" /><a href="javascript:;" onclick="showWindow('phpdisk_pbox', '$v[a_dl]','get',1);" class="{$v[style]}" title="$v[tips]">$v[file_icon] $v[file_name]</a></div>
+			<div class="pl-2 txtgray">$v[file_downs]/$v[file_views]</div>
+			<div class="pl-3 txtgray">$v[file_size]</div>
+			<div class="pl-4 txtgray">$v[file_time]</div>
+			</div>
+			<div class="clear"></div>
+		<!--{/loop}-->
+<div style="margin-top:8px; padding-left:7px;"><input type="button" class="pn" id="cb_select_all" value="{lang phpdisk_mini:cb_select_all}"/>&nbsp;
+	<input type="button" class="pn" id="cb_select_cancel" value="{lang phpdisk_mini:cb_select_cancel}" />&nbsp;
+	<input type="button" class="pnc pn" id="cb_bat_del" value="{lang phpdisk_mini:cb_bat_del}" />&nbsp;
+	<input type="button" class="pnc pn" id="cb_bat_move" value="{lang phpdisk_mini:cb_bat_move}" />&nbsp;
+	<span style="float:right">$multi</span></div>
+	<!--{else}-->
+		<p class="emp">{lang phpdisk_mini:file not found}</p>
+	<!--{/if}-->	
+		</div>
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+jq('#p_m').css('height',jq('#p_r').outerHeight(true)+2);
+</script>
+<!--{template phpdisk_mini:default/footer}-->
+<!--{template common/footer}-->

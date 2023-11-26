@@ -1,0 +1,84 @@
+<style type="text/css">
+.bubble{margin:10px auto;width:100%;border:1px solid #cdcdcd}
+.datalist{padding:10px}
+.datainfo{margin-bottom:20px;position:relative}
+.triangle{position:absolute;top:24px;margin-top:-8px;left:58px;display:block;width:0;height:0;overflow:hidden;line-height:0;font-size:0;border-bottom:8px solid #FFF;border-top:8px solid #FFF;border-left:none;border-right:8px solid #E7EDF0}
+.datainfo .article{float:left;max-width:60%;min-height:40px;display:inline-block;padding:5px 10px;background:#eee;border-radius:5px;background-color:#E7EDF0}
+.datainfo .article img {max-width:500px;}
+.fr{padding-left:0}
+.fr .triangle{left:auto;right:58px;border-bottom:8px solid #FFF;border-top:8px solid #FFF;border-right:none;border-left:8px solid #FFE4CD}
+.fr .article{float:right;background-color:#FFE4CD}
+.clearfix:after{display:block;content:"clear";height:0;clear:both;overflow:hidden;visibility:hidden}
+.profile{margin-right:12px}
+.profile.y{margin-right:0;margin-left:12px}
+.profile{height:54px;display:block;position:relative}
+.profile a img{border:1px solid #cdcdcd;padding:2px;position:relative;width:48px;height:48px; border-radius:100%}
+.profile a span{position:absolute;bottom:3px;left:3px;width:48px;height:14px;line-height:14px;font-size:12px;text-align:center;color:#FFF;background:rgba(57,56,56,.62)}
+.dt th {padding:10px;}
+.connect {line-height:20px; color:#999}
+</style>
+<div class="bubble">
+	<table class="dt" style="border-top:0;"><tr>
+    <th><h1>{lang ticket:tlang18}</h1></th>
+    <th style="text-align:right;">
+    <!--{if $ticket['status']<4 && !$admin}--><a href="javascript:;" style="color:#f60" onclick="showWindow('close', 'plugin.php?id=ticket&mod=do&type=rate&item={$ticketId}');return false;">{lang ticket:tlang19}</a><!--{/if}-->
+    <!--{if $ticket['status']<4 && $admin}--><a href="javascript:;" style="color:#f60" onclick="showWindow('close', 'plugin.php?id=ticket&mod=do&type=close&item={$ticketId}&hash={FORMHASH}');return false;">{lang ticket:tlang20}</a><!--{/if}-->
+    </th>
+    </tr></table>
+	<div class="datalist">
+        <div class="datainfo clearfix">
+        	<div class="profile z">
+            	<a target="_blank" href="home.php?mod=space&uid={$tickets['ticket']['uid']}">{avatar($tickets['ticket']['uid'],'small')}</a>
+            </div>
+            <span class="triangle"></span>
+            <div class="article"><b>{$tickets['ticket']['username']}:</b>
+            	{eval echo stripslashes($tickets['ticket']['content'])}
+                {if $tickets['ticket']['extends']}
+                <p class="connect">
+            	{loop $extends $key $extend}
+                {if $tickets['ticket']['extends'][$extend[1]]}{if $key}<br />{/if}{$extend[0]}:&nbsp;{eval echo dhtmlspecialchars($tickets['ticket']['extends'][$extend[1]])}{/if}
+                {/loop}
+                {if $tickets['ticket']['extends']['dzlab_addon']}{if $key}<br />{/if}{lang ticket:tlang10}:&nbsp;{$tickets['ticket']['extends']['dzlab_addon']}{/if}
+                {if $tickets['ticket']['extends']['dzlab_siteurl']}<br />{lang ticket:tlang21}:&nbsp;<a href="{$tickets['ticket']['extends']['dzlab_siteurl']}" target="_blank">{$tickets['ticket']['extends']['dzlab_siteurl']}</a>{/if}
+                </p>
+                {/if}
+                
+            </div>
+        </div>
+        {loop $tickets['replies'] $reply}
+        <div class="datainfo clearfix{if $reply['uid'] != $tickets['ticket']['uid']} fr{/if}">
+        	<div class="profile {if $reply['uid'] != $tickets['ticket']['uid']}y{else}z{/if}">
+            	<a target="_blank" href="home.php?mod=space&uid={$reply['uid']}">{avatar($reply['uid'],'small')}</a>
+            </div>
+            <span class="triangle{if $reply['uid'] != $tickets['ticket']['uid']} right{/if}"></span>
+            <div class="article"><b>{$reply['username']}:</b>{eval echo (stripslashes($reply['content']))}</div>
+        </div>
+		{/loop}
+    </div>
+</div>
+	<!--{if $tickets['ticket']['status'] <4}-->
+    <link rel="stylesheet" type="text/css" href="source/plugin/ticket/static/css/wangEditor.min.css">
+    <script type="text/javascript" src="source/plugin/ticket/static/js/wangEditor{if $_G['charset'] == 'gbk'}_gbk{/if}.min.js"></script>
+    <style type="text/css">
+    #editor-trigger {height: 220px;}
+    .container {width: 100%;margin: 0 auto;position: relative;}
+    </style>
+	<form action="" method="post">
+	<div id="editor-container" class="container">
+        <div id="editor-trigger"></div>
+    </div>
+    <input type="hidden" id="content" name="content" />
+    <input type="hidden" value="{FORMHASH}" name="formhash" />
+    <br />
+	<button type="submi1t" name="submit" id="submit" onclick="html()" value="true" class="pn pnc"><strong>{lang ticket:tlang22}</strong></button>
+    </form>
+    <script type="text/javascript">
+		function html(){
+			jq("#content").val(jq("#editor-trigger").html());
+		}
+        var editor = new wangEditor('editor-trigger');
+        editor.config.uploadImgUrl = 'plugin.php?id=ticket&mod=upload&t_id={$tickets["ticket"]["t_id"]}';
+       	editor.config.menus = ['bold','underline','eraser','forecolor','fontsize','link','unlink','img','insertcode','undo','redo','fullscreen'];
+        editor.create();
+    </script>
+    <!--{/if}-->

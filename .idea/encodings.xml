@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/source/plugin/dc_downlimit/hook.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/dc_downlimit/install.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/dc_pay/install.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/keke_group/common.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/keke_xzhseo/table/table_keke_xzhseo.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/keke_xzhseo/template/touch/inc.htm" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/milu_pick/config.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/milu_pick/lib/function.global.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/milu_pick/lib/function.pick.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/milu_pick/lib/phprpc/phprpc_client.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/milu_pick/lib/pick.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/nimba_attachlog/hook.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/1314study.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/1314study.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/ad.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/addon.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/changelog.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/check.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/config.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/disable.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/enable.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/hook.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/hook.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/study_attachmentad/uninstall.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_attach/addattach.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_attach/cader.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_attach/downld.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_attach/edit.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_attach/install.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_attach/threed_attach.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_attach/uninstall.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_dazhe/alert.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_dazhe/cader.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_dazhe/function/function_threed.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_dazhe/help.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_dazhe/payfor.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/threed_dazhe/threed_dazhe.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/top_fjm/forum_attachment.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/xhw6_vip/table/table_xhw6_vip.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/ymg6_vip/admincp.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/ymg6_vip/adminrepeats.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/ymg6_vip/adminrulenote.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/ymg6_vip/alipayapi.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/ymg6_vip/alipaybuygroup.inc.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/ymg6_vip/returnnotify_url.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/ymg6_vip/showNote.class.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/ymg6_vip/table/table_ymg6_vip.php" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/source/plugin/ymg6_vip/ymg6_vip.inc.php" charset="GBK" />
+  </component>
+</project>

@@ -1,0 +1,85 @@
+<!--{template common/header_ajax}-->
+<script type="text/javascript" src="{PHPDISK_PLUGIN_DIR}/includes/js/common.js"></script>
+<script type="text/javascript">
+function post(){
+	jq('#msgtips').show();
+	jq('#msgtips').html('<img src="{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif" align="absmiddle" border="0" />{lang phpdisk_mini:loading}');
+	jq.post("{eval echo urr("plugin","id=phpdisk_mini:file&action=$action")}", jq("#codefrm").serialize(),
+		function(msg){
+		var arr = msg.split('|');
+		jq('#msgtips').hide();
+		if(arr[0]=='true'){
+			showPrompt(null, null, '<span class="txtwhite f14">'+arr[1]+'</span>', 1500);
+			setTimeout(function(){document.location.reload();},1500);
+		}else{
+			showDialog(msg, 'alert', '{lang phpdisk_mini:error tips}', null, 1);
+		}
+	});
+}	   
+</script>
+<div id="main_messaqge">
+<div class="f_c" style="height:100%;width:400px;">
+<div class="flb" style="padding-left: 0px; padding-right: 0px;">
+<ul class="tb tb_s cl">
+<li id="p_upbox" class="current"><a href="javascript:;">$box_title</a></li>
+<span class="flbc" onclick="hideWindow('$_G['gp_handlekey']');" title="{lang close}">{lang close}</span></li>
+</ul>
+</div>
+<div id="p_upbox_div">
+<div style="overflow:auto;overflow-x: hidden;width:100%;">
+<div id="container">
+<form id="codefrm">
+<input type="hidden" name="action" value="$action" />
+<input type="hidden" name="task" value="$action" />
+<input type="hidden" name="formhash" value="$formhash" />
+<input type="hidden" name="file_id" value="$file_id" />
+<!--{if $action=='bat_del'}-->
+<div class="cfm_info" style="height:220px;">
+<li>{lang phpdisk_mini:del file}:</li>
+<div style="height:150px; overflow-y:scroll; border:1px #dfdfdf solid; padding:5px; margin-bottom:8px;">
+<input type="hidden" name="file_ids" value="$file_ids" />
+<!--{loop $file_array $v}-->
+<li><span class="">$v[file_name]</span></li>
+<!--{/loop}-->
+</div>
+<li><input type="button" class="pnc pn" onclick="if(confirm('{lang phpdisk_mini:del file tips}')){post();}" value="{lang phpdisk_mini:btn_del}" />&nbsp;&nbsp;<input type="button" class="pn" onclick="hideWindow('$_G['gp_handlekey']');" value="{lang phpdisk_mini:btn_cancel}"/>&nbsp;&nbsp;<span id="msgtips"></span></li>
+</div>
+<!--{/if}-->
+<!--{if $action=='bat_move'}-->
+<div class="cfm_info" style="height:250px;">
+<li>{lang phpdisk_mini:dest folder}:<select name="folder_id"><option value="0" style="color:#0000FF">{lang phpdisk_mini:root folder}</option>{$myfolder_option}</select></li>
+<li>{lang phpdisk_mini:move file}:</li>
+<div style="height:150px; overflow-y:scroll; border:1px #dfdfdf solid; padding:5px; margin-bottom:8px;">
+<input type="hidden" name="file_ids" value="$file_ids" />
+<!--{loop $file_array $v}-->
+<li><span class="">$v[file_name]</span></li>
+<!--{/loop}-->
+</div>
+<li><input type="button" class="pnc pn" onclick="if(confirm('{lang phpdisk_mini:move file tips}')){post();}" value="{lang phpdisk_mini:btn_move}" />&nbsp;&nbsp;<input type="button" class="pn" onclick="hideWindow('$_G['gp_handlekey']');" value="{lang phpdisk_mini:btn_cancel}"/>&nbsp;&nbsp;<span id="msgtips"></span></li>
+</div>
+<!--{/if}-->
+<!--{if $action=='file_pwd'}-->
+<div class="cfm_info" style="height:100px;">
+<li>{lang phpdisk_mini:share pwd}:<input type="text" value="$file[file_pwd]" style="font-size:14px; font-weight:700; padding:3px;" readonly="" /></li>
+<li>&nbsp;</li>
+<li><input type="button" class="pn" onclick="hideWindow('$_G['gp_handlekey']');" value="{lang phpdisk_mini:btn_close}"/></li>
+</div>
+<!--{/if}-->
+<!--{if $action=='del'}-->
+<div class="cfm_info" style="height:100px;">
+<li>{lang phpdisk_mini:del file}:<span class="">$file_name</span></li>
+<li>&nbsp;</li>
+<li><input type="button" class="pnc pn" onclick="if(confirm('{lang phpdisk_mini:del file tips}')){post();}" value="{lang phpdisk_mini:btn_del}" />&nbsp;&nbsp;<input type="button" class="pn" onclick="hideWindow('$_G['gp_handlekey']');" value="{lang phpdisk_mini:btn_cancel}"/>&nbsp;&nbsp;<span id="msgtips"></span></li>
+</div>
+<!--{/if}-->
+
+</form>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<!--{template common/footer_ajax}-->

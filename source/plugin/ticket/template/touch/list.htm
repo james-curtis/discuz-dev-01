@@ -1,0 +1,28 @@
+<style>
+.datalist table { margin-bottom: 20px;width: 100%; border: 1px solid #E6E7E1;}
+.datalist table td {border-right:1px solid #E6E7E1;}
+.datalist table td,.datalist table th {height:26px; line-height:26px; overflow:hidden;}
+.datalist table th {font-weight:bold}
+.datalist table tr:hover {background:#f9fafc}
+.center { text-align:center}
+.pad_l {padding-left:10px!important;}
+.pad_l a {color:#06C}
+</style>
+<div class="datalist">
+<table width="100%" border="0" cellpadding="5" class="dt mtm">
+	<tr>
+        <th class="pad_l">{lang ticket:tlang14}</th>
+    </tr>
+	{loop $list $ticket}
+	<tr>
+    	<td class="pad_l">[{$types[$ticket['t_id']]['t_name']}] <a href="plugin.php?id=ticket&mod=view&item={$ticket['id']}">{eval echo mb_substr(strip_tags(stripcslashes($ticket['content'])),0,20,$_G['charset']);}...</a></td>
+    </tr>
+    {/loop}
+    {if !$list}
+    <tr><td class="center">{lang ticket:tlang17}</td></tr>
+    {/if}
+    {if $multi}
+    <tr><td  class="center">{$multi}</td></tr>
+    {/if}
+</table>    	
+</div>

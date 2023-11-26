@@ -1,0 +1,27 @@
+<div id="menu">
+<ul>
+	<li><a href="{eval echo urr("plugin","id=phpdisk_mini:phpdisk")}" class="pn"><img src="{PHPDISK_PLUGIN_DIR}/images/disk.gif" align="absmiddle" border="0" />{lang phpdisk_mini:mydisk}</a></li>
+	<li><a href="javascript:;" onclick="showWindow('phpdisk_pbox', '{eval echo urr("plugin","id=phpdisk_mini:file_box")}','get',1);" class="pn"><img src="{PHPDISK_PLUGIN_DIR}/images/upload_file_icon.gif" align="absmiddle" border="0" />{lang phpdisk_mini:upload file}</a></li>
+	<li><a href="javascript:;" onclick="showWindow('phpdisk_pbox', '{eval echo urr("plugin","id=phpdisk_mini:folder&action=add")}','get',1);" class="pn"><img src="{PHPDISK_PLUGIN_DIR}/images/new_folder.gif" align="absmiddle" border="0" />{lang phpdisk_mini:new folder}</a></li>
+	<li><a href="{eval echo urr("plugin","id=phpdisk_mini:phpdisk&action=settings")}" class="pn"><img src="{PHPDISK_PLUGIN_DIR}/images/ico_set.gif" align="absmiddle" border="0" />{lang phpdisk_mini:mydisk settings}</a></li>
+	<li><a href="{eval echo urr("plugin","id=phpdisk_mini:search")}" class="pn"><img src="{PHPDISK_PLUGIN_DIR}/images/icon_search.gif" align="absmiddle" border="0" />{lang phpdisk_mini:pub_search}</a></li>
+</ul>
+<div class="search">
+<form method="get" action="{eval echo urr("plugin","")}" id="pds_form1">
+<input type="hidden" name="id" value="phpdisk_mini" />
+<input type="hidden" name="action" value="search" />
+<input type="text" id="word" name="word" placeholder="{lang phpdisk_mini:pls input keywords}" class="txt-search" value="{$word}" />
+<a href="javascript:;" onclick="return dosearch();" class="btn-search"></a>
+</form>
+</div>
+<script type="text/javascript">
+function dosearch(){
+	if(jq('#word').val()==''){
+	jq('#word').focus();
+	return false;
+	}else{
+	jq('#pds_form1').submit();
+	}
+}
+</script>
+</div>

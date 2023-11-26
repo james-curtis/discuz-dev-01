@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+	<item id="Time"><![CDATA[2016-08-14 03:32]]></item>
+	<item id="From"><![CDATA[讯幻网（www.xhkj5.com）]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[讯幻网_附件下载记录]]></item>
+			<item id="identifier"><![CDATA[nimba_attachlog]]></item>
+			<item id="description"><![CDATA[附件下载记录 for Discuz X2.5/X3 作者 土著人宁巴 人工智能实验室 出品（Made By Nimba, Team From AiLab.cn ） 功能介绍：给论坛增加一个附件下载统计的功能，统计每个附件的下载记录包括会员、时间、IP，为站管理网站和跳转运营策略提供数据支持！]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[nimba_attachlog/]]></item>
+			<item id="copyright"><![CDATA[讯幻网（www.xhkj5.com）]]></item>
+			<item id="version"><![CDATA[v1.0.2]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[hook]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[data]]></item>
+					<item id="menu"><![CDATA[统计记录]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[开启统计]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[open]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="appname"><![CDATA[附件下载记录]]></item>
+				<item id="tip_1"><![CDATA[提示信息:您正在检索]]></item>
+				<item id="tip_2"><![CDATA[附件【 ]]></item>
+				<item id="tip_3"><![CDATA[会员【 ]]></item>
+				<item id="tip_4"><![CDATA[ 】的下载记录……返回 ]]></item>
+				<item id="tip_5"><![CDATA[查看全部]]></item>
+				<item id="tip_6"><![CDATA[下载记录]]></item>
+				<item id="item_1"><![CDATA[下载用户名]]></item>
+				<item id="item_2"><![CDATA[所在主题]]></item>
+				<item id="item_3"><![CDATA[附件名称]]></item>
+				<item id="item_4"><![CDATA[总下载次数]]></item>
+				<item id="item_5"><![CDATA[下载日期]]></item>
+				<item id="item_6"><![CDATA[IP地址]]></item>
+				<item id="nodata"><![CDATA[暂无数据]]></item>
+				<item id="readme"><![CDATA[使用说明]]></item>
+				<item id="info_1"><![CDATA[本插件用于统计会员下载网站的附件记录，可记录每次下载的会员信息、时间、IP地址，如果某会员对某附件有多次下载，本插件只记录其第一次下载的信息！]]></item>
+				<item id="info_2"><![CDATA[点击会员名可单独查看本会员的下载记录，点击附件名可以单独插件该附件的下载记录！]]></item>
+				<item id="info_3"><![CDATA[下载次数包括未安装本插件之前的下载量以及会员多次下载重复数据，故仅供参考！]]></item>
+				<item id="info_4"><![CDATA[<font color="red">免费体验版仅支持查看最近20条记录，如需享受完整功能请支持商业版：</font><a href="http://www.xhkj5.com/gg/addon.php?/?@nimba_attachlog.plugin">http://www.xhkj5.com/gg/addon.php?/?@nimba_attachlog.plugin</a>]]></item>
+				<item id="nouid"><![CDATA[游客]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+		<item id="license"><![CDATA[[list]
+[*]本插件版权归属插件作者所有.
+[*]未经插件作者许可,任何人不得以任何形式在任何地方发布/转发原版以及其衍生的修改版.
+[*][b]插件作者:[/b]土著人宁巴 Team from [url=http://www.ailab.cn/]人工智能实验室[/url]
+[*][b]功能简介:[/b]给论坛增加一个附件下载统计的功能，统计每个附件的下载记录包括会员、时间、IP，为站管理网站和跳转运营策略提供数据支持！
+[*][b]技术支持:[/b][url=http://www.ailab.cn/]人工智能实验室[/url]
+[*]如有任何关于使用上的疑问,请至站长社区[url]http://club.bbs369.com/[/url]提出.
+[*][color=Red]请您在安装前认真阅读插件的详细说明[/color]，地址：[url]http://www.xhkj5.com/gg/addon.php?/?@nimba_attachlog.plugin[/url].
+[*][color=Red]如果您愿意资助我们,请至[url]http://me.alipay.com/lih062624[/url]对我们进行赞助.[/color]
+[*]最后,感谢您使用我们的插件,也希望您能够给我们提供更好的意见([url=http://www.ailab.cn/]请点击这里进入人工智能实验室[/url]).
+[/list]]]></item>		
+	</item>
+</root>

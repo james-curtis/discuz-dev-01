@@ -1,0 +1,160 @@
+<!--{template phpdisk_mini:admin/adm_header}-->
+<style type="text/css">
+.dl_addr{ margin:5px 0;}
+.dl_addr ul{list-style:none}
+.dl_addr ul li{ float:left; margin-right:5px;}
+.dl_addr ul li a{ background:url("{PHPDISK_PLUGIN_DIR}/images/pn.png"); display:block; text-align:center; width:auto; padding:2px; border:1px #999999 solid;}
+.dl_addr ul li a:hover{text-decoration:none}
+</style>
+<script language="javascript">
+$(document).ready(function(){
+	$("#cb_select_all").click(function(){
+		 $("input[name='file_ids[]']").each(function(){
+		 	if($(this).attr("checked")){
+				$(this).attr("checked",false);
+			}else{
+				$(this).attr("checked",true);
+			}
+		 });
+	});
+	$("#cb_select_cancel").click(function(){
+		 $("input[name='file_ids[]']").attr("checked",false);
+	});
+});
+function dis(){
+	if(getId('move_oid').checked==true){
+	getId('server_oid').disabled=false;
+	}else{
+	getId('server_oid').disabled=true;
+	}
+}
+function load_down_addr1(file_id){
+	$.jBox.close();
+	$.jBox('<div style="width:200px; padding:20px; margin:auto;"><img src="{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif" align="absmiddle" />{lang phpdisk_mini:loading}<div>',{title:'',top:'10%',width:'auto',height:'auto', buttons: {}});
+	$.ajax({
+		type : 'post',
+		url : 'plugin.php?id=phpdisk_mini:ajax2',
+		data : 'action=load_down_addr1&file_id='+file_id,
+		dataType : 'text',
+		success:function(msg){
+			$.jBox.close();
+			var arr = msg.split('|');
+			if(arr[0] == 'true'){
+				$.jBox('<div style="padding:20px;" class="dl_addr"><ul>'+arr[1]+'</ul><br><br></div>',{title:'<div style="text-align: left;">{lang phpdisk_mini:file addr}</div>', buttons: {}});
+			}else{
+				$.jBox('<div style="padding:20px; margin:auto;">'+msg+'</div>',{title:'<div style="text-align: left;">{lang phpdisk_mini:file addr}</div>', buttons: {}});
+			}
+		},
+		error:function(){
+		}
+	});
+}	
+function down_process2(file_id){
+}
+</script>
+<!--{if $act=='recycle_del'}-->
+<div class='infobox'>
+<h4 class='infotitle2'><img src="{PHPDISK_PLUGIN_DIR}/images/light.gif" align="absmiddle" border="0" /> {lang phpdisk_mini:del file tips}</h4>
+<p class='marginbot'>{$msg}</p>
+<p class='marginbot'>
+<!--{if $del_act == 'one_file'}-->
+<a href='javascript:history.back();' class='lightlink'>{lang phpdisk_mini:browser redirect}</a>
+<!--{else}-->
+<a href='javascript:document.location.reload();' class='lightlink'>{lang phpdisk_mini:browser redirect2}</a>
+<!--{/if}-->
+</p>
+
+</div>
+
+<!--{else}-->
+<form method="post" name="file_form" action="{$curr_url}" onsubmit="return dosubmit(this);">
+<input type="hidden" name="formhash" value="{$formhash}" />
+<input type="hidden" name="act" value="{$act}" />
+<table width="98%" align="center" cellpadding="4" cellspacing="0" border="0" class="tb tb2">
+<tr>
+	<th colspan="15" class="partition">{lang phpdisk_mini:current}:{$subject_txt} | 
+	<a href="{$curr_url}" id="n_"><span>{lang phpdisk_mini:view all}</span></a>| 
+	<a href="{$curr_url}&act=check" id="n_check"><span>{lang phpdisk_mini:checked file}</span></a>| 
+	<a href="{$curr_url}&act=uncheck" id="n_uncheck"><span>{lang phpdisk_mini:uncheck file}</span></a>| 
+	<a href="{$curr_url}&act=recycle" class="txtred" id="n_recycle"><span>{lang phpdisk_mini:recycle}</span></a>
+	<script type="text/javascript">$('#n_{$act}').addClass('sel_a');</script>
+	</th>
+</tr>
+<tr>
+	<td class="td27 txtgreen" colspan="10">{lang phpdisk_mini:file manage tips}</td>
+</tr>
+<!--{if count($file_arr)}-->
+<tr>
+	<td width="40%" class="td27">&nbsp;&nbsp;<!--{if $auth[pd_auth]}-->[{lang phpdisk_mini:server_oid}]<!--{/if}-->{lang phpdisk_mini:file_name}</td>
+	<td class="td27">{lang phpdisk_mini:upload user}</td>
+	<td class="td27">{lang phpdisk_mini:file size}</td>
+	<td class="td27">{lang phpdisk_mini:file status}</td>
+	<td class="td27" align="center">{lang phpdisk_mini:download}/{lang phpdisk_mini:view}</td>
+	<td class="td27" width="80">{lang phpdisk_mini:upload time}</td>
+	<td class="td27" align="right" width="100">{lang phpdisk_mini:upload ip}</td>
+	<td class="td27" align="right">{lang phpdisk_mini:download}</td>
+	<!--{if $act=='recycle'}-->
+	<td class="td27" align="right">{lang phpdisk_mini:operate}</td>
+	<!--{/if}-->
+</tr>
+<!--{loop $file_arr $v}-->
+<tr>
+	<td>
+	<input type="checkbox" name="file_ids[]" id="file_ids" value="{$v[file_id]}" /><!--{if $auth[pd_auth]}-->[{$v[server_oid]}]<!--{/if}-->
+	<a href="{eval echo urr("plugin","id=phpdisk_mini:view&file_id=$v[file_id]")}" target="_blank"><span class="$v[style]">{$v[file_icon].$v[file_name]}</span></a><br><u>$v[real_store]</u></td>
+	<td><a href="{$v[a_space]}">{$v[username]}</a></td>
+	<td>{$v[file_size]}</td>
+	<td>{$v[status]}</td>
+	<td align="center">{$v[file_downs]}/{$v[file_views]}</td>
+	<td>{$v[file_time]}</td>
+	<td align="right">{$v[ip]}</td>
+	<td align="right"><a href="javascript:;" onclick="load_down_addr1($v[file_id])">{lang phpdisk_mini:download}</a></td>
+	<!--{if $act=='recycle'}-->
+	<td align="right"><a href="{$curr_url}&act=recycle_del&task=safe_del&file_id={$v[file_id]}" onclick="return confirm('{lang phpdisk_mini:safe del tips}');">{lang phpdisk_mini:safe del}</a>|<a href="{$curr_url}&act=recycle_del&task=nosafe_del&file_id={$v[file_id]}" onclick="return confirm('{lang phpdisk_mini:nosafe del tips}');">{lang phpdisk_mini:nosafe del}</a></td>
+	<!--{/if}-->
+</tr>
+<!--{/loop}-->	
+<!--{else}-->
+<tr>
+	<td colspan="8" align="center">{lang phpdisk_mini:file not found}</td>
+</tr>
+<!--{/if}-->
+<!--{if $multi }-->
+<tr>
+	<td colspan="10"><div class="cuspages">{$multi}</div></td>
+</tr>
+<!--{/if}-->
+<!--{if count($file_arr)}-->
+<tr>
+	<td colspan="10">	
+	<a href="javascript:void(0);" id="cb_select_all">{lang phpdisk_mini:select all}</a>&nbsp;<a href="javascript:void(0);" id="cb_select_cancel">{lang phpdisk_mini:cancel}</a>&nbsp;&nbsp;
+	<!--{if $act=='recycle'}-->
+	<input type="radio" name="task" value="restore" checked="checked" /><span class="txtblue">{lang phpdisk_mini:restore file}</span>
+	<!--{else}-->
+	<input type="radio" name="task" value="to_recycle" checked="checked" onclick="dis()" /><span class="txtred">{lang phpdisk_mini:recycle}</span>
+	<input type="radio" name="task" value="to_check" onclick="dis()" />{lang phpdisk_mini:checked file}
+	<input type="radio" name="task" value="to_uncheck" onclick="dis()" />{lang phpdisk_mini:uncheck file}
+	<!--{if $auth[pd_auth]}-->
+	<input type="radio" name="task" value="move_oid" id="move_oid" onclick="dis()" />{lang phpdisk_mini:move oid}&nbsp;
+	<select name="server_oid" id="server_oid" disabled="disabled">
+	<option value="0">{lang phpdisk_mini:local server},(ID:0)</option>
+	<!--{loop get_servers() $v}-->
+	<option value="{$v[server_oid]}">{$v[server_name]},(ID:{$v[server_oid]})</option>
+	<!--{/loop}-->
+	</select>&nbsp;
+	<!--{/if}-->
+	<!--{/if}-->
+	<input type="submit" class="btn" value="{lang phpdisk_mini:btn_submit}" />
+	<!--{if $act=='recycle'}-->
+	<div style="background:#efefef; padding:5px; margin-top:10px;">
+	<a href="{$curr_url}&act=recycle_del&task=safe_del" class="f14 bold" onclick="return confirm('{lang phpdisk_mini:safe del tips2}');"><img src="{PHPDISK_PLUGIN_DIR}/images/ico_del.gif" align="absmiddle" border="0" />{lang phpdisk_mini:safe del2}<i class="txtred">{lang phpdisk_mini:safe del tips2}</i></a>&nbsp;<br /><br />
+	<a href="{$curr_url}&act=recycle_del&task=nosafe_del" class="f14 bold" onclick="return confirm('{lang phpdisk_mini:nosafe del tips2}');"><img src="{PHPDISK_PLUGIN_DIR}/images/ico_del.gif" align="absmiddle" border="0" />{lang phpdisk_mini:nosafe del2}<i class="txtred">{lang phpdisk_mini:nosafe del tips2}</i></a>&nbsp;<br /><br />
+	<span class="txtred">{lang phpdisk_mini:warning del file all}</span>&nbsp;
+	</div>
+	<!--{/if}-->
+	</td>
+</tr>
+<!--{/if}-->
+</table>
+</form>
+<!--{/if}-->

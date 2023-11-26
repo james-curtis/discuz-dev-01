@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/discuz.iml" filepath="$PROJECT_DIR$/discuz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dwzgzs_ccdefend/dwzgzs_ccdefend.iml" filepath="$PROJECT_DIR$/dwzgzs_ccdefend/dwzgzs_ccdefend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dwzgzs_ccdefend_free/dwzgzs_ccdefend_free.iml" filepath="$PROJECT_DIR$/dwzgzs_ccdefend_free/dwzgzs_ccdefend_free.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/visual-qr-code/visual-qr-code.iml" filepath="$PROJECT_DIR$/visual-qr-code/visual-qr-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/彩虹代刷3.9.6/彩虹代刷3.9.6.iml" filepath="$PROJECT_DIR$/彩虹代刷3.9.6/彩虹代刷3.9.6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/彩虹授权/彩虹授权.iml" filepath="$PROJECT_DIR$/彩虹授权/彩虹授权.iml" />
+      <module fileurl="file://$PROJECT_DIR$/缩短网址/缩短网址.iml" filepath="$PROJECT_DIR$/缩短网址/缩短网址.iml" />
+      <module fileurl="file://$PROJECT_DIR$/魔方破解/魔方破解.iml" filepath="$PROJECT_DIR$/魔方破解/魔方破解.iml" />
+    </modules>
+  </component>
+</project>

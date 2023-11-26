@@ -1,0 +1,40 @@
+/**
+#	Project: PHPDISK File Storage Solution
+#	This is NOT a freeware, use is subject to license terms.
+#
+#	Site: http://www.phpdisk.com
+#
+#	$Id: plugin.css 3 2014-07-25 05:51:01Z along $
+#
+#	Copyright (C) 2008-2014 PHPDisk Team. All Rights Reserved.
+#
+*/
+.txtgray{color:#666}
+.txtred{color:#FF0000}
+.txtblue{color:#0000FF}
+.txtgreen{color:#008800}
+.sel_li{background-color:#DEEBF3;}
+.ft_wrap_box{}
+.ft_wrap_box .l{float:left; width:200px; border:1px #CCC solid; max-height:375px; height:375px; overflow-y:scroll; border:1px #CCC solid;}
+.ft_wrap_box .r{float:right; width:490px; border:1px #CCC solid; max-height:375px; height:375px;}
+.ft_wrap_box .r h2{ border-bottom:1px #CCC solid;}
+.fl_list{ line-height:28px; height:28px;border-bottom:1px #DFDFDF dotted;}
+.fl_list .f1{float:left;width:60%; overflow:hidden; line-height:28px; height:28px;word-wrap: break-word;word-break: break-all; }
+.fl_list .f2{ float:left; width:15%;}
+.fl_list .f3{ float:left; width:17%;}
+.fl_list .f4{ float:left; width:5%;text-align:right;}
+.p_bar{
+	margin-top:5px;
+}
+.p_redirect{
+	padding:3px 5px; border:1px #cccccc solid; margin:0 3px; text-align:center;
+}
+.p_num{
+	padding:3px 5px; border:1px #cccccc solid; margin:0 3px; text-align:center;
+}
+.p_info{
+	padding:3px 5px; border:1px #cccccc solid; margin:0 3px; text-align:center;
+}
+.p_curpage{
+	padding:3px 5px; border:1px #cccccc solid; margin:0 2px; text-align:center; color:#f00; font-weight:bold;
+}

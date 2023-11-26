@@ -1,0 +1,157 @@
+<!--{template common/header}-->
+<!--{template phpdisk_mini:default/header}-->
+<script type="text/javascript" src="{PHPDISK_PLUGIN_DIR}/includes/js/ZeroClipboard.js"></script>
+<script language="javascript">
+ZeroClipboard.setMoviePath("{PHPDISK_PLUGIN_DIR}/includes/js/ZeroClipboard.swf"); 
+function copy_text(btn_id,txt,msg){
+	clip = new ZeroClipboard.Client();
+	clip.setHandCursor(true);
+	clip.addEventListener('mouseOver', function (client) {
+		clip.setText(txt);
+	});
+	clip.addEventListener('complete', function (client, text) {
+		showPrompt(null, null, '<span class="txtwhite f14">'+msg+'</span>', 2000);
+	});
+	clip.glue(btn_id);
+}
+function load_down_addr1(){
+	jq('#down_addr1').html('<img src="{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif" align="absmiddle" border="0" />{lang phpdisk_mini:loading}');
+	jq.ajax({
+		type : 'post',
+		url : 'plugin.php?id=phpdisk_mini:ajax2',
+		data : 'action=load_down_addr1&file_id=$file_id',
+		dataType : 'text',
+		success:function(msg){
+			var arr = msg.split('|');
+			if(arr[0] == 'true'){
+				jq('#down_addr1').html(arr[1]);
+			}else{
+				jq('#down_addr1').html(msg);
+			}
+		},
+		error:function(){
+		}
+	});
+}	   
+</script>
+<!--{if $_G[adminid]==1}-->
+<div style="padding:5px; font-size:14px; border:1px solid #ccc; margin-bottom:5px; background-color:#FBFFDF">
+<img src="{PHPDISK_PLUGIN_DIR}/images/light.gif" align="" border="0" />{lang phpdisk_mini:manage}:&nbsp;&nbsp;<a href="{eval echo urr("plugin","id=phpdisk_mini:phpdisk&action=edit_desc&file_id=$file_id")}" title="{lang phpdisk_mini:edit}" target="_blank">{lang phpdisk_mini:edit file}</a>&nbsp;&nbsp;<a href="javascript:;" onclick="showWindow('phpdisk_pbox', '{eval echo urr("plugin","id=phpdisk_mini:file&action=del&file_id=$file_id")}','get',1);" title="{lang phpdisk_mini:del}" class="txtred">{lang phpdisk_mini:del file}</a>
+</div>
+<!--{/if}-->
+<div class="bm bmw">
+<div class="bm_h cl f14">
+<h2>{eval echo file_icon($file[file_extension],'filetype_32')}{$file[file_name_all]}</h2>
+</div>
+<div align="center" style="margin-top:5px;">{eval show_ads('viewfile_top');}</div>
+<div class="v_box">
+	<div class="vl">
+	<table width="100%" align="center" cellpadding="4" cellspacing="0" border="0" class="tb tb2 td_line f14" style="border:1px #CDCDCD solid">
+	<tr>
+		<td width="50%" style="border-right:1px solid #ccc">{lang phpdisk_mini:upload user}:<a href="{$file[a_space]}" target="_blank">{$file[username]}</a></td>
+		<td>{lang phpdisk_mini:file size}:{$file[file_size]}</td>
+	</tr>
+	<tr>
+		<td style="border-right:1px solid #ccc">{lang phpdisk_mini:upload time}:{$file[file_time]}</td>
+		<td>{lang phpdisk_mini:upload ip}:{eval echo ip_encode($file[ip]);}</td>
+	</tr>
+	<tr>
+		<td style="border-right:1px solid #ccc">{lang phpdisk_mini:file view}:{$file[file_views]} {lang phpdisk_mini:num}</td>
+		<td>{lang phpdisk_mini:file down}:{$file[file_downs]} {lang phpdisk_mini:num}</td>
+	</tr>
+	<tr>
+		<td colspan="2">{lang phpdisk_mini:file addr}:<input type="text" id="file_url" size="60" onmouseover="$('file_url').select();copy_text('file_url','{$file[file_url]}','{lang phpdisk_mini:copy addr success}')" value="{$file[file_url]}" readonly /> <input type="button" class="pn pnc" value="{lang phpdisk_mini:btn_copy}" id="btn_copy" onmouseover="$('file_url').select();copy_text('btn_copy','{$file[file_url]}','{lang phpdisk_mini:copy addr success}')"/><!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_b" style="line-height: 12px; float:right"><img src="http://share.baidu.com/static/images/type-button-5.jpg" /></div>
+    <script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=68752" ></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+    </script>
+<!-- Baidu Button END --></td>
+	</tr>
+	<!--{if $file[file_description]}-->
+	<tr>
+		<td colspan="2">{lang phpdisk_mini:file description}:<br />{$file[file_description]}</td>
+	</tr>
+	<!--{/if}-->
+	<!--{if $settings[preview_file]}-->
+	<tr>
+		<td colspan="2"><span id="pv_txt" style="display:none">{lang phpdisk_mini:preview_content}</span><input type="button" class="pn pnc" id="pv_btn" onclick="preview_file();" value=" {lang phpdisk_mini:preview_file} "/><br />
+		<div id="pv_box" style="display:none"></div>
+		</td>
+	</tr>
+	<!--{/if}-->
+	<tr>
+		<td colspan="2">
+		<div>{eval show_ads('viewfile_dl_header');}</div>
+		{lang phpdisk_mini:file down addr}:
+		<div class="dl_addr">
+		<ul id="down_addr1">
+		<script type="text/javascript">load_down_addr1()</script>
+		</ul>
+		</div>
+		<div class="clear">{eval show_ads('viewfile_dl_footer');}</div>
+		</td>
+	</tr>
+	</table>
+	</div>
+	<div class="vr">
+	<div style="margin-top:10px; border:1px #CDCDCD solid">
+	{eval show_ads('viewfile_right');}
+	</div>
+	</div>
+</div>
+
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+function preview_file(){
+	if(jq('#pv_box').is(":hidden")){
+	jq('#pv_box').html('<iframe frameborder="0" src="{$file[preview_url]}" style="border:1px dotted #CCC; width:100%;height:300px"></iframe>');
+	jq('#pv_box').show();
+	jq('#pv_txt').show();
+	jq('#pv_btn').hide();
+	}
+}
+function down_process2(file_id){
+/*setTimeout(
+	function(){
+	jq('#down_addr1').html("<img src=\"{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif\" align=\"absmiddle\" border=\"0\" /><span class='txtred'>{lang phpdisk_mini:dl_tips}</span>");
+	},1230);*/
+	jq.ajax({
+		type : 'post',
+		url : 'plugin.php?id=phpdisk_mini:ajax2',
+		data : 'action=down_process&file_id='+file_id,
+		dataType : 'text',
+		success:function(msg){
+			if(msg == 'true'){
+
+			}else{
+				jq('#down_addr1').html(msg);
+			}
+			setTimeout(load_down_addr1(),1500);
+		},
+		error:function(){
+		}
+	});
+}
+</script>
+<!--{if $settings['show_relate'] && count($rel_file)}-->
+<div class="rel_box">
+<h2><img src="{PHPDISK_PLUGIN_DIR}/images/file.gif" align="absmiddle" border="0" />{lang phpdisk_mini:user other file}</h2>
+</div>
+<div class="rel_ctn">
+<ul>
+	<!--{loop $rel_file $v}-->
+	<li><span style="float:right">$v[file_size]</span><a href="$v[a_view]" target="_blank">$v[file_icon] $v[file_name_all]</a></li>
+	<!--{/loop}-->
+</ul>	
+</div>
+</div>
+<!--{/if}-->
+<div align="center">{eval show_ads('viewfile_bottom');}</div>
+
+<div class="clear"></div>
+{eval show_ads('viewfile_codes');}
+<!--{template phpdisk_mini:default/footer}-->
+<!--{template common/footer}-->

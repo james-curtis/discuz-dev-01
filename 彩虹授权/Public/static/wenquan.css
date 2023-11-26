@@ -1,0 +1,102 @@
+.gray-box{  
+	background-color: #dfdfdf;  
+}  
+.notice-card-wide.mdl-card {
+	width: 100%;
+}
+.notice-card-wide > .mdl-card__title {
+	color: #fff;
+	height: 40px;
+	background: #6699FF;
+}	
+.notice-card-wide > .mdl-card__menu {
+	color: #fff;
+}
+.buy-card-wide.mdl-card {
+	width: 100%;
+}
+.buy-card-wide > .mdl-card__title {
+	color: #fff;
+	height: 40px;
+	background: #46B6AC;
+}	
+.buy-card-wide > .mdl-card__menu {
+	color: #fff;
+}
+
+.pass-card-wide.mdl-card {
+	width: 100%;
+}
+.pass-card-wide > .mdl-card__title {
+	color: #fff;
+	height: 40px;
+	background: #66CCFF;
+}	
+.pass-card-wide > .mdl-card__menu {
+	color: #fff;
+}
+
+
+.tradeno-card-wide.mdl-card {
+	width: 100%;
+}
+.tradeno-card-wide > .mdl-card__title {
+	color: #fff;
+	height: 40px;
+	background: #009999;
+}	
+.tradeno-card-wide > .mdl-card__menu {
+	color: #fff;
+}
+div{
+	font-family:Microsoft Yahei;
+}
+h2{
+	font-family:Microsoft Yahei;
+}
+.h2{
+	font-family:Microsoft Yahei;
+}
+select{
+	font-family:Microsoft Yahei;
+}
+option{
+	font-family:Microsoft Yahei;
+}
+button{
+	font-family:Microsoft Yahei;
+}
+input{
+	font-family:Microsoft Yahei;
+}
+a{
+	font-family:Microsoft Yahei;
+}
+textarea{
+	font-family:Microsoft Yahei;
+}
+.styled-select select {
+	background: transparent;
+	width: 268px;
+	padding: 5px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 34px;
+	-webkit-appearance: none; /*for chrome*/
+}
+.styled-select {
+	width: 240px;
+	height: 34px;
+	overflow: hidden;
+}
+.demo-list-control {
+	width: 100%;
+}
+.demo-list-radio {
+	display: inline;
+}
+div{
+	word-wrap: break-word;
+	word-break: normal;
+}
+

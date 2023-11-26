@@ -1,0 +1,46 @@
+{template common/header}
+<script>
+
+function pan_paycredit() {
+	showWindow('payokbox','plugin.php?id=threed_dazhe:payfor&aid={$aid}&daynum={$daydownnum}&ac=pay&formhash={FORMHASH}');
+}
+</script>
+<style>
+.paybox1{width: 400px;border-top:3px solid #CDCDCD; }
+.paybox1 td{border-bottom:1px dashed #CDCDCD; padding:5px 2px; text-align:center;}
+</style>
+<div class="bm bw0">
+	<h3 class="flb" style="font-size:14px;">	
+    <em>{lang threed_dazhe:tmpay1}</em>
+    <!--{if $_G[inajax]}-->
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('paybox')" ></a></span>
+	<!--{/if}-->
+	</h3> <div style="padding:0 10px;">
+	<table class="paybox1" style="" cellpadding="0" cellspacing="0"><tbody>
+    <tr ><td width="150">{lang threed_dazhe:tmpay2}</td><td><a href="home.php?mod=space&uid=$seieid">$sale_username</a></td></tr>
+	<tr><td>{lang threed_dazhe:tmpay3}</td><td><a href="home.php?mod=space&amp;uid=$uid">$buy_username</a></td></tr>
+	<tr><td>{lang threed_dazhe:tmpay4}</td><td>{$pan_zhejia}<!--{if $pan_zhejia<$pan_yuanjia}-->{lang threed_dazhe:yuanjia}<del>{$pan_yuanjia}</del>)<!--{/if}--> $buy_creditname </td></tr>
+        <!--{if $user_creditnum>=$pan_zhejia}-->
+        	<tr><td>{lang threed_dazhe:tmpay5}</td><td>$sale_get $buy_creditname</td></tr>
+			<tr><td>{lang threed_dazhe:tmpay6}</td><td>$yuxia $buy_creditname</td></tr>
+            <!--{if $pan_downnum&&$daydownnum>$pan_downnum&&$pan_over<0}-->
+        <tr><td colspan="2">{lang threed_dazhe:index2}{$daydownnum}{lang threed_dazhe:index1}</td></tr>
+            <!--{else}--> 
+        <tr style=" background:#F2F2F2; height:20px; border-top:1px solid #CCC"><td>{lang threed_dazhe:tmpay7}</td><td><div style="padding:8px 10px; text-align:right;"><button type="submit" class="pn vm" onclick="pan_paycredit()"><em>{lang threed_dazhe:tmpay8}</em></button>
+        <button type="submit" class="pn vm" onclick="hideWindow('paybox')"><em>{lang threed_dazhe:tmpay9}</em></button></div></td></tr>
+                <!--{if $pan_downnum!=0}-->
+                <tr><td colspan="2">{lang threed_dazhe:index3}{$pan_downnum}{lang threed_dazhe:index1}<!--{if $daydownnum>$pan_downnum}-->{lang threed_dazhe:index5}<!--{else}-->{lang threed_dazhe:index4}{$daydownnum}{lang threed_dazhe:index1}<!--{/if}--></td></tr>
+                <!--{/if}-->
+            <!--{/if}-->
+       	<!--{else}-->
+            <tr><td colspan="2">$pan_option['thd_credit']</td></tr>
+        <!--{/if}-->
+            </tbody></table>
+            </div>
+            
+		</div>
+    </div>
+
+</div>
+
+{template common/footer}

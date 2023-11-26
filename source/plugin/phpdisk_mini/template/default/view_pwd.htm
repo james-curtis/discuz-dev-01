@@ -1,0 +1,45 @@
+<!--{template common/header}-->
+<!--{template phpdisk_mini:default/header}-->
+<div class="bm bmw">
+<div class="bm_h cl f14">
+<h2><img src="{PHPDISK_PLUGIN_DIR}/images/light.gif" align="texttop" border="0" />{lang phpdisk_mini:share file tips}</h2>
+</div>
+<div class="v_box">
+	<div class="pick_box">
+	<div class="tips">{lang phpdisk_mini:pls input code}</div>
+	<div class="wrap"><input type="text" class="code" id="code" maxlength="20" /><input type="button" class="pnc pn code_btn" value="{lang phpdisk_mini:pick_code}" onclick="pick_file();" /></div>
+	<div id="code_tips"></div>
+	</div>
+
+</div>
+<script type="text/javascript">
+jq('#pick_code').focus();
+function pick_file(){
+	jq('#code_tips').html('<img src="{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif" align="absmiddle" border="0" />{lang phpdisk_mini:loading}');
+	var code = jq('#code').val();
+	jq.ajax({
+		type : 'post',
+		url : 'plugin.php?id=phpdisk_mini:ajax2',
+		data : 'action=pick_file&file_id=$file_id&code='+code,
+		dataType : 'text',
+		success:function(msg){
+			var arr = msg.split('|');
+			if(arr[0] == 'true'){
+				jq('#code_tips').html(arr[1]);
+				jq('#code_tips').addClass('txtgreen');
+				setTimeout(function(){document.location.reload();},1250);
+			}else{
+				jq('#code_tips').html(msg);
+				jq('#code_tips').addClass('txtred');
+			}
+		},
+		error:function(){
+		}
+	});
+}	   
+
+</script>
+</div>
+<div class="clear"></div>
+<!--{template phpdisk_mini:default/footer}-->
+<!--{template common/footer}-->

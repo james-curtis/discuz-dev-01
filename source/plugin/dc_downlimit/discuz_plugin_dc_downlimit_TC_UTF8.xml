@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+	<item id="Time"><![CDATA[2016-08-12 01:46]]></item>
+	<item id="From"><![CDATA[訊幻網（www.xhkj5.com）]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[訊幻網_DC附件下載限制]]></item>
+			<item id="identifier"><![CDATA[dc_downlimit]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[dc_downlimit/]]></item>
+			<item id="copyright"><![CDATA[訊幻網（www.xhkj5.com）]]></item>
+			<item id="version"><![CDATA[v1.1.1]]></item>
+			<item id="__modules">
+				<item id="9">
+					<item id="name"><![CDATA[xhkj5]]></item>
+					<item id="menu"><![CDATA[<span style="color:#E53333;"><b>訊幻網</b></span>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="0">
+					<item id="name"><![CDATA[proset]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[詳細設置]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[hook]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否啟用]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[open]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[下載量限制提示]]></item>
+				<item id="description"><![CDATA[{count}為限制下載量]]></item>
+				<item id="variable"><![CDATA[msg]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[今日下載次數已達到限制值{count},請明天再來下載]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[免積分下載提示]]></item>
+				<item id="description"><![CDATA[{total}免積分下載總次數,{count}剩余次數,{times}已下載次數]]></item>
+				<item id="variable"><![CDATA[freemsg]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[今日本版塊收費附件免費下載量/剩余:{total}/<font color="#FF0000">{count}</font>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="log_xhkj5_com"><![CDATA[<h2 style="text-align:-webkit-center;">
+	<span style="color:#4C33E5;">推薦一個dz商</span><span style="color:#4C33E5;">業挿件模版下載的</span><span style="color:#4C33E5;"></span><span style="color:#4C33E5;">網站給大家</span><a href="http://www.xhkj5.com" target="_blank"><span style="color:#4C33E5;">訊幻網</span></a><span style="color:#4C33E5;">（www.xhkj5.com）</span> 
+</h2>
+<h3 style="text-align:-webkit-center;">
+	<span style="color:#E53333;">这</span><span style="color:#E53333;">是一個</span><span style="color:#E53333;">dz商業</span><a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=90" target="_blank"><span style="color:#337FE5;">插</span><u><span style="color:#337FE5;"></span></u><span style="color:#337FE5;">件</span></a><a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=93" target="_blank"><u><span style="color:#337FE5;">模</span></u><u><span style="color:#337FE5;"></span></u><u><span style="color:#337FE5;">版</span></u></a><span style="color:#E53333;">資源破解分享的網站，而且還有很多精品的網站源碼下載</span> 
+</h3>
+<h3 style="text-align:-webkit-center;">
+	<span style="color:#E53333;">他們資源每天更新，並且很多都是他們自己出錢在應用中心購買後破解分享出來的</span><br />
+</h3>
+<h3>
+	<div style="text-align:center;">
+		<span style="color:#E53333;">不過還是替他們說一下</span> 
+	</div>
+	<div style="text-align:center;">
+		<span style="color:#E53333;">&nbsp;他們站下載的資源只限於自己學習研究內含的設計思想和原理請勿有任何商業盈利行為</span> 
+	</div>
+</h3>
+<h3 style="text-align:center;">
+	<span style="color:#999999;">介紹也介紹完了，給大家做個小導航吧</span> 
+</h3>
+<h3 style="text-align:center;">
+	<span style="color:#337FE5;"><a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=90" target="_blank">dz商業破解挿件下載</a> &nbsp; <a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=93" target="_blank">dz商業風格模版下載</a> &nbsp; &nbsp;<a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=72" target="_blank">精品網站源碼下載</a> &nbsp; &nbsp;<a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=73" target="_blank">工具素材下载</a></span><span style="color:#337FE5;">&nbsp; &nbsp; <a href="http://www.xhkj5.com/forum.php?mod=forumdisplay&fid=94" target="_blank">精選教程區</a></span> 
+</h3> ]]></item>
+				<item id="downinfo"><![CDATA[今日下載次數已達到限制值{count},請明天再來下載]]></item>
+				<item id="freeinfo"><![CDATA[今日本版塊收費附件免費下載量/剩余:{total}/<font color="#FF0000">{count}</font>]]></item>
+				<item id="error"><![CDATA[出現錯誤]]></item>
+				<item id="succeed"><![CDATA[設置成功]]></item>
+				<item id="group"><![CDATA[用戶組]]></item>
+				<item id="ddowns"><![CDATA[日下載量,0或空為不限制]]></item>
+				<item id="ddfree"><![CDATA[日免積分下載量,0或空為系統默認]]></item>
+				<item id="xxset"><![CDATA[詳細設置]]></item>
+				<item id="tips"><![CDATA[<li>此款插件適用于資源下載站,用來限制他人一次性大量下載</li><li>按版塊限制各用戶組下載量</li><li>如果版塊顯示不正常,請更新下<a href="admin.php?action=tools&operation=updatecache">系統緩存</a></li>]]></item>
+				<item id="ftips"><![CDATA[<li>此處可設置日版塊日下載量及日免積分下載量</li><li>日免積分下載量必須設置下載扣除積分,否則此項無效</li><li>建議日下載量設置值大于日免積分下載量(<font color="#FF0000">日下載量設置值為0時,表示無窮大,即大于日免積分下載量</font>)</li>]]></item>
+				<item id="fid"><![CDATA[板塊]]></item>
+				<item id="nofid"><![CDATA[板塊不存在]]></item>
+				<item id="set"><![CDATA[設置]]></item>
+				<item id="daylimit"><![CDATA[日下載量限制、日免積分下載量]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

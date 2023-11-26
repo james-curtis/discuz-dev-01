@@ -1,0 +1,68 @@
+<!--{eval $xhw_lang = @include DISCUZ_ROOT.'./source/plugin/dc_pay/language/yyhyoalipay.SC_UTF8.php'}-->
+<style>
+.icon-box{ width:135px;border:1px solid #ddd;vertical-align:middle;position:relative;display:inline-block;background-color:#eee;HEIGHT: 32px; border:1px solid #ddd;vertical-align:middle;position:relative;display:inline-block;background-color: #FFF} 
+.ui-list-icons li{float:left;width:166px;margin-bottom:8px;margin-right:10px; list-style-type:none}
+.long-logo {width:580px; }
+</style>
+<ul class="creditl mtm bbda cl">
+	<!--{loop $_G['setting']['extcredits'] $id $credit}-->
+		<!--{if $id!=$creditid}-->
+		<li><em><!--{if $credit[img]}--> {$credit[img]}<!--{/if}--> {$credit[title]}: </em><!--{echo getuserprofile('extcredits'.$id);}--> {$credit[unit]}</li>
+		<!--{/if}-->
+	<!--{/loop}-->
+</ul>
+<form id="addfundsform" name="addfundsform" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=plugin&op=credit&id=dc_pay:buycredit" onsubmit="ajaxpost(this.id, 'return_addfundsform');return false;">
+	<input type="hidden" name="formhash" value="{FORMHASH}" />
+	<input type="hidden" name="buycreditsubmit" value="true" />
+	<input type="hidden" name="handlekey" value="buycredit" />
+	<table cellspacing="0" cellpadding="0" class="tfm mtn">
+		<tr>
+			<th>{lang dc_pay:mode_of_payment}</th>
+				<td colspan="2">
+	<div class="long-logo"><ul class="ui-list-icons ui-four-icons fn-clear cashier-bank">
+<!--{loop $paytypes $pt}-->
+	<li><input name="paytype" id="dc_pay_{$pt}" type="radio" value="{$pt}" <!--{if $defaulept==$pt}-->checked<!--{/if}-->><label class="icon-box" for="dc_pay_{$pt}" style="BACKGROUND: url({$payinfo[$pt]['logo']}) no-repeat"></label></li>
+<!--{/loop}-->
+</ul>
+</div>
+				</td>
+		</tr>
+		<tr id="paybox">
+						<th>{lang dc_pay:memcp_credits_addfunds}</th>
+						<td class="pns">
+							<input type="number" size="5" class="px" style="width: auto;" id="addfundamount" name="addfundamount" value="{$cvar[lower]}" onchange="addcalcredit()" />
+							&nbsp;{$_G[setting][extcredits][$cvar[extcredit]][title]}&nbsp;
+							{lang dc_pay:credits_need}&nbsp;{lang dc_pay:memcp_credits_addfunds_caculate_radio_0}<!--{echo $cvar[lower]/$cvar[bl]?$cvar[lower]/$cvar[bl]:'0'}-->{lang dc_pay:memcp_credits_addfunds_caculate_radio_1}
+						</td>
+						<td width="300" class="d">
+							{lang dc_pay:memcp_credits_addfunds_rules_ratio} =  <strong style="color: red;">$cvar['bl']</strong> {$_G[setting][extcredits][$cvar[extcredit]][unit]}{$_G[setting][extcredits][$cvar[extcredit]][title]}
+							<!--{if $cvar['lower']}--><br />{lang dc_pay:memcp_credits_addfunds_rules_min}  <strong style="color: red;">$cvar['lower']</strong> {$_G[setting][extcredits][$cvar[extcredit]][unit]}{$_G[setting][extcredits][$cvar[extcredit]][title]}<!--{/if}-->
+							<!--{if $cvar['larger']}--><br />{lang dc_pay:memcp_credits_addfunds_rules_max}  <strong style="color: red;">$cvar['larger']</strong> {$_G[setting][extcredits][$cvar[extcredit]][unit]}{$_G[setting][extcredits][$cvar[extcredit]][title]}<!--{/if}-->
+							<!--{if $cvar['month_larger']}--><br />{lang dc_pay:memcp_credits_addfunds_rules_month}  <strong style="color: red;">$cvar['month_larger']</strong> {$_G[setting][extcredits][$cvar[extcredit]][unit]}{$_G[setting][extcredits][$cvar[extcredit]][title]}<!--{/if}-->
+						</td>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<td colspan="2">
+							<button type="submit" name="addfundssubmit_btn" class="pn" id="addfundssubmit_btn" value="true"><em>{lang dc_pay:memcp_credits_addfunds}</em></button>
+						</td>
+					</tr>
+
+				</table>
+			</form>
+<span style="display: none" id="return_addfundsform"></span>
+<script type="text/javascript">
+	var pay_lower = {$cvar[lower]};
+	var pay_larger = {$cvar[larger]};
+	function addcalcredit() {
+		var addfundamount = $('addfundamount').value.replace(/^0/, '');
+		addfundamount = parseInt(addfundamount);
+        if(addfundamount<0)showDialog("{lang dc_pay:buycreditamounttolower}0", "alert", "", null, true, null, "", "", "", 3);
+		if(pay_lower>addfundamount&&pay_lower)showDialog("{lang dc_pay:buycreditamounttolower}"+pay_lower, "alert", "", null, true, null, "", "", "", 3);
+		if(pay_larger<addfundamount&&pay_larger)showDialog("{lang dc_pay:buycreditamounttolarger}"+pay_larger, "alert", "", null, true, null, "", "", "", 3);
+		$('desamount').innerHTML = !isNaN(addfundamount) ? (addfundamount / {$cvar['bl']}) : 0;
+	}
+	function errorhandle_buycredit(message){
+		showDialog(message, 'alert', "", null, true, null, "", "", "", 3);
+	}
+</script>

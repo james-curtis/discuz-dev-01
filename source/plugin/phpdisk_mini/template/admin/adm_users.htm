@@ -1,0 +1,55 @@
+<!--{template phpdisk_mini:admin/adm_header}-->
+<script type="text/javascript">
+function user_count(userid){
+	$('#fd_count_'+userid).html('<img src="{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif" align="absmiddle" border="0" />{lang phpdisk_mini:loading}');
+	$.ajax({
+		type : 'post',
+		url : 'plugin.php?id=phpdisk_mini:adm_ajax',
+		data : 'action=user_count&userid='+userid,
+		dataType : 'text',
+		success:function(msg){
+			var arr = msg.split('|');
+			if(arr[0] == 'true'){
+				$('#fd_count_'+userid).html(arr[1]);
+				$('#fl_count_'+userid).html(arr[2]);
+			}else{
+				alert(msg);
+			}
+		},
+		error:function(){
+		}
+	});
+}	   
+</script>
+<form method="post" action="$curr_url">
+<table width="98%" align="center" cellpadding="4" cellspacing="0" border="0" class="tb tb2">
+<tr>
+	<th colspan="15" class="partition">{lang phpdisk_mini:disk users}</th>
+</tr>
+<!--{if count($users)}-->
+<tr>
+	<td width="20%" class="td27">{lang phpdisk_mini:username}</td>
+	<td class="td27">{lang phpdisk_mini:folder count}</td>
+	<td class="td27">{lang phpdisk_mini:file count}</td>
+	<td class="td27">{lang phpdisk_mini:active time}</td>
+</tr>
+<!--{loop $users $v}-->	
+<tr>
+	<td><a href="{$v[a_space]}">{$v[username]}</a></td>
+	<td><span id="fd_count_$v[userid]" onclick="user_count($v[userid])" style="cursor:pointer">{lang phpdisk_mini:view2}</span></td>
+	<td><span id="fl_count_$v[userid]" onclick="user_count($v[userid])" style="cursor:pointer">{lang phpdisk_mini:view2}</span></td>
+	<td>{$v[active_time]}</td>
+</tr>
+<!--{/loop}-->
+<!--{else}-->
+<tr>
+	<td colspan="5" align="center">{lang phpdisk_mini:users not found}</td>
+</tr>
+<!--{/if}-->
+<!--{if $multi }-->
+<tr>
+	<td colspan="10"><div class="cuspages">{$multi}</div></td>
+</tr>
+<!--{/if}-->
+</table>
+</form>

@@ -1,0 +1,19 @@
+/**
+#	Project: PHPDISK File Storage Solution
+#	This is NOT a freeware, use is subject to license terms.
+#
+#	Site: http://www.phpdisk.com
+#
+#	$Id: admin.css 10 2014-08-02 14:34:18Z along $
+#
+#	Copyright (C) 2008-2014 PHPDisk Team. All Rights Reserved.
+#
+*/
+.txtgray{color:#666}
+.txtred{color:#FF0000}
+.txtblue{color:#0000FF}
+.txtgreen{color:#008800}
+.f14{font-size:14px}
+.bold{font-weight:bold}
+.sel_a span{background:#0099CC; padding:3px; color:#FFFFFF;}
+

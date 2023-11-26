@@ -1,0 +1,208 @@
+<!--{template common/header}-->
+	<!--{subtemplate home/spacecp_header}-->
+			<script type="text/javascript" src="source/plugin/bineoo_storage/static/jquery-3.2.1.min.js"></script>
+			<link rel="stylesheet" href="source/plugin/bineoo_storage/static/cropper.css">
+			<!--{hook/spacecp_avatar_top}-->
+			<script type="text/javascript">
+				function updateavatar() {
+					window.location.href = document.location.href.replace('&reload=1', '') + '&reload=1';
+				}
+				<!--{if !$reload}-->
+				saveUserdata('avatar_redirect', document.referrer);
+				<!--{/if}-->
+			</script>
+			<form class="avatar-form" action="plugin.php?id=bineoo_storage:misc&action=upload_avatar" enctype="multipart/form-data" method="post">
+				<input type="file" id="avatar_chose" name="avatar_file" style="display: none;">
+				<input type="hidden" name="avatar_data">
+				<input type="hidden" name="avatarsign" value="$avatarsign">
+				<table cellspacing="0" cellpadding="0" class="tfm">
+					<caption>
+						<span id="retpre" class="y xi2"></span>
+						<h2 class="xs2">{lang current_my_space}</h2>
+						<p>{lang setting_avatar_message}</p>
+					</caption>
+					<tr>
+						<td>
+							<!--{avatar($space[uid],big)}-->
+						</td>
+					</tr>
+				</table>
+
+				<table cellspacing="0" cellpadding="0" class="tfm">
+					<caption>
+						<h2 class="xs2">{lang setting_my_new_avatar}</h2>
+						<p>{lang setting_my_new_avatar_message}</p>
+					</caption>
+					<tr>
+						<td>
+							<div class="cl bineoo-avatar">
+								<div class="avatar-preview"></div>
+								<div class="avatar-previews">
+									<div class="preview-item" style="width: 180px;height: 180px;"><div class="preview"></div></div>
+									<div class="preview-item" style="width: 100px;height: 100px;"><div class="preview"></div></div>
+									<div class="preview-item" style="width: 40px;height: 40px;"><div class="preview"></div></div>
+									<div class="cl avatar-action" style="display: none;">
+										<span action="restart">{lang bineoo_storage:chose_avatar_btn}</span>
+										<span action="save">{lang bineoo_storage:save_avatar_btn}</span>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<input type="hidden" name="formhash" value="{FORMHASH}" />
+			</form>
+			<!--{hook/spacecp_avatar_bottom}-->
+		</div>
+	</div>
+	<script src="source/plugin/bineoo_storage/static/cropper.js"></script>
+	<script type="text/javascript">
+		bineoo_jq(function () {
+			bineoo_jq(document).on('click','.avatar-preview',function(){
+				if(!bineoo_jq(this).hasClass('avatar-previewed')){
+					bineoo_jq('#avatar_chose').trigger('click');
+				}
+			});
+			bineoo_jq(document).on('click','.avatar-action span',function(){
+				var action = bineoo_jq(this).attr('action');
+				if(action == 'restart'){
+					bineoo_jq('#avatar_chose').trigger('click');
+				}else if(action == 'save'){
+					upload_avatar(bineoo_jq('.avatar-form'));
+					return false;
+				}
+			});
+			bineoo_jq(document).on('change','#avatar_chose',function(){
+				if(bineoo_jq(this).val()){
+					var file = bineoo_jq(this)[0].files[0];
+					if (!isImageFile(file)) {
+						showError('{lang bineoo_storage:chose_image_error}');
+						return false;
+					}
+					img_url = URL.createObjectURL(file);
+					if(!img_url){
+					 	if(typeof FileReader == 'function'){
+							var reader = new FileReader();
+							reader.readAsDataURL(file);
+							reader.onload = function(e){
+								startCropper(this.result);
+							}
+					 	}
+					}else{
+						startCropper(img_url);
+					}
+					bineoo_jq('.avatar-preview').addClass('avatar-previewed')
+				}
+			});
+		});
+		function isImageFile(file){
+			if (file.type) {
+				return /^image\/\w+$/.test(file.type);
+			} else {
+				return /\.(jpg|jpeg|png|gif)$/.test(file);
+			}
+		}
+		function startCropper(url){
+			var img_ele = bineoo_jq('.avatar-preview').find('img');
+			bineoo_jq('.avatar-action').show();
+			if(img_ele.length>0){
+				img_ele.cropper('replace', url);
+			}else{
+				img_ele = bineoo_jq('<img/>').attr('src',url);
+				img_ele.appendTo(bineoo_jq('.avatar-preview'));
+				var previews = bineoo_jq('.preview');
+				img_ele.cropper({
+					viewMode: 1,
+					dragMode: 'move',
+					aspectRatio: 1 / 1,
+					restore: false,
+					guides: false,
+					highlight: false,
+					cropBoxMovable: false,
+					cropBoxResizable: false,
+					minCropBoxWidth: 200,
+					minCropBoxHeight: 200,
+					ready: function (e) {
+						var clone = bineoo_jq(this).clone().removeClass('cropper-hidden');
+
+						clone.css({
+							display: 'block',
+							width: '100%',
+							minWidth: 0,
+							minHeight: 0,
+							maxWidth: 'none',
+							maxHeight: 'none'
+						});
+
+						previews.css({
+							width: '100%',
+							overflow: 'hidden'
+						}).html(clone);
+					},
+
+					crop: function (e) {
+						var imageData = bineoo_jq(this).cropper('getImageData');
+						var previewAspectRatio = e.width / e.height;
+
+						previews.each(function () {
+							var preview = bineoo_jq(this);
+							var previewWidth = preview.width();
+							var previewHeight = previewWidth / previewAspectRatio;
+							var imageScaledRatio = e.width / previewWidth;
+
+							preview.height(previewHeight).find('img').css({
+								width: imageData.naturalWidth / imageScaledRatio,
+								height: imageData.naturalHeight / imageScaledRatio,
+								marginLeft: -e.x / imageScaledRatio,
+								marginTop: -e.y / imageScaledRatio
+							});
+						});
+						var json = [
+							'{"x":' + e.x,
+							'"y":' + e.y,
+							'"height":' + e.height,
+							'"width":' + e.width,
+							'"rotate":' + e.rotate + '}'
+						].join();
+						bineoo_jq('input[name="avatar_data"]').val(json);
+					}
+				});
+			}
+		}
+		function upload_avatar(obj){
+			var data = new FormData(obj[0]),
+				url = obj.attr('action'),
+				body = bineoo_jq('body');
+			bineoo_jq('<div>').addClass('bineoo-loading').appendTo(body);
+			bineoo_jq('<div>').addClass('bineoo-loading-tip').html('{lang bineoo_storage:avatar_upload_loading}').appendTo(body);
+			bineoo_jq.ajax(url, {
+				type: 'post',
+				data: data,
+				dataType: 'json',
+				processData: false,
+				contentType: false,
+				success: function (s) {
+					console.log(s);
+					if(s.code == 'error'){
+						showError(s.msg);
+						return false;
+					}
+					showDialog('{lang bineoo_storage:avatar_upload_succeed}', 'right', null, function(){
+						window.location.href = window.location.href;
+					}, 1, null, null, null, null, null, 3);
+				},
+				complete: function () {
+					bineoo_jq('.bineoo-loading,.bineoo-loading-tip').remove();
+				}
+			});
+		}
+		var redirecturl = loadUserdata('avatar_redirect');
+		if(redirecturl) {
+			$('retpre').innerHTML = '<a href="' + redirecturl + '">{lang previous_page}</a>';
+		}
+	</script>
+	<div class="appl">
+		<!--{subtemplate home/spacecp_footer}-->
+	</div>
+</div>
+<!--{template common/footer}-->

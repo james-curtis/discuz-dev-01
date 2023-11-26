@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0,L1.0,X3.3]]></item>
+	<item id="Time"><![CDATA[2017-02-13 15:49]]></item>
+	<item id="From"><![CDATA[讯幻网（www.xhw6.cn）]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[讯幻网_工單系統]]></item>
+			<item id="identifier"><![CDATA[ticket]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[ticket/]]></item>
+			<item id="copyright"><![CDATA[讯幻网（www.xhw6.cn）]]></item>
+			<item id="version"><![CDATA[1.2.1]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[ticket]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[工單系統]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[types]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[工單分類]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[addon]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[開發者模塊]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0,L1.0,X3.3]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[工單回復用戶組]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[groups]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[1]]></item>
+				</item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[工單提示]]></item>
+				<item id="description"><![CDATA[支持HTML代碼]]></item>
+				<item id="variable"><![CDATA[tips]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<div style="padding:10px; border:1px dashed #cdcdcd; color:#cdcdcd;">
+請描述您的問題，我們會第一時間協助您解決！<br />
+如果您需要協助調試，請提供相關帳號密碼信息！ <br />
+工作時間：周一至周五，9:00-11:30；13:30-17:30，節假日不上班！
+</div>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[拓展信息]]></item>
+				<item id="description"><![CDATA[規則如下（一行一個）
+名稱=英文標識符=是否必填=驗證正則（1為必填，0為不必填）]]></item>
+				<item id="variable"><![CDATA[extend]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[聯系QQ=qq=1=^\d{5,10}$
+手機號=tel=0=^\d{11}$
+聯系郵箱=email=1=^\w+[-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="logy_m_g"><![CDATA[<h2 style="text-align:-webkit-center;">
+	<span style="color:#4C33E5;">推薦一個dz商</span><span style="color:#4C33E5;">業插件模版下載的</span><span style="color:#4C33E5;"></span><span style="color:#4C33E5;">網站給大家</span><a href="http://www.xhw6.cn" target="_blank"><span style="color:#4C33E5;">讯幻网分享吧</span></a><span style="color:#4C33E5;">（www.xhw6.cn）</span> 
+</h2>
+<h3 style="text-align:-webkit-center;">
+	<span style="color:#E53333;">這</span><span style="color:#E53333;">是一個</span><span style="color:#E53333;">dz商業</span><a href="http://www.xhw6.cn/forum.php?mod=forumdisplay&fid=2" target="_blank"><span style="color:#337FE5;">插</span><u><span style="color:#337FE5;"></span></u><span style="color:#337FE5;">件</span></a><a href="http://www.xhw6.cn/forum.php?mod=forumdisplay&fid=36" target="_blank"><u><span style="color:#337FE5;">模</span></u><u><span style="color:#337FE5;"></span></u><u><span style="color:#337FE5;">版</span></u></a><span style="color:#E53333;">資源破解分享的網站，而且還有很多精品的網站源碼下載</span> 
+</h3>
+<h3 style="text-align:-webkit-center;">
+	<span style="color:#E53333;">他們資源每天更新，并且很多都是他們自己出錢在應用中心購買后破解分享出來的</span><br />
+</h3>
+<h3>
+	<div style="text-align:center;">
+		<span style="color:#E53333;">不過還是替他們說一下</span> 
+	</div>
+	<div style="text-align:center;">
+		<span style="color:#E53333;">&nbsp;他們站下載的資源只限于自己學習研究內含的設計思想和原理 請勿有任何商業盈利行為</span> 
+	</div>
+</h3>
+<h3 style="text-align:center;">
+	<span style="color:#999999;">介紹也介紹完了，給大家做個小導航吧</span> 
+</h3>
+<h3 style="text-align:center;">
+	<span style="color:#337FE5;"><a href="http://www.xhw6.cn/forum.php?mod=forumdisplay&fid=2" target="_blank">dz商業破解插件下載</a> &nbsp; <a href="http://www.xhw6.cn/forum.php?mod=forumdisplay&fid=36" target="_blank">dz商業風格模版下載</a> &nbsp; &nbsp;<a href="http://www.xhw6.cn/forum.php?mod=forumdisplay&fid=50" target="_blank">精品網站源碼下載</a> &nbsp; &nbsp;<a href="http://www.xhw6.cn/forum.php?mod=forumdisplay&fid=51" target="_blank">工具素材下載</a></span><span style="color:#337FE5;">&nbsp; &nbsp; <a href="http://www.xhw6.cn/forum.php?mod=forumdisplay&fid=41" target="_blank">精選教程區</a></span> 
+</h3> ]]></item>
+				<item id="slang01"><![CDATA[網站不存在，請從應用中心重新安裝]]></item>
+				<item id="slang02"><![CDATA[該網站還沒有授權，請從應用中心重新安裝]]></item>
+				<item id="slang03"><![CDATA[請填寫需驗證授權的工單ID]]></item>
+				<item id="slang04"><![CDATA[開發者設置]]></item>
+				<item id="slang05"><![CDATA[需驗證授權的工單ID]]></item>
+				<item id="slang06"><![CDATA[以,分割，如1,2]]></item>
+				<item id="slang07"><![CDATA[當前分類不存在]]></item>
+				<item id="slang08"><![CDATA[您是管理員，不可以提交工單！]]></item>
+				<item id="slang09"><![CDATA[請填寫工單內容]]></item>
+				<item id="slang10"><![CDATA[請填寫]]></item>
+				<item id="slang11"><![CDATA[請選擇應用]]></item>
+				<item id="slang12"><![CDATA[請填寫網站ID]]></item>
+				<item id="slang13"><![CDATA[工單提交成功，請等待客服響應]]></item>
+				<item id="slang14"><![CDATA[工單不存在]]></item>
+				<item id="slang15"><![CDATA[你無權對工單進行評價]]></item>
+				<item id="slang16"><![CDATA[參數錯誤]]></item>
+				<item id="slang17"><![CDATA[感謝您的評價]]></item>
+				<item id="slang18"><![CDATA[工單已評價]]></item>
+				<item id="slang19"><![CDATA[關閉工單成功]]></item>
+				<item id="slang20"><![CDATA[非法操作]]></item>
+				<item id="slang21"><![CDATA[服務器端錯誤]]></item>
+				<item id="slang22"><![CDATA[請上傳圖片]]></item>
+				<item id="slang23"><![CDATA[上傳圖片失敗，請重試]]></item>
+				<item id="slang24"><![CDATA[你無權查看本工單]]></item>
+				<item id="slang25"><![CDATA[請填寫工單內容]]></item>
+				<item id="slang26"><![CDATA[工單回復成功]]></item>
+				<item id="slang27"><![CDATA[請先安裝擴展組件]]></item>
+				<item id="slang28"><![CDATA[請先安裝開發者安裝檢測插件]]></item>
+				<item id="slang29"><![CDATA[<li>請添加工單分類，用戶將根據該分類進行工單提交</li><li>請謹慎刪除工單分類，刪除操作將會刪除當前分類下所有工單！</li>]]></item>
+				<item id="slang30"><![CDATA[工單分類]]></item>
+				<item id="slang31"><![CDATA[刪?]]></item>
+				<item id="slang32"><![CDATA[排序]]></item>
+				<item id="slang33"><![CDATA[分類名稱]]></item>
+				<item id="slang34"><![CDATA[分類簡介]]></item>
+				<item id="slang35"><![CDATA[分類ID：]]></item>
+				<item id="slang36"><![CDATA[添加分類]]></item>
+				<item id="slang37"><![CDATA[待客服響應]]></item>
+				<item id="slang38"><![CDATA[待處理]]></item>
+				<item id="slang39"><![CDATA[待確認]]></item>
+				<item id="slang40"><![CDATA[評價：非常不滿]]></item>
+				<item id="slang41"><![CDATA[評價：不滿意]]></item>
+				<item id="slang42"><![CDATA[評價：一般]]></item>
+				<item id="slang43"><![CDATA[評價：滿意]]></item>
+				<item id="slang44"><![CDATA[評價：非常滿意]]></item>
+				<item id="slang45"><![CDATA[自動關閉]]></item>
+				<item id="slang46"><![CDATA[錯誤]]></item>
+				<item id="slang47"><![CDATA[您的工單已響應]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="tlang01"><![CDATA[工單系統]]></item>
+				<item id="tlang02"><![CDATA[提交工單]]></item>
+				<item id="tlang03"><![CDATA[查看工單]]></item>
+				<item id="tlang04"><![CDATA[工單管理]]></item>
+				<item id="tlang05"><![CDATA[正在進行]]></item>
+				<item id="tlang06"><![CDATA[已解決]]></item>
+				<item id="tlang07"><![CDATA[我的工單]]></item>
+				<item id="tlang08"><![CDATA[正在進行的工單]]></item>
+				<item id="tlang09"><![CDATA[已經完成的工單]]></item>
+				<item id="tlang10"><![CDATA[應用名稱]]></item>
+				<item id="tlang11"><![CDATA[請選擇應用]]></item>
+				<item id="tlang12"><![CDATA[網站ID]]></item>
+				<item id="tlang13"><![CDATA[查看位置]]></item>
+				<item id="tlang14"><![CDATA[工單內容]]></item>
+				<item id="tlang15"><![CDATA[狀態]]></item>
+				<item id="tlang16"><![CDATA[最后時間]]></item>
+				<item id="tlang17"><![CDATA[暫無記錄]]></item>
+				<item id="tlang18"><![CDATA[工單記錄]]></item>
+				<item id="tlang19"><![CDATA[關閉并評價]]></item>
+				<item id="tlang20"><![CDATA[關閉工單]]></item>
+				<item id="tlang21"><![CDATA[網站地址]]></item>
+				<item id="tlang22"><![CDATA[回復工單]]></item>
+				<item id="tlang23"><![CDATA[由此提問]]></item>
+				<item id="tlang24"><![CDATA[關閉并評價工單]]></item>
+				<item id="tlang25"><![CDATA[非常不滿]]></item>
+				<item id="tlang26"><![CDATA[不滿意]]></item>
+				<item id="tlang27"><![CDATA[一般]]></item>
+				<item id="tlang28"><![CDATA[滿意]]></item>
+				<item id="tlang29"><![CDATA[非常滿意]]></item>
+				<item id="tlang30"><![CDATA[評價]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

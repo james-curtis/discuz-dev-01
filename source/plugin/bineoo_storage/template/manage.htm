@@ -1,0 +1,482 @@
+<!--{template bineoo_storage:header}-->
+{if $_GET['mod'] == 'bucket'}
+	{if $_GET['action'] == 'bucket'}
+		{if !$bucket_list}
+			<div class="bineoo-notice">
+				{lang bineoo_storage:bucket_list_empty}
+			</div>
+		{/if}
+		<div class="bineoo-notice" style="color: #f00;">
+			{lang bineoo_storage:bucket_default_notice}
+		</div>
+		<div class="cl action-nav">
+			<a class="btn" href="{echo oss_url('&action=create')}">{lang bineoo_storage:create_bucket_btn}</a>
+			<a class="btn dialog" href="javascript:;" url="{echo oss_url('&action=sync')}">{lang bineoo_storage:sync_bucket_btn}</a>
+		</div>
+		<form id="editform" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="bineoo_ajax_post(this.id,bineoo_jq(this));return false;" action="{echo oss_url()}">
+			<input type="hidden" name="formhash" value="{FORMHASH}">
+			<input type="hidden" name="editsubmit" value="true">
+			<input type="hidden" name="handlekey" value="editmain">
+			<table class="bineoo-table">
+				<tr>
+					<th width="40">{lang bineoo_storage:default}</th>
+					<th>{lang bineoo_storage:bucket_name}</th>
+					<th width="220">{lang bineoo_storage:bucket_region}</th>
+					<th width="130">{lang bineoo_storage:bucket_create_time}</th>
+					<th width="120">{lang bineoo_storage:bucket_acl}</th>
+					<th class="text-right" width="150">{lang bineoo_storage:action}</th>
+				</tr>
+				{loop $bucket_list $bucket}
+					<tr>
+						<td><input class="checkbox" type="radio" name="default" value="$bucket['bucket']" {if $bucket['default']}checked{/if}></td>
+						<td><a href="{echo oss_url('&action=object&bucket='.$bucket['bucket'])}">$bucket['bucket']</a></td>
+						<td>$_G['bineoo_storage']['oss_set']['region_list'][$bucket['region']]</td>
+						<td>{echo date('Y-m-d H:i',$bucket['create_time'])}</td>
+						<td>{echo lang('plugin/bineoo_storage',$bucket['acl'])}</td>
+						<td class="text-right table-action">
+							<a href="{echo oss_url('&action=info&bucket='.$bucket['bucket'])}">{lang bineoo_storage:bucket_set}</a>
+							<a class="dialog" href="javascript:;" url="{echo oss_url('&action=delete&formhash='.formhash().'&bucket='.$bucket['bucket'])}">{lang bineoo_storage:delete}</a>
+						</td>
+					</tr>
+				{/loop}
+			</table>
+			<div class="cl action-nav">
+				<button class="btn">{lang bineoo_storage:save_btn}</button>
+			</div>
+		</form>
+	{elseif $_GET['action'] == 'create'}
+		<div class="cl bread-nav">
+			<a href="{echo oss_url()}">{lang bineoo_storage:bucket_homepage}</a>
+			<em>&raquo;</em>
+			<span>{lang bineoo_storage:create_bucket_btn}</span>
+		</div>
+		<form id="editform" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="bineoo_ajax_post(this.id,bineoo_jq(this));return false;" action="{echo oss_url('&action=create')}">
+			<input type="hidden" name="formhash" value="{FORMHASH}">
+			<input type="hidden" name="editsubmit" value="true">
+			<input type="hidden" name="handlekey" value="editmain">
+			<table class="form-table">
+				<tr>
+					<th>{lang bineoo_storage:bucket_name}</th>
+					<td><input class="form-text" type="text" name="bucket"></td>
+					<td class="form-notice">{lang bineoo_storage:bucket_name_tips}</td>
+				</tr>
+				<tr>
+					<th>{lang bineoo_storage:bucket_region_title}</th>
+					<td>
+						<select class="form-select" name="region">
+							{loop $_G['bineoo_storage']['oss_set']['region_list'] $key $region}
+								<option value="$key">$region</option>
+							{/loop}
+						</select>
+					</td>
+					<td class="form-notice">{lang bineoo_storage:bucket_region_tips}</td>
+				</tr>
+				<tr>
+					<th>{lang bineoo_storage:bucket_acl_title}</th>
+					<td>
+						<select class="form-select" name="acl">
+							{loop $_G['bineoo_storage']['oss_set']['acl_list'] $key $acl}
+								<option value="$key">$acl</option>
+							{/loop}
+						</select>
+					</td>
+					<td class="form-notice">{lang bineoo_storage:bucket_acl_tips}</td>
+				</tr>
+				<tr>
+					<th>{lang bineoo_storage:bucket_bing_domain}</th>
+					<td><input class="form-text" type="text" name="domain"></td>
+					<td class="form-notice">{lang bineoo_storage:bucket_bing_domain_tips}</td>
+				</tr>
+				<tr>
+					<th>{lang bineoo_storage:bucket_use_internal}</th>
+					<td><input type="checkbox" name="internal" value="1"></td>
+					<td class="form-notice">{lang bineoo_storage:bucket_use_internal_tips}</td>
+				</tr>
+			</table>
+			<div class="cl action-nav">
+				<button class="btn">{lang bineoo_storage:create_bucket_btn}</button>
+			</div>
+		</form>
+	{elseif $_GET['action'] == 'object'}
+		<div class="cl bread-nav">
+			<a href="{echo oss_url()}">{lang bineoo_storage:bucket_homepage}</a>
+			<em>&raquo;</em>
+			<a href="{echo oss_url('&action=object&bucket='.$bucket['bucket'])}">$bucket['bucket']</a>
+			{loop $prefix_nav $nav}
+				<em>&raquo;</em>
+				<a href="{echo oss_url('&action=object&bucket='.$bucket['bucket'].'&prefix='.$nav['key'])}">$nav['prefix']</a>
+			{/loop}
+		</div>
+		<form id="editform" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="bineoo_ajax_post(this.id,bineoo_jq(this));return false;" action="{echo oss_url('&action=object')}">
+			<input type="hidden" name="formhash" value="{FORMHASH}">
+			<input type="hidden" name="editsubmit" value="true">
+			<input type="hidden" name="handlekey" value="editmain">
+			<input type="hidden" name="bucket" value="$bucket['bucket']">
+			<input type="hidden" name="object_do" value="">
+			{if $prefix}
+				<input type="hidden" name="prefix" value="{$prefix}/">
+			{/if}
+			<table class="bineoo-table">
+				<tr>
+					<th width="20"></th>
+					<th>{lang bineoo_storage:object_filename}</th>
+					<th width="120">{lang bineoo_storage:object_filesize}</th>
+					<th width="120">{lang bineoo_storage:object_localtitle}</th>
+					<th width="120">{lang bineoo_storage:bucket_create_time}</th>
+					<th class="text-right" width="120">{lang bineoo_storage:action}</th>
+				</tr>
+				{eval $marker='';}
+				{loop $dir_list $dir}
+					<tr>
+						<td><span class="oss-icon-folder"></span></td>
+						<td><a href="{echo oss_url('&action=object&bucket='.$bucket['bucket'].'&prefix='.$dir['prefix'])}">{echo str_replace($_GET['prefix'], '', $dir['prefix'])}</a></td>
+						<td>-</td>
+						<td width="70" class="object-position" mod="local_exist" object="$dir['prefix']">{lang bineoo_storage:object_checking}</td>
+						<td>-</td>
+						<td class="text-right table-action"></td>
+					</tr>
+					{eval $marker=$dir['prefix'];}
+				{/loop}
+				{loop $object_list $object}
+					<tr>
+						<td><input type="checkbox" class="object-check" name="object[]" value="$object['key']"></td>
+						<td><span {if $object['isimage']}class="object-image-preview" url="{echo object_url($object['key'])}"{/if}>{echo str_replace($_GET['prefix'], '', $object['key'])}</span></td>
+						<td>$object['size']</td>
+						<td width="70" class="object-position" mod="local_exist" object="$object['key']">{lang bineoo_storage:object_checking}</td>
+						<td>{echo date('Y-m-d H:i',$object['LastModified'])}</td>
+						<td class="text-right table-action">
+							<a class="dialog" href="javascript:;" url="{echo oss_url('&action=delete&formhash='.formhash().'&bucket='.$bucket['bucket'].'&object='.$object['key'])}">{lang bineoo_storage:delete}</a>
+						</td>
+					</tr>
+					{eval $marker=$object['key'];}
+				{/loop}
+				<tr>
+					<td class="load-more-object" colspan="6">
+						<div>{lang bineoo_storage:load_more_object}</div>
+					</td>
+				</tr>
+			</table>
+				<div class="cl action-nav">
+				<span class="btn check-all">{lang bineoo_storage:check_all}</span>
+				<span class="btn uncheck-all disabled">{lang bineoo_storage:uncheck_all}</span>
+				<span class="btn download-btn disabled">{lang bineoo_storage:object_download_local}</span>
+				<span class="btn delete-btn disabled">{lang bineoo_storage:object_delete_check}</span>
+			</div>
+			<input type="hidden" id="marker" value="$marker">
+		</form>
+	{elseif $_GET['action'] == 'info'}
+		<div class="cl bread-nav">
+			<a href="{echo oss_url()}">{lang bineoo_storage:bucket_homepage}</a>
+			<em>&raquo;</em>
+			<span>$bucket['bucket'] {lang bineoo_storage:bucket_info_title}</span>
+		</div>
+		<form id="editform" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="bineoo_ajax_post(this.id,bineoo_jq(this));return false;" action="{echo oss_url('&action=info')}">
+			<input type="hidden" name="formhash" value="{FORMHASH}">
+			<input type="hidden" name="editsubmit" value="true">
+			<input type="hidden" name="handlekey" value="editmain">
+			<input type="hidden" name="bucket" value="$bucket['bucket']">
+			<table class="form-table">
+				<tr>
+					<th>{lang bineoo_storage:bucket_name}</th>
+					<td>$bucket['bucket']</td>
+					<td class="form-notice">{lang bineoo_storage:bucket_name_disabled}</td>
+				</tr>
+				<tr>
+					<th>{lang bineoo_storage:bucket_region_title}</th>
+					<td>$_G['bineoo_storage']['oss_set']['region_list'][$bucket['region']]</td>
+					<td class="form-notice">{lang bineoo_storage:bucket_region_disabled}</td>
+				</tr>
+				<tr>
+					<th>{lang bineoo_storage:bucket_acl_title}</th>
+					<td>
+						<select class="form-select" name="acl">
+							{loop $_G['bineoo_storage']['oss_set']['acl_list'] $key $acl}
+								<option value="$key" {if $bucket['acl'] == $key}selected{/if}>$acl</option>
+							{/loop}
+						</select>
+					</td>
+					<td class="form-notice">{lang bineoo_storage:bucket_acl_tips}</td>
+				</tr>
+				<tr>
+					<th>{lang bineoo_storage:bucket_bing_domain}</th>
+					<td><input class="form-text" type="text" name="domain" value="$bucket['domain']"></td>
+					<td class="form-notice">{lang bineoo_storage:bucket_bing_domain_tips}</td>
+				</tr>
+				<tr>
+					<th>{lang bineoo_storage:bucket_use_imagestyle}</th>
+					<td><input class="form-text" type="text" name="image_style" value="$bucket['image_style']"></td>
+					<td class="form-notice">{lang bineoo_storage:bucket_use_imagestyle_tips}</td>
+				</tr>
+				<tr>
+					<th>{lang bineoo_storage:bucket_use_internal}</th>
+					<td><input type="checkbox" name="internal" value="1" {if $bucket['internal']}checked{/if}></td>
+					<td class="form-notice">{lang bineoo_storage:bucket_use_internal_tips}</td>
+				</tr>
+			</table>
+			<div class="cl action-nav">
+				<button class="btn">{lang bineoo_storage:save_btn}</button>
+			</div>
+		</form>
+	{/if}
+
+{elseif $_GET['mod'] == 'local'}
+	<div class="bineoo-notice">
+		{echo lang('plugin/bineoo_storage','local_top_tips',array('bucket'=>$bucket['bucket']))}
+	</div>
+	{if $prefix}
+		<div class="cl bread-nav">
+			<a href="{echo oss_url('&mod=local')}">{lang bineoo_storage:local_nav_title}</a>
+			{loop $prefix_nav $nav}
+				<em>&raquo;</em>
+				<a href="{echo oss_url('&mod=local&prefix='.$nav['key'])}">$nav['prefix']</a>
+			{/loop}
+		</div>
+	{/if}
+	<form id="editform" method="post" autocomplete="off" enctype="multipart/form-data" onsubmit="bineoo_ajax_post(this.id,bineoo_jq(this));return false;" action="{echo oss_url('&mod=local')}">
+		<input type="hidden" name="formhash" value="{FORMHASH}">
+		<input type="hidden" name="editsubmit" value="true">
+		<input type="hidden" name="handlekey" value="editmain">
+		<input type="hidden" name="bucket" value="$bucket['bucket']">
+		<input type="hidden" name="prefix" value="{$prefix}/">
+		<table class="bineoo-table">
+			<tr>
+				<th width="20"></th>
+				<th>{lang bineoo_storage:object_filename}</th>
+				<th>OSS</th>
+				<th width="120">{lang bineoo_storage:object_filesize}</th>
+				<th width="120">{lang bineoo_storage:object_lastedittime}</th>
+				<th class="text-right" width="80">{lang bineoo_storage:action}</th>
+			</tr>
+			{if $local['dir']}
+				{loop $local['dir'] $dir}
+					<tr>
+						<td width="20"><span class="oss-icon-folder"></span></td>
+						<td>
+							<a href="{echo oss_url('&mod=local&prefix='.(($prefix ? $prefix.'/' : '').$dir))}">$dir</a>
+						</td>
+						<td width="70">-</td>
+						<td width="120">-</td>
+						<td width="120">-</td>
+						<td class="text-right">
+							<a class="dialog" href="javascript:;" content="{lang bineoo_storage:local_upload_dialog_content}" url="{echo oss_url('&mod=upload&bucket='.$bucket['bucket'].'&prefix='.urlencode($prefix).'&object='.urlencode(($prefix ? $prefix.'/' : '').$dir))}">{lang bineoo_storage:upload_link}</a>
+							<a class="dialog" href="javascript:;" content="{lang bineoo_storage:local_delete_dialog_content}" url="{echo oss_url('&mod=delete_local&prefix='.urlencode($prefix).'&object='.urlencode(($prefix ? $prefix.'/' : '').$dir))}">{lang bineoo_storage:delete}</a>
+						</td>
+					</tr>
+				{/loop}
+			{/if}
+			{if $local['file']}
+				{loop $local['file'] $file}
+					{eval $file_size = filesize(($prefix ? $prefix.'/' : '').$file);}
+					{eval $isimage = in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)),array('gif','jpeg','png','bmp','jpg','webp')) ? 1 : 0;}
+					<tr>
+						<td width="20"><input type="checkbox" class="object-check" name="object[]" value="{echo ($prefix ? $prefix.'/' : '').$file}"></td>
+						<td><span {if $isimage}class="object-image-preview" url="{echo object_url(($prefix ? $prefix.'/' : '').$file)}"{/if}>$file</span></td>
+						<td width="70" class="object-position" bucket="$bucket['bucket']" mod="oss_exist" object="{echo ($prefix ? $prefix.'/' : '').$file}">{lang bineoo_storage:object_checking}</td>
+						<td width="120">
+							{echo sizecount($file_size)}
+						</td>
+						<td width="120">
+							{eval $stat = stat(($prefix ? $prefix.'/' : '').$file)}
+							{echo date('Y-m-d H:i',$stat['mtime'])}
+						</td>
+						<td class="text-right">
+							<a class="dialog" href="javascript:;" content="{if $file_size>=10485760}{lang bineoo_storage:local_upload_dialog_large_content}{else}{lang bineoo_storage:local_upload_dialog_file_content}{/if}" url="{echo oss_url('&mod=upload&bucket='.$bucket['bucket'].'&object='.urlencode(($prefix ? $prefix.'/' : '').$file))}">{lang bineoo_storage:upload_link}</a>
+							<a class="dialog" href="javascript:;" content="{lang bineoo_storage:local_delete_dialog_file_content}" url="{echo oss_url('&mod=delete_local&prefix='.urlencode($prefix).'&object='.urlencode(($prefix ? $prefix.'/' : '').$file))}">{lang bineoo_storage:delete}</a>
+						</td>
+					</tr>
+				{/loop}
+			{/if}
+		</table>
+		<div class="cl action-nav">
+			<span class="btn check-all">{lang bineoo_storage:check_all}</span>
+			<span class="btn uncheck-all disabled">{lang bineoo_storage:uncheck_all}</span>
+			<span class="btn upload-btn disabled" bucket="$bucket['bucket']">
+				{if $bucket['bucket']}
+					{lang bineoo_storage:upload_to}$bucket['bucket']
+				{else}
+					{lang bineoo_storage:upload_empty_default_bucket}
+				{/if}
+			</span>
+		</div>
+	</form>
+{elseif $_GET['mod'] == 'cache'}
+{/if}
+<span id="return_editmain" style="display:none"></span>
+<script>
+	bineoo_jq(function(){
+/*		bineoo_jq('.object-image-preview').hover(
+			function(){
+				var url = bineoo_jq(this).attr('url');
+				if(bineoo_jq('.object-preview').length<=0){
+					bineoo_jq('<div>').addClass('object-preview').html('<img src="'+url+'">').appendTo(bineoo_jq('body'));
+				}else{
+					bineoo_jq('.object-preview').html('<img src="'+url+'">');
+				}
+			},
+			function(){
+				console.log('yikai');
+			}
+		);*/
+		bineoo_jq('.object-position').each(function(){
+			var box = bineoo_jq(this),
+				object = box.attr('object'),
+				bucket = box.attr('bucket'),
+				mod = box.attr('mod');
+			bineoo_jq.ajax({
+				url:'plugin.php?id=bineoo_storage',
+				dataType:'json',
+				data:{mod:mod,object:object,bucket:bucket},
+				success:function(s){
+					box.addClass('object-position-'+s.code).html(s.msg);
+				},
+				complete:function(XMLHttpRequest,status){
+					//console.log(XMLHttpRequest);
+					//console.log(status);
+				}
+			});
+		});
+		bineoo_jq(document).on('click','.load-more-object',function(){
+			var load_btn = bineoo_jq(this),
+				load_btn_tr = load_btn.parents('tr'),
+				marker = bineoo_jq('#marker').val();
+			bineoo_jq.ajax({
+				url:'plugin.php?id=bineoo_storage:misc&action=object_list',
+				data:{bucket:'$bucket[bucket]',prefix:'{$prefix}/',marker:marker},
+				dataType:'json',
+				success:function(s){
+					if(s.code == 'succeed'){
+						if(s.html){
+							load_btn_tr.before(s.html);
+						}
+						if(!s.marker){
+							load_btn_tr.remove();
+						}
+						bineoo_jq('#marker').val(s.marker);
+					}else{
+						showError(s.msg);
+					}
+				}
+			});
+		});
+		bineoo_jq(document).on('click','.dialog',function(){
+			var url = bineoo_jq(this).attr('url') || bineoo_jq(this).attr('href'),
+				title = bineoo_jq(this).attr('title') || '',
+				content = bineoo_jq(this).attr('content') || '{lang bineoo_storage:dialog_default_content}';
+			showDialog(content,'confirm',title,function(){
+				showWindow('bineoo_dialog', url, 'get', 0);
+			});
+		});
+		bineoo_jq(document).on('click','.download-btn',function(){
+			var obj = bineoo_jq(this),
+				form = obj.parents('form');
+			if(obj.hasClass('disabled')){
+				return false;
+			}
+			showDialog('{lang bineoo_storage:download_delete_confirm}','confirm',null,function(){
+				form.find('input[name="object_do"]').val('download');
+				form.append('<input type="hidden" name="delete_oss" value="1">');
+				obj.addClass('disabled').html('{lang bineoo_storage:processing_btn}').prop({
+					disabled:true
+				});
+				form.submit();
+			},1,function(){
+				form.find('input[name="delete_oss"]').remove();
+				form.find('input[name="object_do"]').val('download');
+				obj.addClass('disabled').html('{lang bineoo_storage:processing_btn}').prop({
+					disabled:true
+				});
+				form.submit();
+			},null,'{lang bineoo_storage:delete}','{lang bineoo_storage:hold_file}');
+		});
+		bineoo_jq(document).on('click','.upload-btn',function(){
+			var obj = bineoo_jq(this),
+				form = obj.parents('form');
+			if(obj.hasClass('disabled')){
+				return false;
+			}
+			showDialog('{lang bineoo_storage:upload_delete_confirm}','confirm',null,function(){
+				form.append('<input type="hidden" name="delete_local" value="1">');
+				obj.addClass('disabled').html('{lang bineoo_storage:processing_btn}').prop({
+					disabled:true
+				});
+				form.submit();
+			},1,function(){
+				form.find('input[name="delete_local"]').remove();
+				obj.addClass('disabled').html('{lang bineoo_storage:processing_btn}').prop({
+					disabled:true
+				});
+				form.submit();
+			},null,'{lang bineoo_storage:delete}','{lang bineoo_storage:hold_file}');
+		});
+		bineoo_jq(document).on('click','.delete-btn',function(){
+			if(bineoo_jq(this).hasClass('disabled')){
+				return false;
+			}
+			var obj = bineoo_jq(this),
+				form = obj.parents('form'),
+				title = obj.attr('title') || '',
+				content = obj.attr('content') || '{lang bineoo_storage:dialog_default_content}';
+			showDialog(content,'confirm',title,function(){
+				obj.addClass('disabled').html('{lang bineoo_storage:processing_btn}').prop({
+					disabled:true
+				});
+				form.find('input[name="object_do"]').val('delete');
+				form.submit();
+			});
+		});
+		bineoo_jq(document).on('click','.object-check',function(){
+			var form = bineoo_jq(this).parents('form');
+			if(form.find('.object-check:checked').length > 0){
+				unlock_btn(form);
+			}else{
+				lock_btn(form);
+			}
+		});
+		bineoo_jq(document).on('click','.check-all',function(){
+			var form = bineoo_jq(this).parents('form');
+			var check_i = 0;
+			form.find('.object-check').each(function(){
+				bineoo_jq(this).prop({
+					checked:true
+				});
+				check_i++;
+			});
+			if(check_i){
+				unlock_btn(form);
+			}
+		});
+		bineoo_jq(document).on('click','.uncheck-all',function(){
+			if(bineoo_jq(this).hasClass('disabled')){
+				return false;
+			}
+			var form = bineoo_jq(this).parents('form');
+			form.find('.object-check').prop({
+				checked:false
+			});
+			lock_btn(form);
+		});
+	});
+	function lock_btn(form){
+		form.find('.uncheck-all,button,.download-btn,.delete-btn,.upload-btn').addClass('disabled').prop({
+			disabled:true
+		});
+	}
+	function unlock_btn(form){
+		form.find('.uncheck-all,button,.download-btn,.delete-btn,.upload-btn').removeClass('disabled').prop({
+			disabled:false
+		});
+		if(!form.find('.upload-btn').attr('bucket')){
+			form.find('.upload-btn').addClass('disabled').prop({
+				disabled:true
+			});
+		}
+	}
+	function bineoo_ajax_post(id,form){
+		form.find('button').addClass('disabled').html('{lang bineoo_storage:processing_btn}').prop({
+			disabled:true
+		});
+		showDialog('{lang bineoo_storage:processing_title}','notice',null,null,1,null,'{lang bineoo_storage:processing_tips}',null,null);
+		ajaxpost(id,'return_editmain');return false;
+	}
+</script>
+<!--{template bineoo_storage:footer}-->

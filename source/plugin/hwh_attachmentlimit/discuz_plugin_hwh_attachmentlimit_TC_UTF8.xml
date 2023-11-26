@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0,L1.0,X3.3,X3.4]]></item>
+	<item id="Time"><![CDATA[2017-08-23 01:18]]></item>
+	<item id="From"><![CDATA[讯幻网（www.xhw6.cn）]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[讯幻网_【海曼】附件下載限制高級版]]></item>
+			<item id="identifier"><![CDATA[hwh_attachmentlimit]]></item>
+			<item id="description"><![CDATA[有效限制用戶下載次數,防止非法采集,保護網站資源!]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[hwh_attachmentlimit/]]></item>
+			<item id="copyright"><![CDATA[讯幻网（www.xhw6.cn）]]></item>
+			<item id="version"><![CDATA[1.0]]></item>
+<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[hwh_attachmentlimit]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[hwh_attachmentlimit]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[28]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[hwh_attachmentlimit]]></item>
+					<item id="param"><![CDATA[mod=admin&ac=config]]></item>
+					<item id="menu"><![CDATA[詳細設置]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[hwh_attachmentlimit]]></item>
+					<item id="param"><![CDATA[mod=admin&ac=log]]></item>
+					<item id="menu"><![CDATA[超限記錄]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5,X3,X3.1,X3.2,F1.0,L1.0,X3.3,X3.4]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[模式]]></item>
+				<item id="description"><![CDATA[全局模式:全部版塊設置,版塊細分:分版塊設置]]></item>
+				<item id="variable"><![CDATA[mode]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1=全局模式
+2=版塊細分]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[附件資源類型]]></item>
+				<item id="description"><![CDATA[選擇針對免費,收費,或者所有附件資源進行控制]]></item>
+				<item id="variable"><![CDATA[att_type]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1=所有附件資源
+2=收費附件資源
+3=免費附件資源]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[超出下載上限提示文字]]></item>
+				<item id="description"><![CDATA[{max}為當前用戶的下載上限數]]></item>
+				<item id="variable"><![CDATA[warning_str]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[您今天的下載次數已超過最大限制{max}個,請或升級會員,明天再試!]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[提示后跳轉鏈接]]></item>
+				<item id="description"><![CDATA[請填寫完整URL地址(例:http://qq.com),留空則無跳轉]]></item>
+				<item id="variable"><![CDATA[warning_forward_url]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[http://www.qq.com/]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[提示后自動跳轉等待時間]]></item>
+				<item id="description"><![CDATA[單位:秒]]></item>
+				<item id="variable"><![CDATA[location_time]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[3]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[開啟記錄下載超過限制的用戶]]></item>
+				<item id="description"><![CDATA[如果某個用戶下載次數超過了上限則會記錄下來,在[超限記錄]里查看]]></item>
+				<item id="variable"><![CDATA[log_allow]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

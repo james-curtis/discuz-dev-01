@@ -1,0 +1,134 @@
+
+
+<!--{eval}-->
+<!--
+function show_attach($attach)
+{
+    global $_G;
+    $pan_option = $_G['cache']['plugin']['threed_dazhe'];
+    $thd_panurl = $pan_option['thd_panurl'];
+    $thd_youke = $pan_option['thd_youke'];
+    $uid=$_G['uid'];
+    //附件处理
+    $aidencode = packaids($attach);
+    $is_archive = $_G['forum_thread']['is_archived'] ? '&fid=' . $_G['fid'] .
+        '&archiveid=' . $_G[forum_thread][archiveid] : '';
+    //用户名处理
+    $groupsname = "{lang threed_dazhe:attach1}";
+    $groupid =1;
+    if ($attach[readperm] == 0)
+        {$groupsname = "{lang threed_dazhe:attach2}";
+        $groupid =$_G[groupid];}
+    else {
+        foreach ($_G['cache']['usergroups'] as $av => $groups) {
+            if ($groups['readaccess'] == $attach[readperm]) {
+                $groupsname = $groups['grouptitle'];
+                $groupid = $av;
+                break;
+            } else {
+                continue;
+            }
+        }
+    }
+    
+    //统计已下载次数
+    $daytimenow = $_G['timestamp'];
+    $daytimeup = $_G['timestamp'] + 43200;
+    $daytimedown = $_G['timestamp'] - 43200;
+    $daydownnum = DB::result_first("SELECT count(*) FROM " . DB::table('common_credit_log') .
+        " WHERE uid='$uid' AND operation='BAC' AND dateline between $daytimedown AND $daytimeup");
+        
+    //折扣预处理
+    $pan_user = $_G['cache']['plugin']['threed_dazhe']["thd_user"];
+        $pan_zhekou = array();
+        $pan_zheokou_temp = explode(",", $pan_user);
+        foreach ($pan_zheokou_temp as $listk => $listv) {
+            $listv_temp = explode("|", $listv);
+            $pan_zhekou[0][$listk] = intval($listv_temp[0] ? $listv_temp[0] : 1);
+            $pan_zhekou[1][$listk] = round(($listv_temp[1] ? $listv_temp[1] : 0), 1);
+            $pan_zhekou[2][$listk] = intval($listv_temp[2] ? $listv_temp[2] : 0);
+            $pan_zhekou[3][$listk] = round(($listv_temp[3] ? $listv_temp[3] : 0), 1);
+        }
+        
+    //权限处理和下载次数处理
+    $pan_yuanjia=$pan_zhejia=$attach['price'];
+    foreach ($pan_zhekou[0] as $listk => $listv) {
+            if ($_G['groupid'] == $listv) {
+        $pan_downnum = $pan_zhekou[2][$listk];
+        $pan_over=$pan_zhekou[3][$listk];
+        if($daydownnum>=$pan_downnum){
+            if($pan_over<0){
+            $pan_zhejia = $pan_yuanjia;
+            }else{
+            $pan_zhejia = intval($pan_zhekou[3][$listk] * $pan_yuanjia / 10);
+            }
+        }else{
+            $pan_zhejia = intval($pan_zhekou[1][$listk] * $pan_yuanjia / 10);
+        }
+        break;
+    }
+    }
+    
+        
+    //判断是否为网盘
+    if($attach['ext']=='pan'){
+        $attach_url=base64_encode($attach[attachment]);
+        $attach[filename]=str_replace('.pan','',$attach[filename]);
+        };
+-->
+<!--{/eval}-->
+<!--{block return}-->
+<div>
+<link rel="stylesheet" type="text/css" href="source/plugin/threed_dazhe/template/panattach.css">
+<div style="clear:both; width:100%;text-decoration:none;overflow:hidden;" class="tab_button">
+<input type="hidden" name="urlid" value="48459799-27A9-A0DA-ECA9-2EE3EC1E61BA">
+    <!--{if !$attach['price']|| ($attach['payed']&&$_G[uid])}-->
+    <div class="button">
+        <!--{if $_G['cache']['usergroups'][$_G[groupid]][readaccess]>=$attach[readperm]&&($_G[uid]||(!$_G[uid]&&$thd_youke))}-->
+            <!--{if $attach['ext']=='pan'}-->
+            <a href="plugin.php?id=threed_attach:downld&aid={$attach['aid']}&formhash={FORMHASH}" target="_blank" rel="nofollow" style="text-decoration:none;">
+            <!--{else}-->
+            <a href="forum.php?mod=attachment{$is_archive}&aid={$aidencode}" target="_blank" rel="nofollow" style="text-decoration:none;">
+            <!--{/if}-->
+            <img src="source/plugin/threed_dazhe/template/zip.gif" class="vm" alt="" border="0"><font style=" color:#fff !important;"> {lang threed_dazhe:attachdown}</font></a>
+      <p class="top">{lang threed_dazhe:attach3}</p>
+      <p class="bottom">{lang threed_dazhe:attachdownlogin_ok}$_G['cache']['usergroups'][$_G[groupid]][grouptitle]</p>
+   	    <!--{else}-->
+        <a href="plugin.php?id=threed_dazhe:alert&ac=noaccess" onclick="showWindow('noaccess', this.href)"  target="_blank" rel="nofollow" style="text-decoration:none;">
+        <img src="source/plugin/threed_dazhe/template/zip.gif" class="vm" alt="" border="0"><font style=" color:#F88427 !important;"> {lang threed_dazhe:attachdown}</font></a>
+        <p class="top">{lang threed_dazhe:attach4}</p>
+       <p class="bottom">{lang threed_dazhe:attachdownlogin_ok}$_G['cache']['usergroups'][$_G[groupid]][grouptitle]</p>
+        <!--{/if}-->
+    </div>
+	<!--{else}-->
+    <div class="button">
+       <!--{if !$pan_downnum||$daydownnum<$pan_downnum||($daydownnum>=$pan_downnum&&$pan_over>0)}-->
+            <a href="plugin.php?id=threed_dazhe:payfor&ac=buy&aid={$attach[aid]}&daynum={$daydownnum}&formhash={FORMHASH}" onclick="showWindow('paybox', this.href)" rel="nofollow" style="text-decoration:none;"><img src="source/plugin/threed_dazhe/template/zip.gif" class="vm" alt="" border="0"><font style=" color:#ccc !important;"> {lang threed_dazhe:attachdown}</font></a>
+            <!--{if $_G[uid]}-->
+    <p class="top">{lang threed_dazhe:attach4}</p>
+    <p class="bottom">{lang threed_dazhe:attachdownlogin_ok}$_G['cache']['usergroups'][$_G[groupid]][grouptitle]</p>
+            <!--{else}-->
+      <p class="top">{lang threed_dazhe:attachdownreg}</p>
+      <p class="bottom">{lang threed_dazhe:attachdownlogin}</p>
+            <!--{/if}-->
+       <!--{else}-->
+            <a href="plugin.php?id=threed_dazhe:alert&ac=nodown&daynum={$daydownnum}&pannum={$pan_downnum}" onclick="showWindow('nodown', this.href)"  target="_blank" rel="nofollow" style="text-decoration:none;">
+            <img src="source/plugin/threed_dazhe/template/zip.gif" class="vm" alt="" border="0"><font style=" color:#F88427 !important;"> {lang threed_dazhe:attachdown}</font></a>
+      <p class="top">{lang threed_dazhe:attach5}</p>
+      <p class="bottom">{lang threed_dazhe:attachdownlogin_ok}$_G['cache']['usergroups'][$_G[groupid]][grouptitle]</p>
+       <!--{/if}-->
+    </div>
+	<!--{/if}-->
+			<div class="buttonright">
+            <span style="white-space: nowrap;"><em >{lang threed_dazhe:attachname}</em>{$attach[filename]}&nbsp;</span><br>
+            <em >{lang threed_dazhe:attachdownloads}</em>{$attach[downloads]}&nbsp;&nbsp;<!--{if $attach['ext']=='pan'}-->{lang threed_dazhe:attachpan}<!--{else}--><em>{lang threed_dazhe:attachsize}</em>{$attach[attachsize]}<!--{/if}-->&nbsp;
+            <!--{if $attach['price']}--><em>{lang threed_dazhe:attachprice}</em>{$pan_zhejia}<!--{if $pan_zhejia<$pan_yuanjia}-->({lang threed_dazhe:yuanjia}<del>{$pan_yuanjia}</del>)<!--{/if}-->{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}  <a href="forum.php?mod=misc&amp;action=viewattachpayments&amp;aid=$attach['aid']" onclick="showWindow('attachpay', this.href)" target="_blank">[{lang threed_dazhe:recorde}]</a><!--{/if}--><br>
+     <em>{lang threed_dazhe:attachreadperm}</em> <a target="_blank" href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=$groupid"  rel="nofollow" class="xi2" style="text-decoration:none;"><font style="font-size:14px;" >{$groupsname}&nbsp;</font></a>{$thd_panurl} </div></div><br />
+     </div>
+<!--{/block}-->
+<!--{eval}-->
+<!--
+	return $return;
+}
+-->
+<!--{/eval}-->

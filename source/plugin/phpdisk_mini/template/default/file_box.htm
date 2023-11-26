@@ -1,0 +1,68 @@
+<!--{template common/header_ajax}-->
+<script type="text/javascript" src="{PHPDISK_PLUGIN_DIR}/includes/js/common.js"></script>
+<meta name="copyright" content="Powered by PHPDisk Team {NOW_YEAR}" />
+<meta name="author" content="PHPDisk {PHPDISK_EDITION} v{PHPDISK_VERSION} " />
+<script type="text/javascript">
+function chgFileBox(id){
+	if(id == 1){
+		$('p_upbox').className = 'current';
+		$('p_filebox').className = '';
+		$('p_upbox_div').style.display = 'block';
+		$('p_filebox_div').style.display = 'none';	
+	}else if(id == 2){
+		$('p_filebox').className = 'current';
+		$('p_upbox').className = '';
+		$('p_filebox_div').style.display = 'block';	
+		$('p_upbox_div').style.display = 'none';
+	}
+}
+function get_myfile(folder_id,page){
+	jq('#myfile_list').html('<p align="center"><img src="{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif" align="absmiddle" border="0" />{lang phpdisk_mini:loading}</p>');
+	jq.ajax({
+		type : 'post',
+		url : 'plugin.php?id=phpdisk_mini:ajax',
+		data : 'action=get_myfile&folder_id='+folder_id+'&page='+page,
+		dataType : 'text',
+		success:function(msg){	
+			if(msg==''){			
+				jq('#myfile_list').html('{lang phpdisk_mini:file not found}');
+			}else{
+				jq('#myfile_list').html(msg);
+			}
+		},
+		error:function(){
+		}
+	});
+}
+</script>
+<div id="main_messaqge">
+<div class="f_c" style="width:720px;height:100%;">
+<div class="flb" style="padding-left: 0px; padding-right: 0px;">
+<ul class="tb tb_s cl">
+<li id="p_upbox" class="current"><a href="javascript:;" onclick="chgFileBox(1);">{lang phpdisk_mini:upload file}</a></li>
+<!--{if $action=='plugin_box'}-->
+<li id="p_filebox"><a href="javascript:;" onclick="chgFileBox(2);get_myfile(0,1);">{lang phpdisk_mini:myfile}</a></li>
+<li><a href="{eval echo urr("plugin","id=phpdisk_mini:phpdisk")}">{lang phpdisk_mini:file manage}</a></li>
+<!--{/if}-->
+<li class="y"><span style="float:left; color:#0000FF">{lang phpdisk_mini:file_insert_tips}&nbsp;&nbsp;</span><span style="float:left" id="add_tips">{lang phpdisk_mini:file_box_tips}</span><span class="flbc" onclick="hideWindow('$_G['gp_handlekey']');" title="{lang close}">{lang close}</span></li>
+</ul>
+</div>
+<div id="p_upbox_div">
+<div style="height:310px;overflow:auto;overflow-x: hidden;width:100%;">
+<div style="text-align:center;line-height: 80px;width:700px; height:100%;">
+<iframe src="{$upload_url}" style="width:100%; height:300px; overflow:hidden" scrolling="no" frameborder="0"></iframe>
+
+</div>
+</div>
+<div class="c" style="border-top: #e9e9e9 1px dashed;">
+<div class="notice">{lang phpdisk_mini:can upload file size}: <span class="xi1">{eval echo get_system_upload_max_size()}B</span> , {lang phpdisk_mini:can upload file queue} <span class="xi1">$max_file_queue</span> {lang phpdisk_mini:per}</div>
+</div>
+</div>
+
+<div id="p_filebox_div" class="c" style="margin-top: 10px;display:none;">
+<div id="myfile_list"></div>
+<div class="notice">{lang phpdisk_mini:can upload file size}: <span class="xi1">{eval echo get_system_upload_max_size()}B</span> , {lang phpdisk_mini:can upload file queue} <span class="xi1">$max_file_queue</span> {lang phpdisk_mini:per}<span style="float:right">{lang phpdisk_mini:copyright}</span><br><span style="float:right">PHPDisk Mini v{PHPDISK_VERSION} {VERSION_TXT}</span></div>
+</div>
+</div>
+</div>
+<!--{template common/footer_ajax}-->

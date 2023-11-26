@@ -1,0 +1,35 @@
+<!--{template common/header_ajax}-->
+<div class="close">
+    <h3 style="cursor: move;" class="flb">
+        <em>{lang ticket:tlang24}</em>
+        <span style="float:right;">
+        <a href="javascript:void(0);" class="flbc" onclick="hideWindow('close')" title="Close">Close</a>
+        </span>
+    </h3>
+    <style>
+    *:focus {outline: none;}
+    .tfm th {width:40px; font-weight:bold;}
+    </style>
+    <form action="plugin.php?id=ticket&mod=do&type=rate&item={$ticketId}" method="post" name="close" id="close" fwin="close" onsubmit="ajaxpost(this.id,'close');">
+    <div class="c" >
+        <table cellspacing="0" cellpadding="0" class="tfm" id="profilelist" style="margin:0 10px; width:500px;">
+            <tbody>
+                <tr>
+                    <td width="20%"><input type="radio" name="rate" value="4" />&nbsp;{lang ticket:tlang25}</td>
+                    <td width="20%"><input type="radio" name="rate" value="5" />&nbsp;{lang ticket:tlang26}</td>
+                    <td width="20%"><input type="radio" name="rate" value="6" />&nbsp;{lang ticket:tlang27}</td>
+                    <td width="20%"><input type="radio" name="rate" value="7" />&nbsp;{lang ticket:tlang28}</td>
+                    <td width="20%"><input type="radio" name="rate" value="8" checked="checked" />&nbsp;{lang ticket:tlang29}</td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="hidden" value="{FORMHASH}" name="formhash" />
+        <input type="hidden" name="inajax" value="1">
+        <input type="hidden" name="handlekey" value="close">
+    </div>
+    <p class="o pns">
+        <button id="submit" type="submit" name="submit" value="true" class="pn pnc" fwin="close"><strong>{lang ticket:tlang30}</strong></button>
+    </p>
+    </form>
+</div>
+<!--{template common/footer_ajax}-->

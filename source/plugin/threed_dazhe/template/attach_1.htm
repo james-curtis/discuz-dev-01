@@ -1,0 +1,73 @@
+<!--{eval}-->
+<!--
+
+function get_attach_temp($attach,$pan_zhejia,$pan_yuanjia,$daydownnum,$pan_downnum,$aid,$aidencode,$is_archive,$groupsname) {
+    global $_G;
+    $pan_option = $_G['cache']['plugin']['threed_dazhe'];
+    $thd_panurl = $pan_option['thd_panurl'];
+    $thd_youke = $pan_option['thd_youke'];
+-->
+<!--{/eval}-->
+<!--{block return}-->
+<link rel="stylesheet" type="text/css" href="source/plugin/threed_dazhe/template/style1/panattach.css">
+
+<div class="wpdown ljxz">
+    <div class="wpdown_min" style="border-top:none">
+        <div class="wpdown_fenlei">{lang threed_dazhe:style0}</div>
+        <div class="wpdown_shuoming wpdownfl"><a href="javascript:;" onclick="showWindow('miscreport', 'misc.php?mod=report&amp;url='+REPORTURL);return false;">{lang threed_dazhe:style1}</a></div>
+        <div class="wpdown_shuoming" style="margin:5px 0;float: right;"><a>{lang threed_dazhe:style2}</a></div>
+    </div>
+    <div class="wpdown_min" style="margin-top:50px" >
+        <div class="wpdown_dl wpdownfl">
+        <!--{if !$attach['price']|| ($attach['payed']&&$_G[uid])}-->
+            <!--{if $_G['cache']['usergroups'][$_G[groupid]][readaccess]>=$attach[readperm]&&($_G[uid]||(!$_G[uid]&&$thd_youke))}-->
+                <!--{if $attach['ext']=='pan'}-->
+        <a href="plugin.php?id=threed_attach:downld&aid={$aid}&formhash={FORMHASH}" target="_self" ><span></span><div class="clear"></div><em>{lang threed_dazhe:style3}</em></a>
+                <!--{else}-->
+        <a href="forum.php?mod=attachment{$is_archive}&aid={$aidencode}" rel="nofollow" target="_self" ><span></span><div class="clear"></div><em>{lang threed_dazhe:style3}</em></a>
+                <!--{/if}-->
+            <!--{else}-->
+        <a href="plugin.php?id=threed_dazhe:alert&ac=noaccess" rel="nofollow" target="_self" ><span></span><div class="clear"></div><em>{lang threed_dazhe:style3}</em></a>
+            <!--{/if}-->
+        <!--{else}-->
+            <!--{if !$pan_downnum||$daydownnum<$pan_downnum||($daydownnum>=$pan_downnum&&$pan_over>0)}-->
+        <a href="plugin.php?id=threed_dazhe:payfor&ac=buy&aid={$attach[aid]}&daynum={$daydownnum}&formhash={FORMHASH}" onclick="showWindow('paybox', this.href)" rel="nofollow" target="_self" ><span></span><div class="clear"></div><em>{lang threed_dazhe:style3}</em></a>
+            <!--{else}-->
+        <a href="plugin.php?id=threed_dazhe:alert&ac=nodown&daynum={$daydownnum}&pannum={$pan_downnum}" rel="nofollow" target="_self" ><span></span><div class="clear"></div><em>{lang threed_dazhe:style3}</em></a>
+            <!--{/if}-->
+        <!--{/if}-->
+        </div>
+        <div class="wpdown_zt wpdownfl">
+         <div class="wpdown_jg wpdownfl">
+         <!--{if $attach['price']}-->
+         <a>{$pan_zhejia}</a>
+         <!--{else}-->
+         <a class="mb">{lang threed_dazhe:style4}</a>
+         <!--{/if}-->
+         </div>
+         <div class="wpdown_jg wpdownfl">
+         <!--{if !$attach['price']|| ($attach['payed']&&$_G[uid])}-->
+         <div class="yj">{lang threed_dazhe:style5}</div>
+         <!--{else}-->
+         <div class="yj" style="background-color: #ca4242;">{lang threed_dazhe:style6}</div>
+         <!--{/if}-->
+           <div>
+            <p>{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}</p>
+            <!--{if $pan_zhejia<$pan_yuanjia}--><p class="jjg">{lang threed_dazhe:yuanjia}{$pan_yuanjia}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}</p>
+            <!--{/if}-->
+           </div>
+         </div>
+       </div>  
+        {$thd_panurl}
+    </div>
+  <div class="wpdown_min">
+	
+  </div>
+</div>
+<!--{/block}-->
+<!--{eval}-->
+<!--
+	return $return;
+}
+-->
+<!--{/eval}-->

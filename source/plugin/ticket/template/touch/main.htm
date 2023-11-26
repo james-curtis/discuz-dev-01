@@ -1,0 +1,36 @@
+<!--{template common/header}-->
+<style>
+.toplist { position:fixed; top:0; height:36px; line-height:36px; width:100%; background:#13b7f6; z-index:99999}
+.toplist li {width:33%;float:left; text-align:center}
+.toplist li a{color:#fff;}
+</style>
+<div id="wp" class="wp" style="margin-bottom:10px;">
+    <script type="text/javascript" src="static/js/mobile/jquery.min.js"></script>
+    <!--mian start-->    
+    <div id="ct" class="n wp cl">
+        <div class="mn">
+        	<ul class="tb cl toplist">
+            	<li{if $mod == 'types' || $mod == 'add'} class="a"{/if}><a href="plugin.php?id=ticket"><span>{lang ticket:tlang02}</span></a></li>
+            	{if !$admin}
+                <li><a href="plugin.php?id=ticket&mod=list&type=1" title="{lang ticket:tlang08}" class="hidefocus"><span>{lang ticket:tlang05}</span></a></li>
+            <li><a href="plugin.php?id=ticket&mod=list&type=2" title="{lang ticket:tlang09}" class="hidefocus"><span>{lang ticket:tlang06}</span></a></li>{/if}
+                {if $admin}<li><a href="plugin.php?id=ticket&mod=admin&type=1" title="{lang ticket:tlang08}" class="hidefocus"><span>{lang ticket:tlang05}</span></a></li>
+            <li><a href="plugin.php?id=ticket&mod=admin&type=2" title="{lang ticket:tlang09}" class="hidefocus"><span>{lang ticket:tlang06}</span></a></li>{/if}
+            </ul>
+        </div>
+        <div style="margin-top:46px;">
+        <!--other-->   
+        {if $mod == 'types'}
+        	<!--{template ticket:types}-->
+        {elseif $mod == 'add'}
+        	<!--{template ticket:add}-->
+        {elseif $mod == 'list' || $mod == 'admin'}
+        	<!--{template ticket:list}-->
+        {elseif $mod == 'view'}
+        	<!--{template ticket:view}-->
+        {/if}
+        </div>
+    </div>
+    <!--mian end-->    
+</div>
+<!--{template common/footer}-->

@@ -1,0 +1,42 @@
+<!--{template common/header}-->
+<!--{template phpdisk_mini:default/header}-->
+<!--{template phpdisk_mini:default/nav_bar}-->
+<div class="bm bmw">
+<div class="bm_h cl">
+<h2>{lang phpdisk_mini:setting item}</h2>
+</div>
+<form method="post" action="plugin.php?id=phpdisk_mini:phpdisk">
+<input type="hidden" name="action" value="settings" />
+<input type="hidden" name="task" value="settings" />
+<input type="hidden" name="formhash" value="$formhash" />
+<table width="98%" align="center" cellpadding="4" cellspacing="0" border="0" class="tb tb2 td_line">
+<tr>
+	<td width="40%"><span class="f14">{lang phpdisk_mini:phpdisk frame mode}:</span></td>
+	<td><input type="radio" name="setting[frame_mode]" value="1" {eval echo ifchecked($myset[frame_mode],1)} />{lang phpdisk_mini:frame mode}&nbsp;&nbsp;
+	<input type="radio" name="setting[frame_mode]" value="0" {eval echo ifchecked($myset[frame_mode],0)}/>{lang phpdisk_mini:noframe mode}
+	</td>
+</tr>
+<tr>
+	<td><span class="f14">{lang phpdisk_mini:show_subfolder}:</span><br /><span class="txtgray2">{lang phpdisk_mini:show_subfolder tips}</span></td>
+	<td><input type="radio" name="setting[show_subfolder]" value="1" {eval echo ifchecked($myset[show_subfolder],1)} />{lang phpdisk_mini:yes}&nbsp;&nbsp;
+	<input type="radio" name="setting[show_subfolder]" value="0" {eval echo ifchecked($myset[show_subfolder],0)}/>{lang phpdisk_mini:no}
+	</td>
+</tr>
+<tr>
+	<td><span class="f14">{lang phpdisk_mini:upload_in_share}:</span><br /><span class="txtgray2">{lang phpdisk_mini:upload_in_share tips}</span></td>
+	<td><input type="radio" name="setting[upload_in_share]" value="1" {eval echo ifchecked($myset[upload_in_share],1)} />{lang phpdisk_mini:yes}&nbsp;&nbsp;
+	<input type="radio" name="setting[upload_in_share]" value="0" {eval echo ifchecked($myset[upload_in_share],0)}/>{lang phpdisk_mini:no}
+	</td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+	<td><input type="submit" class="pnc pn" value="{lang phpdisk_mini:btn_submit}" /></td>
+</tr>
+</table>
+</form>	
+</div>
+
+</div>
+<div class="clear"></div>
+<!--{template phpdisk_mini:default/footer}-->
+<!--{template common/footer}-->

@@ -1,0 +1,29 @@
+<style>
+.datalist table { margin-bottom: 20px;width: 100%; border: 1px solid #E6E7E1;}
+.datalist table td {border-bottom:1px solid #E6E7E1; padding:20px 0;}
+.datalist table td:hover {background:#f9fafc}
+.type {min-height:60px; position:relative}
+.type .icon {position:absolute;left:8px;}
+.type .z {margin-left:60px}
+.type p a {color:#06C}
+</style>
+<div class="datalist">
+<table width="100%" border="0" cellpadding="5" class="dt mtm">
+	{loop $types $key $type}
+	<tr>
+    <td>
+    	<div class="type">
+    		<div class="icon"><img src="source/plugin/ticket/static/images/wen.png" /></div>
+    		<div class="z">
+            	<h2>{$type['t_name']}</h2>
+                <p>{$type['t_desc']}<br />
+            		<a href="plugin.php?id=ticket&mod=add&type={$type['t_id']}">{lang ticket:tlang23}</a>
+            	</p>
+            </div>
+        </div>
+    </td>
+    
+    </tr>
+    {/loop}
+</table>    	
+</div>

@@ -1,0 +1,110 @@
+.buttonright{
+float:left;
+margin-left:5px;
+font-size:14px;
+margin-top:-5px;
+padding-top: 0px;
+overflow:hidden;
+max-width: 550px;
+color: #aaa;
+}
+
+.buttonright em{
+color: #aaa;
+}
+
+.buttonright a{
+text-decoration:none;
+font-size:12px;
+}
+
+.newfujian {
+margin:10px auto;
+border:1px solid #cedebd;
+background:#fdfefb;
+height:60px;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+border-radius:3px;
+padding:10px;
+overflow:hidden;
+}
+
+.fileico {
+width:35px;
+height:44px;
+background:url(fileico.png) 0px 0;
+float:left;
+margin:5px auto;
+}
+
+.filecont {
+float:left;
+padding:0 0 0 10px;
+text-indent:0 !important;
+}
+
+.newfujian .filetit {
+height:27px;
+font-size:14px;
+line-height:25px;
+letter-spacing:1px;
+font-family: "Microsoft Yahei ";
+}
+
+.newfujian .filetit span.filename {
+max-width:500px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.newfujian .filetit span {
+font-size:12px;
+color:#999;
+float:left;
+font-family:arial;
+letter-spacing:0;
+}
+
+.newfujian .filetit a {
+color:#666;
+text-decoration:none;
+max-width:490px;
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipsis;
+}
+
+.newfujian .filetit a:hover {
+text-decoration:underline;
+}
+
+.newfujian .fileaq {
+height:15px;
+background:url(fileaq.png) no-repeat;
+padding-left:18px;
+font-size:12px;
+color:#73B010;
+letter-spacing:0;
+line-height:14px;
+font-family:arial;
+margin-top:8px;
+}
+
+.down_2 {
+float:right;
+margin:3px auto;
+}
+
+.down_2 a {
+width:130px;
+height:42px;
+display:block;
+background:url(down_2.jpg) no-repeat -2px -1px;
+overflow:hidden;
+}
+
+.down_2 a:hover {
+background:url(down_2.jpg) no-repeat -2px -46px;
+}

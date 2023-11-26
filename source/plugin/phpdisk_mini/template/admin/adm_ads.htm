@@ -1,0 +1,43 @@
+<form method="post" action="{$curr_url}&task=save">
+<input type="hidden" name="formhash" value="{$formhash}" />
+<table width="98%" align="center" cellpadding="4" cellspacing="0" border="0" class="tb tb2">
+<tr>
+	<th colspan="15" class="partition">{lang phpdisk_mini:mydisk ads setting}</th>
+</tr>
+<tr>
+	<td colspan="2" class="partition"><b>{lang phpdisk_mini:viewfile_ads}:</b></td>
+</tr>
+<tr>
+	<td width="30%"><b>{lang phpdisk_mini:viewfile_right}:</b></td>
+	<td><textarea rows="6" name="set[viewfile_right]" cols="50" class="tarea">{$settings[viewfile_right]}</textarea></td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:viewfile_top}:</b></td>
+	<td><textarea rows="6" name="set[viewfile_top]" cols="50" class="tarea">{$settings[viewfile_top]}</textarea></td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:viewfile_dl_header}:</b></td>
+	<td><textarea rows="6" name="set[viewfile_dl_header]" cols="50" class="tarea">{$settings[viewfile_dl_header]}</textarea></td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:viewfile_dl_footer}:</b></td>
+	<td><textarea rows="6" name="set[viewfile_dl_footer]" cols="50" class="tarea">{$settings[viewfile_dl_footer]}</textarea></td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:viewfile_bottom}:</b></td>
+	<td><textarea rows="6" name="set[viewfile_bottom]" cols="50" class="tarea">{$settings[viewfile_bottom]}</textarea></td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:viewfile_codes}:</b></td>
+	<td><textarea rows="6" name="set[viewfile_codes]" cols="50" class="tarea">{$settings[viewfile_codes]}</textarea></td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:search_right}:</b></td>
+	<td><textarea rows="6" name="set[search_right]" cols="50" class="tarea">{$settings[search_right]}</textarea></td>
+</tr>
+<tr>
+	<td class="td27">&nbsp;</td>
+	<td><input type="submit" class="btn" name="editsubmit" title="{lang phpdisk_mini:submit tips}" value="{lang phpdisk_mini:update}" /></td>
+</tr>
+</table>
+</form>

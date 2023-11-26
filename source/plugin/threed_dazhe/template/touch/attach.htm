@@ -1,0 +1,54 @@
+<!--{eval}-->
+<!--
+
+function get_attach_temp($attach,$pan_zhejia,$pan_yuanjia,$daydownnum,$pan_downnum,$aid,$aidencode,$is_archive,$groupsname) {
+    global $_G;
+    $pan_option = $_G['cache']['plugin']['threed_dazhe'];
+    $thd_panurl = $pan_option['thd_panurl'];
+    $thd_youke = $pan_option['thd_youke'];
+-->
+<!--{/eval}-->
+<!--{block return}-->
+<link rel="stylesheet" type="text/css" href="source/plugin/threed_dazhe/template/touch/panattach.css">
+<div class="claim_div">
+<div class="claimListwi">
+<span>
+  <div class="apL_claim_Img">
+  <img src="source/plugin/threed_dazhe/template/touch/zip.gif" width="30" height="30" border="0">
+  </div>
+  <div class="apL_claim_rtext">
+    <div class="apL_claim_rli apL_claimHeight">
+    <p class="apL_Title"><span>{$attach[filename]}</span></p>
+    <p class="apL_xinxi"><span>{lang threed_dazhe:attachsize}<em>{$attach[attachsize]}</em></span><span>{lang threed_dazhe:attachdownloads}<em>{$attach[downloads]}</em></span></p>
+      <p class="apL_xinxi"><!--{if $attach['price']}--><span>{lang threed_dazhe:attachprice}{$pan_zhejia}<!--{if $pan_zhejia<$pan_yuanjia}-->({lang threed_dazhe:yuanjia}<del>{$pan_yuanjia}</del>)<!--{/if}-->{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}</span><!--{/if}--><span>{lang threed_dazhe:attachreadperm}{$groupsname}</span></p>
+          </div>
+  </div>
+  </span>
+    <!--{if !$attach['price']|| ($attach['payed']&&$_G[uid])}-->
+        <!--{if $_G['cache']['usergroups'][$_G[groupid]][readaccess]>=$attach[readperm]&&($_G[uid]||(!$_G[uid]&&$thd_youke))}-->
+            <!--{if $attach['ext']=='pan'}-->
+            <a href="plugin.php?id=threed_attach:downld&aid={$aid}&url={$attach_url}&name={$attach[filename]}&auth={$attach[uid]}&formhash={FORMHASH}" target="_blank" rel="nofollow" style="text-decoration:none;" class="apL_claim_tbr">
+            <!--{else}-->
+            <a href="forum.php?mod=attachment{$is_archive}&aid={$aidencode}" target="_blank" rel="nofollow" style="text-decoration:none;" class="apL_claim_tbr">
+            <!--{/if}-->
+            {lang threed_dazhe:mobile1}</a>
+   	    <!--{else}-->
+          <a href="plugin.php?id=threed_dazhe:alert&ac=noaccess" target="_blank" rel="nofollow" style="text-decoration:none;" class="apL_claim_tbr">{lang threed_dazhe:mobile4}</a>
+        <!--{/if}-->
+	<!--{else}-->
+       <!--{if !$pan_downnum||$daydownnum<$pan_downnum||($daydownnum>=$pan_downnum&&$pan_over>0)}-->
+           <a href="plugin.php?id=threed_dazhe:payfor&ac=buy&aid={$attach[aid]}&daynum={$daydownnum}&formhash={FORMHASH}" rel="nofollow" style="text-decoration:none;" class="apL_claim_tbr">{lang threed_dazhe:mobile2}({$pan_zhejia}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]})</a>    
+       <!--{else}-->
+       <a href="plugin.php?id=threed_dazhe:alert&ac=nodown&daynum={$daydownnum}&pannum={$pan_downnum}" target="_blank" rel="nofollow" style="text-decoration:none;" class="apL_claim_tbr">{lang threed_dazhe:mobile3}</a>
+       <!--{/if}-->
+	<!--{/if}-->
+    
+  </div>
+</div>
+<!--{/block}-->
+<!--{eval}-->
+<!--
+	return $return;
+}
+-->
+<!--{/eval}-->

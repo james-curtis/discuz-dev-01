@@ -1,0 +1,51 @@
+<!--{eval}-->
+<!--
+
+function get_attach_temp($attach,$pan_zhejia,$pan_yuanjia,$daydownnum,$pan_downnum,$aid,$aidencode,$is_archive,$groupsname) {
+    global $_G;
+    $pan_option = $_G['cache']['plugin']['threed_dazhe'];
+    $thd_panurl = $pan_option['thd_panurl'];
+    $thd_youke = $pan_option['thd_youke'];
+-->
+<!--{/eval}-->
+<!--{block return}-->
+
+<link rel="stylesheet" type="text/css" href="source/plugin/threed_dazhe/template/style2/style.css">
+<div class="newfujian">
+<div style="clear:both;text-decoration:none;overflow:hidden;" class="tab_button">
+    <div class="fileico rar"></div>
+			<div class="buttonright">
+            <span style="white-space: nowrap;"><em >{lang threed_dazhe:attachname}</em>{$attach[filename]}&nbsp;</span><br>
+            <em >{lang threed_dazhe:attachdownloads}</em>{$attach[downloads]}&nbsp;&nbsp;<em>{lang threed_dazhe:attachsize}</em>{$attach[attachsize]}&nbsp;
+            <!--{if $attach['price']}--><em>{lang threed_dazhe:attachprice}</em>{$pan_zhejia}<!--{if $pan_zhejia<$pan_yuanjia}-->({lang threed_dazhe:yuanjia}<del>{$pan_yuanjia}</del>)<!--{/if}-->{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}  <a href="forum.php?mod=misc&amp;action=viewattachpayments&amp;aid=$attach['aid']" onclick="showWindow('attachpay', this.href)" target="_blank">[{lang threed_dazhe:recorde}]</a><!--{/if}--><br>
+     <em>{lang threed_dazhe:attachreadperm}</em> <a target="_blank" href="/home.php?mod=spacecp&amp;ac=usergroup&amp;gid=$groupid"  rel="nofollow" class="xi2" style="text-decoration:none;"><font style="font-size:14px;" >{$groupsname}&nbsp;</font></a>{$thd_panurl} </div>
+                 <div class="down_2">
+            <!--{if !$attach['price']|| ($attach['payed']&&$_G[uid])}-->
+            <!--{if $_G['cache']['usergroups'][$_G[groupid]][readaccess]>=$attach[readperm]&&($_G[uid]||(!$_G[uid]&&$thd_youke))}-->
+                <!--{if $attach['ext']=='pan'}-->
+        <a href="plugin.php?id=threed_attach:downld&aid={$aid}&formhash={FORMHASH}" target="_self" ></a>
+                <!--{else}-->
+        <a href="forum.php?mod=attachment{$is_archive}&aid={$aidencode}" rel="nofollow" target="_self" ></a>
+                <!--{/if}-->
+            <!--{else}-->
+        <a href="plugin.php?id=threed_dazhe:alert&ac=noaccess" rel="nofollow" target="_self" ></a>
+            <!--{/if}-->
+        <!--{else}-->
+            <!--{if !$pan_downnum||$daydownnum<$pan_downnum||($daydownnum>=$pan_downnum&&$pan_over>0)}-->
+        <a href="plugin.php?id=threed_dazhe:payfor&ac=buy&aid={$attach[aid]}&daynum={$daydownnum}&formhash={FORMHASH}" onclick="showWindow('paybox', this.href)" rel="nofollow" target="_self" ></a>
+            <!--{else}-->
+        <a href="plugin.php?id=threed_dazhe:alert&ac=nodown&daynum={$daydownnum}&pannum={$pan_downnum}" rel="nofollow" target="_self" ></a>
+            <!--{/if}-->
+        <!--{/if}-->
+        <div class="fileaq">{lang threed_dazhe:style7}</div>
+                 </div>
+     </div>
+
+     </div>
+<!--{/block}-->
+<!--{eval}-->
+<!--
+	return $return;
+}
+-->
+<!--{/eval}-->

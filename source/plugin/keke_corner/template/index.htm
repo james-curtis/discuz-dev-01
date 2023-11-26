@@ -1,0 +1,24 @@
+<!--{block return}-->
+<link  href="source/plugin/keke_corner/template/img/css.css"  rel="stylesheet"  type="text/css">
+<div class="float_mask" id="float_mask">
+    <div class="float_layer">
+    </div>
+    <div class="float_content clearfix">
+        <div class="float_bg">
+            <a target="_blank" href="{$link}" title='{$content}'>
+                <div class="float_slogan"></div>
+                 <div class="float_slogana" style="color:{$color}">{$content}</div>
+            </a>
+        </div>
+        <div class="float_close">
+            <a onclick="closeFootAd()" title="close"></a>
+        </div>
+    </div>
+</div>
+<script>
+
+function closeFootAd() {
+	document.getElementById("float_mask").style.display="none";	
+} 
+</script>
+<!--{/block}-->

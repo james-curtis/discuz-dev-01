@@ -1,0 +1,88 @@
+<!--{eval}-->
+<!--
+
+function show_attach($attach) {
+	global $_G;
+    //print_r($_G['cache']['usergroups'][$_G[groupid]][readaccess]);
+    $thd_panurl=$_G['cache']['plugin']['threed_attach']['thd_panurl'];
+    $uid=$_G['uid'];
+    //附件处理
+   	$aidencode = packaids($attach);
+	$is_archive = $_G['forum_thread']['is_archived'] ? '&fid='.$_G['fid'].'&archiveid='.$_G[forum_thread][archiveid] : '';
+    //用户名处理
+    $groupsname = "{lang threed_attach:attach1}";
+    $groupid =1;
+    if ($attach[readperm] == 0)
+        {$groupsname = "{lang threed_attach:attach2}";
+        $groupid =$_G[groupid];}
+    else {
+        foreach ($_G['cache']['usergroups'] as $av => $groups) {
+            if ($groups['readaccess'] == $attach[readperm]) {
+                $groupsname = $groups['grouptitle'];
+                $groupid = $av;
+                break;
+            } else {
+                continue;
+            }
+        }
+    }
+    if($attach['ext']=='pan'){
+        $attach_url=base64_encode($attach[attachment]);
+         $filename=str_replace('.pan','',$attach[filename]);
+         $aid=($attach['aid']+3)*7+131;
+         $aid=base64_encode($aid);         
+         }
+-->
+<!--{/eval}-->
+<!--{block return}-->
+<div>
+<link rel="stylesheet" type="text/css" href="source/plugin/threed_attach/template/panattach.css">
+<div style="clear:both; width:100%;text-decoration:none;overflow:hidden;" class="tab_button">
+<input type="hidden" name="urlid" value="CDF6307B-58E8-550B-8044-A330AD87BA1D">
+    <!--{if !$attach['price'] || ($attach['payed']&&$_G[uid])}-->
+    <div class="button">
+        <!--{if $_G['cache']['usergroups'][$_G[groupid]][readaccess]>=$attach[readperm]}-->
+            <!--{if $attach['ext']=='pan'}-->
+            <a href="plugin.php?id=threed_attach:downld&aid={$aid}&formhash={FORMHASH}" target="_blank" rel="nofollow" style="text-decoration:none;">
+            <!--{else}-->
+            <a href="forum.php?mod=attachment{$is_archive}&aid={$aidencode}" target="_blank" rel="nofollow" style="text-decoration:none;">
+            <!--{/if}-->
+    <img src="source/plugin/threed_attach/template/4.gif" class="vm" alt="" border="0"><font style=" color:#fff !important;"> {lang threed_attach:attachdown}</font></a>
+      <p class="top">{lang threed_attach:attach3}</p>
+      <p class="bottom">{lang threed_attach:attachdownlogin_ok}$_G['cache']['usergroups'][$_G[groupid]][grouptitle]</p>
+	   <!--{else}-->
+        <a href="forum.php?mod=attachment{$is_archive}&aid={$aidencode}" target="_blank" rel="nofollow" style="text-decoration:none;">
+        <img src="source/plugin/threed_attach/template/4.gif" class="vm" alt="" border="0"><font style=" color:#F88427 !important;"> {lang threed_attach:attachdown}</font></a>
+        <p class="top">{lang threed_attach:attach4}</p>
+       <p class="bottom">{lang threed_attach:attachdownlogin_ok}$_G['cache']['usergroups'][$_G[groupid]][grouptitle]</p>
+        <!--{/if}-->
+    </div>
+    <!--{else}--> 
+    <div class="button">
+            <a href="forum.php?mod=misc&action=attachpay&aid=$attach[aid]&tid=$attach[tid]" onclick="showWindow('attachpay', this.href)" rel="nofollow" style="text-decoration:none;"><img src="source/plugin/threed_attach/template/4.gif" class="vm" alt="" border="0"><font style=" color:#ccc !important;"> {lang threed_attach:attachdown}</font></a>
+            <!--{if $_G[uid]}-->
+    <p class="top">{lang threed_attach:attach4}</p>
+    <p class="bottom">{lang threed_attach:attachdownlogin_ok}$_G['cache']['usergroups'][$_G[groupid]][grouptitle]</p>
+            <!--{else}-->
+      <p class="top">{lang threed_attach:attachdownreg}</p>
+      <p class="bottom">{lang threed_attach:attachdownlogin}</p>
+            <!--{/if}-->
+    </div>
+	<!--{/if}-->
+			<div class="buttonright">
+            <span style="white-space: nowrap;"><em >{lang threed_attach:attachname}</em>$filename&nbsp;</span><br>
+            <em >{lang threed_attach:attachdownloads}</em>$attach[downloads]&nbsp;&nbsp;<em>{lang threed_attach:attachsize}</em>$attach[attachsize]&nbsp;
+            <!--{if $attach['price']}-->
+            <em>{lang threed_attach:attachprice}</em>$attach[price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}<a href="forum.php?mod=misc&action=viewattachpayments&amp;aid=$attach['aid']" onclick="showWindow('attachpay', this.href)" target="_blank">[{lang threed_attach:recorde}]</a>
+            <!--{/if}-->
+            <br/>
+            
+     <em>{lang threed_attach:attachreadperm}</em> <a target="_blank" href="/home.php?mod=spacecp&amp;ac=usergroup&gid=$groupid"  rel="nofollow" class="xi2" style="text-decoration:none;"><font style="font-size:14px;" >$groupsname&nbsp;</font></a> $thd_panurl </div></div><br />
+     </div>
+<!--{/block}-->
+<!--{eval}-->
+<!--
+	return $return;
+}
+-->
+<!--{/eval}-->

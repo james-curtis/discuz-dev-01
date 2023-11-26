@@ -1,0 +1,47 @@
+<!--{template common/header}-->
+<!--{template phpdisk_mini:default/header}-->
+<div class="v_box">
+<div $style>
+<form method="get" action="{eval echo urr("plugin","")}" id="pds_form1">
+<input type="hidden" name="id" value="phpdisk_mini" />
+<input type="hidden" name="action" value="pub_search" />
+<input type="text" id="word" name="word" style="padding:5px; font-size:14px;" $size placeholder="{lang phpdisk_mini:pls input keywords2}" value="{$word}" />
+<input type="button" onclick="return dosearch();" class="pnc pn" style="margin-top:-5px; padding:5px; height:35px; font-size:14px;" value="{lang phpdisk_mini:btn_search_file}"/>
+</form>
+</div>
+<script type="text/javascript">
+function dosearch(){
+	if(jq('#word').val()==''){
+	jq('#word').focus();
+	return false;
+	}else{
+	jq('#pds_form1').submit();
+	}
+}
+</script>
+<!--{if $word}-->
+	<div class="vl" style="border:1px solid #CDCDCD; margin-top:5px; padding-left:3px; width:69%">
+	<!--{if count($file_list)}-->
+	<!--{loop $file_list $v}-->
+	<div class="s_item">
+	<div class="s_tit">{eval echo file_icon($v[file_extension],'filetype_32')}<a href="$v[a_view]" target="_blank">$v[file_name]</a></div>
+	<div class="s_other">{lang phpdisk_mini:file size}:{$v[file_size]}, {lang phpdisk_mini:upload time}:$v[file_time], {lang phpdisk_mini:file view}:{$v[file_views]} {lang phpdisk_mini:num}, {lang phpdisk_mini:file down}:{$v[file_downs]} {lang phpdisk_mini:num}</div>
+	</div>
+	<!--{/loop}-->
+	$multi
+	<!--{else}-->
+	<div style="padding:5px; font-size:14px;">{lang phpdisk_mini:no_search_file}</div>
+	<!--{/if}-->
+	</div>
+	<div class="vr">
+	<div style="margin-top:5px; border:1px #CDCDCD solid">
+	{eval show_ads('search_right');}
+	</div>
+	</div>
+<!--{/if}-->	
+</div>
+
+<div class="clear"></div>
+
+<!--{template phpdisk_mini:default/footer}-->
+<!--{template common/footer}-->

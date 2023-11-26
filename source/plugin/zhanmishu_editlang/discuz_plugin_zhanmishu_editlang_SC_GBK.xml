@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+	<item id="Time"><![CDATA[2016-03-09 18:36]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://plugin/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[¡¾ZMS¡¿²å¼þÓïÑÔ°ü±à¼­ÐÞ¸Ä]]></item>
+			<item id="identifier"><![CDATA[zhanmishu_editlang]]></item>
+			<item id="description"><![CDATA[Äú¹ºÂòÁË²å¼þ£¬Ê±³£ÏëÐÞ¸Ä²å¼þÀïÃæµÄÎÄ×Ö°É£¬±¾²å¼þ¿ÉÐÞ¸Ä²å¼þµÄÄ£°å¡¢½Å±¾ÓïÑÔ°ü¡£]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[zhanmishu_editlang/]]></item>
+			<item id="copyright"><![CDATA[Õ¾ÃØÊé(³É¶¼ÖÇ²â¿Æ¼¼ÓÐÏÞ¹«Ë¾)]]></item>
+			<item id="version"><![CDATA[v1.1.0]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[edit]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[±à¼­ÓïÑÔ°ü]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[restore]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[»Ö¸´±¸·Ý]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="pluginlanguage_script"><![CDATA[²å¼þ½Å±¾ÓïÑÔ°ü]]></item>
+				<item id="pluginlanguage_template"><![CDATA[²å¼þÄ£°åÓïÑÔ°ü]]></item>
+				<item id="pluginlanguage_install"><![CDATA[²å¼þ°²×°ÓïÑÔ°ü]]></item>
+				<item id="please_choose_cat"><![CDATA[ÇëÑ¡Òª±à¼­µÄ²å¼þÓïÑÔ°üÀà±ð]]></item>
+				<item id="please_choose_plugin"><![CDATA[ÇëÑ¡ÔñÐèÒª±à¼­ÓïÑÔ°üµÄ²å¼þ]]></item>
+				<item id="backs"><![CDATA[±¸·ÝÁÐ±í]]></item>
+				<item id="somethingwrong"><![CDATA[·¢ÉúÁË´íÎó]]></item>
+				<item id="del_success"><![CDATA[É¾³ý³É¹¦]]></item>
+				<item id="restore_success"><![CDATA[»Ö¸´³É¹¦]]></item>
+				<item id="please_edit"><![CDATA[µã»÷ÐÞ¸Ä]]></item>
+				<item id="sendlog"><![CDATA[·¢ËÍÈÕÖ¾]]></item>
+				<item id="cannot_restore"><![CDATA[Êý¾Ý´íÎó£¬ÎÞ·¨»Ö¸´]]></item>
+				<item id="back_str"><![CDATA[±¸·ÝÕæÊµÂ·¾¶£¨¿É´ÓÎÄ¼þÖÐÉ¾³ý±¸·Ý£©]]></item>
+				<item id="back_cat"><![CDATA[±¸·ÝÀà±ð]]></item>
+				<item id="back_time"><![CDATA[±¸·ÝÊ±¼ä]]></item>
+				<item id="act"><![CDATA[²Ù×÷]]></item>
+				<item id="isrestore"><![CDATA[ÊÇ·ñÒª»Ö¸´±¸·Ý£¿£¬½«¸²¸Çµ±Ç°Êý¾Ý]]></item>
+				<item id="isdel"><![CDATA[ÊÇ·ñÉ¾³ý£¿É¾³ýÎÞ·¨»Ö¸´]]></item>
+				<item id="restore"><![CDATA[»Ö¸´±¸·Ý]]></item>
+				<item id="del"><![CDATA[É¾³ý±¸·Ý]]></item>
+				<item id="editlangtips"><![CDATA[<li>±¾²å¼þ¿ÉÐÞ¸Ä²å¼þÓïÑÔ°ü£¬¶ÔÓÚÄ£°å»º´æºóµÄÓïÑÔ°ü£¬ÐèÒª¸üÐÂÄ£°å»º´æ²Å»áÉúÐ§</li>
+  <li>Èç²å¼þ¿ªÆôÁË¿ª·¢Ä£Ê½£¬ÇÒ²å¼þ°²×°xmlÎÄ¼þ»òÕßÓïÑÔ°üÎÄ¼þ»¹ÔÚ£¬±¾²å¼þ¿ÉÄÜÎÞÐ§£¬Äã¿ÉÖ±½ÓÐÞ¸Ä²å¼þÓïÑÔ°ü¼´¿É</li><li>±¾²å¼þ·ÖÎªÃâ·Ñ°æºÍÉÌÒµ°æ£¬Ãâ·Ñ°æ½öÄÜÐÞ¸ÄÕ¾ÃØÊé²å¼þ£¬Ò²¾ÍÊÇÎÒÃÇ×Ô¼º¿ª·¢µÄ²å¼þ£¬ÉÌÒµ°æ¿ÉÐÞ¸ÄËùÓÐ»î¶¯£¨ÒÑ¾­ÆôµÄ²å¼þ£©²å¼þÓïÑÔ°ü</li>]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="mobile_lable"><![CDATA[ÊÖ»úºÅ:]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

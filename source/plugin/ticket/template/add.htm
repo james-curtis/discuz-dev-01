@@ -1,0 +1,53 @@
+<div style="width:100%; margin:10px 0;">{$pVars['tips']}</div>
+<link rel="stylesheet" type="text/css" href="source/plugin/ticket/static/css/wangEditor.min.css">
+<script type="text/javascript" src="source/plugin/ticket/static/js/wangEditor{if $_G['charset'] == 'gbk'}_gbk{/if}.min.js"></script>
+<style type="text/css">
+#editor-trigger {height: 300px;}
+.container {width: 100%;margin: 0 auto;position: relative;}
+</style>
+	<form action="" method="post">
+    
+    {if count($extends) || $addons}
+    <table cellspacing="0" cellpadding="0" class="tfm"  style="margin-left:10px;">
+    	{loop $extends $extend}
+		<tr>
+        	<th>{if $extend[2]}<span class="rq">*</span>{/if}{$extend[0]}</th>
+            <td><input type="text" class="px" name="{$extend[1]}" /></td>
+        </tr>
+        {/loop}
+        {if $addons}
+        <tr>
+        	<th>{if $extend[2]}<span class="rq">*</span>{/if}{lang ticket:tlang10}</th>
+            <td>
+            	<select name="addon" required>
+                	<option value="0">{lang ticket:tlang11}</option>
+                	<!--{loop $addons $addon}-->
+                    <option value="{$addon['addonid']}">{$addon['name']}</option>
+                    <!--{/if}-->
+                </select>
+            </td>
+        </tr>
+        <tr>
+        	<th>{if $extend[2]}<span class="rq">*</span>{/if}{lang ticket:tlang12}</th>
+            <td><input type="text" class="px" name="siteuid" />&nbsp;{lang ticket:tlang13}&nbsp;<a href="http://www.ymg6.com/gg/addon.php?/index.php?ac=info" target="_blank">http://www.ymg6.com/gg/addon.php?/index.php?ac=info</a></td>
+        </tr>
+        {/if}
+    </table>
+    {/if}
+	<div id="editor-container" class="container">
+        <div id="editor-trigger"></div>
+    </div>
+    <input type="hidden" id="content" name="content" />
+    <input type="hidden" value="{FORMHASH}" name="formhash" />
+    <br />
+	<button type="submi1t" name="submit" id="submit" onclick="html()" value="true" class="pn pnc"><strong>{lang ticket:tlang02}</strong></button>
+    </form>
+    <script type="text/javascript">
+		function html(){
+			jq("#content").val(jq("#editor-trigger").html());
+		}
+        var editor = new wangEditor('editor-trigger');
+        editor.config.uploadImgUrl = 'plugin.php?id=ticket&mod=upload&t_id={$t_id}';
+       	editor.config.menus = ['bold','underline','eraser','forecolor','fontsize','link','unlink','img','insertcode','undo','redo','fullscreen'];
+        editor.create();
+    </script>

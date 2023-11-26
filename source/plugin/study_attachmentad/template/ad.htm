@@ -1,0 +1,28 @@
+{template common/header}
+<div class="bm bw0">
+	<h3 class="flb" style="font-size:14px">	
+    <em>{$lang[down]}</em>		
+    <!--{if $_G[inajax]}-->
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('study_attachmentad')" title="{lang close}">{lang close}</a></span>
+		<!--{/if}-->
+	</h3>
+	<div class="c yeei_dw">
+		<div style="border:1px solid #D9D9D9;margin:10px 0 5px;">
+    <p style=" background:#F5F5F5; border:none"><em>{$lang[filename]}</em><font color="#008000">$file_infos[filename]</font></p>
+		<p><em>{$lang[filesize]}</em>$file_infos[filesize]</p>
+		<p><em>{$lang[dateline]}</em>$file_infos['dateline']</p>
+		<!--{if !$_G['cache']['plugin']['dc_downlimit']['open']}-->
+		<p><em>{$lang[downloads]}</em>$file_infos['downloads']</p>
+		<!--{/if}-->
+		$file_infos['count']
+		</div>
+		<div>$S_a[top_ad]</div>
+		<div style="padding-top:{$top_px}px;padding-bottom:{$bottom_px}px;"><a href="$url" onclick="hideWindow('study_attachmentad')"><img src="source/plugin/study_attachmentad/images/yeei_down.png" /></a></div>
+		<div>$S_a[bottom_ad]</div>
+	</div>
+</div>
+<style type="text/css">
+.yeei_dw em{ color:#777}
+.yeei_dw p{ border-top:1px solid #D9D9D9; padding:3px 10px 2px 10px}
+</style>
+{template common/footer}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="dz1">
+    <serverData>
+      <paths name="dz1">
+        <serverdata>
+          <mappings>
+            <mapping deploy="\" local="$PROJECT_DIR$/dwzgzs_ccdefend_free" web="/" />
+            <mapping deploy="\" local="$PROJECT_DIR$" web="\" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="test">
+        <serverdata>
+          <mappings>
+            <mapping deploy="\" local="$PROJECT_DIR$/dwzgzs_ccdefend_free" web="/" />
+            <mapping deploy="\" local="$PROJECT_DIR$" web="\" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

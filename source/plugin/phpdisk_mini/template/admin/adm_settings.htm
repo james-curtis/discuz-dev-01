@@ -1,0 +1,130 @@
+<!--{template phpdisk_mini:admin/adm_header}-->
+<table width="98%" align="center" cellpadding="4" cellspacing="0" border="0" class="tb tb2" id="phpdisk_news_box" style="display:none;border:1px #efefef solid">
+<tr>
+	<th colspan="15" class="partition">{lang phpdisk_mini:phpdisk news}</th>
+</tr>
+<tr>
+	<td colspan="15"><div id="phpdisk_news"></div></td>
+</tr>
+</table>
+<form method="post" action="$curr_url">
+<input type="hidden" name="task" value="setting" />
+<input type="hidden" name="formhash" value="{$formhash}" />
+<table width="98%" align="center" cellpadding="4" cellspacing="0" border="0" class="tb tb2">
+<tr>
+	<th colspan="15" class="partition">{lang phpdisk_mini:mydisk setting}</th>
+</tr>
+<tr>
+	<td width="40%"><b>{lang phpdisk_mini:file store dir}:</b><br /><span class="tips2">{lang phpdisk_mini:file store dir tips}</span></td>
+	<td><input type="text" name="set[file_path]" value="{$settings[file_path]}" maxlength="50" /></td>
+</tr>
+<tr>
+	<td ><b>{lang phpdisk_mini:upload_file_status}:</b><br /><span class="tips2">{lang phpdisk_mini:upload_file_status_tips}</span></td>
+	<td>
+	<div style="padding:5px 0"><input type="radio" name="set[upload_file_status]" value="0" {eval echo ifchecked(0,$settings['upload_file_status'])} />{lang phpdisk_mini:deny_upload}&nbsp;&nbsp;<input type="radio" name="set[upload_file_status]" value="1" {eval echo ifchecked(1,$settings['upload_file_status'])}/>{lang phpdisk_mini:can_upload}</div>
+	<textarea rows="6" name="set[deny_extension]" cols="50" class="tarea">{$settings['deny_extension']}</textarea>
+	</td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:one file size}:</b><br /><span class="tips2">{lang phpdisk_mini:one file size tips}</span></td>
+	<td><input type="text" name="set[max_file_size]" value="{$settings[max_file_size]}" maxlength="50" />&nbsp;{lang phpdisk_mini:curr_system}:{eval echo get_system_upload_max_size(0);}</td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:encrypt key}:</b><br /><span class="tips2">{lang phpdisk_mini:encrypt key tips}</span></td>
+	<td><input type="text" name="set[encrypt_key]" id="encrypt_key" value="{$settings[encrypt_key]}" maxlength="50" />&nbsp;<input type="button" value="{lang phpdisk_mini:make}" class="btn" onclick="make_code('encrypt_key',12);" /></td>
+</tr>
+<!--{if $auth[pd_auth]}-->
+<tr>
+	<td><b>{lang phpdisk_mini:dl_expire_time}:</b><br /><span class="tips2"></span></td>
+	<td><input type="text" name="set[dl_expire_time]" value="{$settings[dl_expire_time]}" maxlength="30" />{lang phpdisk_mini:second}</td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:rsync_time}:</b><br /><span class="tips2">{lang phpdisk_mini:rsync_time_tips}</span></td>
+	<td><input type="text" name="set[rsync_time]" value="{$settings[rsync_time]}" maxlength="30" />{lang phpdisk_mini:second}</td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:reg_user_day_downfile}:</b><br /><span class="tips2">{lang phpdisk_mini:reg_user_day_downfile_tips}</span></td>
+	<td><input type="text" name="set[reg_user_day_downfile]" value="{$settings[reg_user_day_downfile]}" maxlength="30" />{lang phpdisk_mini:per}</td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:guest_day_downfile}:</b><br /><span class="tips2">{lang phpdisk_mini:reg_user_day_downfile_tips}</span></td>
+	<td><input type="text" name="set[guest_day_downfile]" value="{$settings[guest_day_downfile]}" maxlength="30" />{lang phpdisk_mini:per}</td>
+</tr>
+<!--{/if}-->
+<tr>
+	<td><b>{lang phpdisk_mini:share to check}:</b><br /><span class="tips2">{lang phpdisk_mini:share to check tips}</span></td>
+	<td class='rowform'>
+		<ul onmouseover='altStyle(this);'>
+			<li><input type="radio" value="1" name="set[share_to_check]" class="radio" {eval echo ifchecked($settings[share_to_check],1)}>&nbsp;{lang phpdisk_mini:yes}</li>
+			<li><input type="radio" value="0" name="set[share_to_check]" class="radio" {eval echo ifchecked($settings[share_to_check],0)}>&nbsp;{lang phpdisk_mini:no}</li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td><b>{lang phpdisk_mini:show relate file}:</b><br /><span class="tips2">{lang phpdisk_mini:show relate file tips}</span></td>
+	<td class='rowform'>
+		<ul onmouseover='altStyle(this);'>
+			<li><input type="radio" value="1" name="set[show_relate]" class="radio" {eval echo ifchecked($settings[show_relate],1)}>&nbsp;{lang phpdisk_mini:yes}</li>
+			<li><input type="radio" value="0" name="set[show_relate]" class="radio" {eval echo ifchecked($settings[show_relate],0)}>&nbsp;{lang phpdisk_mini:no}</li>
+		</ul>
+	</td>
+</tr>
+<!--{if $auth[pd_auth]}-->
+<tr>
+	<td><b>{lang phpdisk_mini:preview_file}:</b><br /><span class="tips2">{lang phpdisk_mini:preview_file_tips}</span></td>
+	<td class='rowform'>
+		<ul onmouseover='altStyle(this);'>
+			<li><input type="radio" value="1" name="set[preview_file]" class="radio" {eval echo ifchecked($settings[preview_file],1)}>&nbsp;{lang phpdisk_mini:yes}</li>
+			<li><input type="radio" value="0" name="set[preview_file]" class="radio" {eval echo ifchecked($settings[preview_file],0)}>&nbsp;{lang phpdisk_mini:no}</li>
+		</ul>
+	</td>
+</tr>
+<!--{/if}-->
+<tr>
+	<td><b>{lang phpdisk_mini:open rewrite}:</b><br /><span class="tips2">{lang phpdisk_mini:open rewrite tips}</span></td>
+	<td class='rowform'>
+		<ul onmouseover='altStyle(this);'>
+			<li><input type="radio" value="1" name="set[open_rewrite]" class="radio" {eval echo ifchecked($settings[open_rewrite],1)}>&nbsp;{lang phpdisk_mini:yes}</li>
+			<li><input type="radio" value="0" name="set[open_rewrite]" class="radio" {eval echo ifchecked($settings[open_rewrite],0)}>&nbsp;{lang phpdisk_mini:no}</li>
+		</ul>&nbsp;<a href="http://bbs.phpdisk.com/thread-6551-1-1.html" target="_blank">{lang phpdisk_mini:rewrite rule url}</a>
+	</td>
+</tr>
+<!--{if $auth[pd_auth]}-->
+<tr>
+	<td><b>{lang phpdisk_mini:hide_license}:</b><br /><span class="tips2">{lang phpdisk_mini:hide_license_tips}</span></td>
+	<td class='rowform'>
+		<ul onmouseover='altStyle(this);'>
+			<li><input type="radio" value="1" name="set[hide_license]" class="radio" {eval echo ifchecked($settings[hide_license],1)}>&nbsp;{lang phpdisk_mini:yes}</li>
+			<li><input type="radio" value="0" name="set[hide_license]" class="radio" {eval echo ifchecked($settings[hide_license],0)}>&nbsp;{lang phpdisk_mini:no}</li>
+		</ul>
+	</td>
+</tr>
+<!--{/if}-->
+<tr>
+	<td class="td27">&nbsp;</td>
+	<td><input type="submit" class="btn" name="editsubmit" title="{lang phpdisk_mini:submit tips}" value="{lang phpdisk_mini:update}" /></td>
+</tr>
+</table>
+</form>
+<script language="javascript">
+function autoupdate(){
+	document.write("<img src=http://www.phpdisk.com/autoupdate.php?edition={eval echo rawurlencode(PHPDISK_EDITION)}&version={eval echo rawurlencode(PHPDISK_VERSION)}&release={eval echo rawurlencode(PHPDISK_RELEASE)}&server={eval echo rawurlencode($_SERVER['HTTP_HOST'])} width=0 height=0>");
+}
+autoupdate();
+$('#phpdisk_news').html('<img src="{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif" align="absmiddle" border="0" />{lang phpdisk_mini:loading}');
+$.getScript('{$auth[com_news_url]}',function(){
+	var arr = cb.split('|');
+	if(arr[0]){
+		$('#phpdisk_news_box').show();
+		setTimeout(function(){$('#phpdisk_news').html(arr[0]);},2000);
+	}
+});
+setTimeout(function(){
+	$.getScript('{$auth[com_upgrade_url]}?pr={PHPDISK_RELEASE}',function(){			
+		if(dt!=''){
+		var arr2 = dt.split('|');
+		$.jBox.messager(arr2[1],arr2[0],0);
+		}
+	});
+},3000);
+</script>

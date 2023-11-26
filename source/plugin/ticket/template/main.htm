@@ -1,0 +1,38 @@
+<!--{template common/header}-->
+<div id="wp" class="wp" style="margin-bottom:10px;">
+    <!--<script type="text/javascript" src="static/js/mobile/jquery.min.js"></script>-->
+    <div id="pt" class="bm cl">
+    	<div class="z"><a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&rsaquo;</em><a href="plugin.php?id=ticket">{lang ticket:tlang01}</a>{if $mod == 'add'}<em>&rsaquo;</em><a href="plugin.php?id=ticket">{lang ticket:tlang02}</a><em>&rsaquo;</em><a href="plugin.php?id=ticket&mod=add&type={$_GET['type']}">{$type['t_name']}</a>{elseif $mod == 'view'}<em>&rsaquo;</em><a href="plugin.php?id=ticket&mod=view&item={$_GET['item']}">{lang ticket:tlang03}</a>{elseif $mod == 'admin'}<em>&rsaquo;</em><a href="plugin.php?id=ticket&mod=admin&type={$_GET['type']}">{lang ticket:tlang04}</a><em>&rsaquo;</em><a href="plugin.php?id=ticket&mod=admin&type={$_GET['type']}">{if $_GET['type'] == 1}{lang ticket:tlang05}{else}{lang ticket:tlang06}{/if}</a>{elseif $mod == 'list'}<em>&rsaquo;</em><a href="plugin.php?id=ticket&mod=list&type={$_GET['type']}">{lang ticket:tlang07}</a><em>&rsaquo;</em><a href="plugin.php?id=ticket&mod=list&type={$_GET['type']}">{if $_GET['type'] == 1}{lang ticket:tlang05}{else}{lang ticket:tlang06}{/if}</a>{/if}</div>
+    </div>
+    <!--mian start-->    
+    <div id="ct" class="n wp cl">
+        <div class="mn">
+        	<ul class="tb cl">
+            	<li{if $mod == 'types' || $mod == 'add'} class="a"{/if}><a href="plugin.php?id=ticket"><span>{lang ticket:tlang02}</span></a></li>
+            	{if !$admin}<li{if ($mod == 'list' || $mod == 'view') && !$admin} class="a"{/if} id="mine" onmouseover="showMenu(this.id)" initialized="true"><a href="javascript:void(0);" title="{lang ticket:tlang07}"><span class="showmenu">{lang ticket:tlang07}</span></a></li>{/if}
+                {if $admin}<li{if ($mod == 'admin' || $mod == 'view') && $admin} class="a"{/if} id="admin" onmouseover="showMenu(this.id)" initialized="true"><a href="javascript:void(0);" title="{lang ticket:tlang07}"><span class="showmenu">{lang ticket:tlang04}</span></a></li>{/if}
+            </ul>
+        </div>
+        <ul id="mine_menu" class="p_pop" style="display:none; width:80px;">
+			<li><a href="plugin.php?id=ticket&mod=list&type=1" title="{lang ticket:tlang08}" class="hidefocus"><span>{lang ticket:tlang05}</span></a></li>
+            <li><a href="plugin.php?id=ticket&mod=list&type=2" title="{lang ticket:tlang09}" class="hidefocus"><span>{lang ticket:tlang06}</span></a></li>
+        </ul>
+        {if $admin}
+        <ul id="admin_menu" class="p_pop" style="display:none; width:80px;">
+			<li><a href="plugin.php?id=ticket&mod=admin&type=1" title="{lang ticket:tlang08}" class="hidefocus"><span>{lang ticket:tlang05}</span></a></li>
+            <li><a href="plugin.php?id=ticket&mod=admin&type=2" title="{lang ticket:tlang09}" class="hidefocus"><span>{lang ticket:tlang06}</span></a></li>
+        </ul>{/if}
+        <!--other-->   
+        {if $mod == 'types'}
+        	<!--{template ticket:types}-->
+        {elseif $mod == 'add'}
+        	<!--{template ticket:add}-->
+        {elseif $mod == 'list' || $mod == 'admin'}
+        	<!--{template ticket:list}-->
+        {elseif $mod == 'view'}
+        	<!--{template ticket:view}-->
+        {/if}
+    </div>
+    <!--mian end-->    
+</div>
+<!--{template common/footer}-->

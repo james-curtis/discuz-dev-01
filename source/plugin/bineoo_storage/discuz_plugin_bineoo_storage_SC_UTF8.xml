@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3.2]]></item>
+	<item id="Time"><![CDATA[2017-07-09 09:58]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://localhost/dz_oss/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[阿里云OSS附件存储]]></item>
+			<item id="identifier"><![CDATA[bineoo_storage]]></item>
+			<item id="description"><![CDATA[将网站附件存储到阿里云OSS上，节省服务器空间资源，提升网站访问速度]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[bineoo_storage/]]></item>
+			<item id="copyright"><![CDATA[]]></item>
+			<item id="version"><![CDATA[5.2]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[bineoo_storage]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[bineoo_storage_m]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[28]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[admin_setting]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[高级配置]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X3,X3.1,X3.2,X3.3]]></item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="error_hash"><![CDATA[表单验证失败，请刷新后重新提交]]></item>
+				<item id="upload_image_tips"><![CDATA[点击图片添加到帖子内容中<br>文件尺寸: <span class="xi1">小于 {size} </span>, 可用扩展名: <span class="xi1">{type}</span>&nbsp;]]></item>
+				<item id="upload_attach_tips"><![CDATA[<p id="attach_notice">点击附件文件名添加到帖子内容中</p>文件尺寸: <span class="xi1">小于 {size} </span>]]></item>
+				<item id="public-read-write"><![CDATA[公共读写]]></item>
+				<item id="public-read"><![CDATA[公共读，私有写]]></item>
+				<item id="private"><![CDATA[私有读写]]></item>
+				<item id="admin_setting_succeed"><![CDATA[参数配置成功!]]></item>
+				<item id="admin_setting_tips"><![CDATA[<li style="color:#f00;">为了更好的管理附件，请填写完参数并保存后点击<a href="plugin.php?id=bineoo_storage" target="_blank">OSS附件管理中心</a>对附件进行管理</li>]]></item>
+				<item id="admin_setting_title"><![CDATA[基础参数配置]]></item>
+				<item id="manage_uids"><![CDATA[允许进入管理中心的用户]]></item>
+				<item id="manage_uids_content"><![CDATA[用户uid，多个用户使用英文逗号隔开。]]></item>
+				<item id="region_list_title"><![CDATA[Region对照表]]></item>
+				<item id="region_list_content"><![CDATA[如果您不知道此处设置的作用，请勿随意修改]]></item>
+				<item id="Access_Key_ID_content"><![CDATA[必填参数<br>获取地址：<a href="https://ak-console.aliyun.com/#/accesskey" target="_blank">https://ak-console.aliyun.com/#/accesskey</a>]]></item>
+				<item id="Access_Key_Secret_content"><![CDATA[必填参数<br>如果不修改，请直接提交即可]]></item>
+				<item id="direct_upload"><![CDATA[是否开启直传]]></item>
+				<item id="direct_upload_content"><![CDATA[开启直传后，Discuz自带的上传功能上传附件后将会直接上传至OSS<br>注意：其他插件的上传功能无法完成直传，请前往附件管理中心对其他插件附件进行上传操作]]></item>
+				<item id="direct_oss"><![CDATA[是否开启强制使用OSS图片]]></item>
+				<item id="direct_oss_content"><![CDATA[开启强制使用OSS图片后，无论图片是否在OSS内都会将图片链接指向OSS]]></item>
+				<item id="upload_succeed"><![CDATA[上传成功]]></item>
+				<item id="upload_failed"><![CDATA[上传失败]]></item>
+				<item id="notin_manage_uids"><![CDATA[无权操作！]]></item>
+				<item id="access_key_empty"><![CDATA[请先在后台高级配置中填写相关参数！]]></item>
+				<item id="no_default_bucket"><![CDATA[未找到指定Bucket，请先同步Bucket后再操作！]]></item>
+				<item id="no_bucket"><![CDATA[指定Bucket不存在]]></item>
+				<item id="bucket_default_succeed"><![CDATA[默认Bucket指定成功]]></item>
+				<item id="bucket_sync_succeed"><![CDATA[Bucket同步成功]]></item>
+				<item id="error_region_list"><![CDATA[暂不支持所选地域！]]></item>
+				<item id="create_bucket_succeed"><![CDATA[Bucket创建成功]]></item>
+				<item id="create_bucket_failed"><![CDATA[Bucket创建失败，请检查Bucket名称是否符合规范或Bucket已存在！]]></item>
+				<item id="no_chose_object"><![CDATA[请选择需要操作的文件或文件夹]]></item>
+				<item id="object_delete_succeed"><![CDATA[所选对象删除成功]]></item>
+				<item id="object_download_succeed"><![CDATA[所选对象下载成功]]></item>
+				<item id="no_chose_object_do"><![CDATA[请选择操作类型]]></item>
+				<item id="bucket_edit_succeed"><![CDATA[Bucket信息编辑成功]]></item>
+				<item id="bucket_edit_failed"><![CDATA[域名填写错误或未备案！]]></item>
+				<item id="object_delete_failed"><![CDATA[所选对象删除失败！]]></item>
+				<item id="bucket_delete_succeed"><![CDATA[Bucket删除成功]]></item>
+				<item id="bucket_delete_failed"><![CDATA[Bucket删除失败，请检查Bucket中是否存在Object或任务碎片!]]></item>
+				<item id="not_found_bucket_tips"><![CDATA[指定Bucket不存在，请检查OSS中是否已被删除！]]></item>
+				<item id="object_upload_count"><![CDATA[{success} 个文件成功上传至OSS，{error} 个文件上传失败]]></item>
+				<item id="prefix_error"><![CDATA[请从本地文件根目录进入子目录，切勿修改链接地址中参数]]></item>
+				<item id="prefix_not_dir"><![CDATA[指定文件夹不存在]]></item>
+				<item id="dir_upload_succeed"><![CDATA[文件夹上传成功]]></item>
+				<item id="file_not_found"><![CDATA[指定文件不存在]]></item>
+				<item id="dir_delete_succeed"><![CDATA[指定文件或文件夹删除成功！]]></item>
+				<item id="exist"><![CDATA[存在]]></item>
+				<item id="not_exist"><![CDATA[不存在]]></item>
+				<item id="local_top_tips"><![CDATA[<ol>
+			<li>当前默认的Bucket：<strong style="color: #f00;">{bucket}</strong></li>
+			<li>上传操作会将所选对象上传至该Bucket内，若需上传到其他Bucket请先切换默认Bucket</li>
+			<li>网站正常运营时，请勿随意切换默认Bucket，否则会导致图片无法显示，附件无法读取</li>
+			<li>您可以使用对象复制后再切换默认Bucket</li>
+		</ol>]]></item>
+				<item id="update_cache_succeed"><![CDATA[缓存更新成功]]></item>
+				<item id="bucket_delete_failed_by_default"><![CDATA[默认Bucket无法删除，请先指定其他Bucket为默认后再操作。]]></item>
+				<item id="rep_mod"><![CDATA[模式设置]]></item>
+				<item id="close_max_mod"><![CDATA[关闭增强模式]]></item>
+				<item id="cache_tag"><![CDATA[处理标签]]></item>
+				<item id="cache_tag_content"><![CDATA[如果您不知道该模式原理请勿随意更改]]></item>
+				<item id="except_tag_head"><![CDATA[标签过滤]]></item>
+				<item id="except_tag_title"><![CDATA[不处理的标签列表]]></item>
+				<item id="except_tag_content"><![CDATA[当图片不显示时可通过本设置完成兼容性设置]]></item>
+				<item id="delete"><![CDATA[删除]]></item>
+				<item id="NoAuthorization"><![CDATA[未授权]]></item>
+				<item id="extra_tag_title"><![CDATA[图片网址前缀]]></item>
+				<item id="extra_tag_content"><![CDATA[当图片中存在带http的绝对地址，但图片不是远程图片，而是存在OSS内时，将该网址填写至此处能达到最大兼容处理]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="index_upload_image"><![CDATA[上传图片]]></item>
+				<item id="index_chose_image"><![CDATA[选择图片文件]]></item>
+				<item id="index_description"><![CDATA[描述]]></item>
+				<item id="sure"><![CDATA[确定]]></item>
+				<item id="index_upload_attach"><![CDATA[上传附件]]></item>
+				<item id="index_chose_attach"><![CDATA[选择附件]]></item>
+				<item id="index_filename"><![CDATA[文件名 ( <a onclick="insertAllAttachTag();return false;" href="javascript:;" class="xi2">插入全部附件</a> )]]></item>
+				<item id="attach_readperm_0"><![CDATA[不限]]></item>
+				<item id="attach_readperm_255"><![CDATA[最高权限]]></item>
+				<item id="attach_readperm"><![CDATA[阅读权限 <img src="static/image/common/faq.gif" alt="Tip" class="vm" style="margin: 0;" onmouseover="showTip(this)" tip="阅读权限按由高到低排列，高于或等于选中组的用户才可以阅读">]]></item>
+				<item id="bucket_list_empty"><![CDATA[未发现相关Bucket，请先点击下方新建按钮创建Bucket或同步已有Bucket]]></item>
+				<item id="bucket_default_notice"><![CDATA[警告：当附件存储到OSS后请勿随意切换默认Bucket，除非您已将数据复制至将要切换的OSS内，否则图片、附件将无法读取！]]></item>
+				<item id="create_bucket_btn"><![CDATA[创建Bucket]]></item>
+				<item id="sync_bucket_btn"><![CDATA[同步Bucket]]></item>
+				<item id="default"><![CDATA[默认]]></item>
+				<item id="action"><![CDATA[操作]]></item>
+				<item id="bucket_name"><![CDATA[Bucket名称]]></item>
+				<item id="bucket_region"><![CDATA[Bucket地域]]></item>
+				<item id="bucket_create_time"><![CDATA[创建时间]]></item>
+				<item id="bucket_acl"><![CDATA[权限]]></item>
+				<item id="bucket_set"><![CDATA[设置]]></item>
+				<item id="delete"><![CDATA[删除]]></item>
+				<item id="save_btn"><![CDATA[保存设置]]></item>
+				<item id="bucket_homepage"><![CDATA[Bucket中心]]></item>
+				<item id="bucket_name_tips"><![CDATA[Bucket命名规范： <br>? 只能包含小写字母，数字和短横线<br>? 必须以小写字母和数字开头和结尾<br>? bucketName的长度限制在3-63之间]]></item>
+				<item id="bucket_region_title"><![CDATA[所属地域]]></item>
+				<item id="bucket_region_tips"><![CDATA[相同地域内的产品内网可以互通；创建后不支持更换地域，请谨慎选择]]></item>
+				<item id="bucket_acl_title"><![CDATA[读写权限]]></item>
+				<item id="bucket_acl_tips"><![CDATA[? 私有：对object的所有访问操作，都需要进行身份验证。<br>? 公共读：对object写操作需要进行身份验证；对object读操作无需身份验证，可直接读取。<br>? 公共读写：所有人都可以对object进行读写操作，为确保您的数据安全，不推荐此配置。]]></item>
+				<item id="bucket_bing_domain"><![CDATA[绑定域名]]></item>
+				<item id="bucket_bing_domain_tips"><![CDATA[填写绑定域名后需要在域名购买商处做域名cname解析]]></item>
+				<item id="object_filename"><![CDATA[文件名]]></item>
+				<item id="object_lastedittime"><![CDATA[最后修改]]></item>
+				<item id="object_filesize"><![CDATA[文件大小]]></item>
+				<item id="object_localtitle"><![CDATA[本地]]></item>
+				<item id="object_checking"><![CDATA[检测中...]]></item>
+				<item id="check_all"><![CDATA[全选]]></item>
+				<item id="uncheck_all"><![CDATA[取消全选]]></item>
+				<item id="object_download_local"><![CDATA[下载至本地]]></item>
+				<item id="object_delete_check"><![CDATA[删除选中项]]></item>
+				<item id="bucket_info_title"><![CDATA[的信息]]></item>
+				<item id="bucket_name_disabled"><![CDATA[Bucket的名称无法修改]]></item>
+				<item id="bucket_region_disabled"><![CDATA[Bucket的地域无法修改]]></item>
+				<item id="local_nav_title"><![CDATA[本地文件]]></item>
+				<item id="local_upload_dialog_content"><![CDATA[您确定要上传该文件夹吗？如果此文件夹中存在子文件夹或文件过多，上传时间会很长，且有可能出现服务器超时！]]></item>
+				<item id="upload_link"><![CDATA[上传]]></item>
+				<item id="local_delete_dialog_content"><![CDATA[当前操作正在删除本地文件夹，删除后数据无法恢复，确定要这么做吗？]]></item>
+				<item id="local_upload_dialog_large_content"><![CDATA[该文件大小超过10MB，上传可能需要耗费较长时间，请耐心等待]]></item>
+				<item id="local_upload_dialog_file_content"><![CDATA[您确定要上传该文件吗？如果OSS相同路径中存在相同文件名将会被覆盖！]]></item>
+				<item id="local_delete_dialog_file_content"><![CDATA[当前操作正在删除本地文件，删除后数据无法恢复，确定要这么做吗？]]></item>
+				<item id="upload_to"><![CDATA[上传至：]]></item>
+				<item id="upload_empty_default_bucket"><![CDATA[未默认Bucket]]></item>
+				<item id="dialog_default_content"><![CDATA[当前操作无法恢复，您确定要这么做吗？]]></item>
+				<item id="download_delete_confirm"><![CDATA[下载成功后是否删除OSS内的附件？]]></item>
+				<item id="processing_btn"><![CDATA[数据处理中...]]></item>
+				<item id="hold_file"><![CDATA[保留]]></item>
+				<item id="upload_delete_confirm"><![CDATA[上传成功后是否删除服务器的附件？]]></item>
+				<item id="processing_title"><![CDATA[数据处理中，请耐心等候！]]></item>
+				<item id="processing_tips"><![CDATA[数据处理完成后页面会自动跳转]]></item>
+				<item id="left_nav_bucket"><![CDATA[Bucket管理]]></item>
+				<item id="left_nav_local"><![CDATA[本地附件]]></item>
+				<item id="left_nav_cache"><![CDATA[更新缓存]]></item>
+				<item id="bucket_use_internal"><![CDATA[使用内网]]></item>
+				<item id="bucket_use_internal_tips"><![CDATA[如果服务器是阿里云的ECS服务器，并且当前Bucket所在地域与ECS在同一地域，勾选此项后，上传速度会得到大幅提升<br><span style="color:#f00;">如果不满足以上条件，切勿勾选此项，否则会导致严重错误！</span>]]></item>
+				<item id="chose_avatar_btn"><![CDATA[重新选择]]></item>
+				<item id="save_avatar_btn"><![CDATA[保存头像]]></item>
+				<item id="chose_image_error"><![CDATA[请选择图片文件]]></item>
+				<item id="avatar_upload_loading"><![CDATA[<img src="{STATICURL}image/common/loading.gif"><br>头像上传中，请稍后]]></item>
+				<item id="avatar_upload_succeed"><![CDATA[头像上传成功]]></item>
+				<item id="load_more_object"><![CDATA[>>加载更多<<]]></item>
+				<item id="bucket_use_imagestyle"><![CDATA[图片样式]]></item>
+				<item id="bucket_use_imagestyle_tips"><![CDATA[此项设置需进入OSS控制台进行<a href="https://oss.console.aliyun.com/index" target="_blank" style="color:#f00;">点击这里进入>></a><br>进入控制台后，选择当前bucket，并在设置=>图片处理中设置图片样式格式<br>设置完毕后，请将图片样式名称(规则名)填写到此处]]></item>
+			</item>
+			<item id="installlang">
+				<item id="step_1"><![CDATA[校验程序]]></item>
+				<item id="step_2"><![CDATA[更新数据库]]></item>
+				<item id="step_3"><![CDATA[完成安装]]></item>
+				<item id="step_4"><![CDATA[插件文件完整性检查通过，正在准备安装程序...]]></item>
+				<item id="step_5"><![CDATA[数据库更新完成...]]></item>
+				<item id="step_6"><![CDATA[插件安装成功...即将返回]]></item>
+				<item id="region_list"><![CDATA[oss-cn-hangzhou==华东 1
+oss-cn-shanghai==华东 2
+oss-cn-qingdao==华北 1
+oss-cn-beijing==华北 2
+oss-cn-zhangjiakou==华北 3
+oss-cn-shenzhen==华南 1
+oss-cn-hongkong==香港
+oss-us-west-1==美国西部 1 （硅谷）
+oss-us-east-1==美国东部 1 （弗吉尼亚）
+oss-ap-southeast-1==亚太东南 1 （新加坡）
+oss-ap-southeast-2==亚太东南 2 （悉尼）
+oss-ap-northeast-1==亚太东北 1 （日本）
+oss-eu-central-1==欧洲中部 1 （法兰克福）
+oss-me-east-1==中东东部 1 （迪拜）]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+		<item id="license"><![CDATA[禁止使用盗版插件]]></item>
+	</item>
+</root>

@@ -1,0 +1,40 @@
+<!--{subtemplate common/header}-->
+<div id="pt" class="cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em>订单记录
+	</div>
+</div>
+<style>
+.status a{color: #369;padding:10px;height: 33px;}
+</style>
+<div class="wp cl frame">
+<div class="status">
+<a href="plugin.php?id=dc_pay">全部</a>  <a href="plugin.php?id=dc_pay&status=2">已付款</a>  <a href="plugin.php?id=dc_pay&status=1">未付款</a>  <a href="plugin.php?id=dc_pay&status=3">未审核</a>  今日总计：{$nowday}元    昨日总计：{$yesterday}元
+</div>
+<table class="dt" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<th width="300">订单号</th>
+<th width="80">接口</th>
+<th width="80">金额</th>
+<th width="80">用户名</th>
+<th width="100">订单时间</th>
+<th width="100">完成时间</th>
+<th>付款单号</th>
+<th width="100">状态</th>
+</tr>
+<!--{loop $orders $v}-->
+<tr>
+<td>{$v['orderid']}</td>
+<td>{echo $plugins[$v['plugin']]?$plugins[$v['plugin']]['name']:$_lang['order_noapi']}</td>
+<td>{echo $v['price']>0?$v['price']:'-'}</td>
+<td>{$v['username']}</td>
+<td>{echo dgmdate($v['dateline'], 'dt')}</td>
+<td>{echo $v['finishdateline']?dgmdate($v['finishdateline'], 'dt'):'-'}</td>
+<td>{$v['payorderid']}</td>
+<td>{echo $v['status']==1?$_lang['order_ispay']:($v['status']==2?$_lang['order_wait']:$_lang['order_nopay'])}</td>
+</tr>
+<!--{/loop}-->
+</tbody></table>
+<div class="pgs cl mtm">{$multipage}</div>
+</div>
+<!--{subtemplate common/footer}-->

@@ -1,0 +1,42 @@
+<!--{template phpdisk_mini:admin/adm_header}-->
+<table width="98%" align="center" cellpadding="4" cellspacing="0" border="0" class="tb tb2" id="phpdisk_news_box" style="display:none;border:1px #efefef solid">
+<tr>
+	<th colspan="15" class="partition">{lang phpdisk_mini:phpdisk news}</th>
+</tr>
+<tr>
+	<td colspan="15"><div id="phpdisk_news"></div></td>
+</tr>
+</table>
+<br />
+<table width="98%" align="center" cellpadding="4" cellspacing="0" border="0" class="tb tb2">
+<tr>
+	<th colspan="15" class="partition">{lang phpdisk_mini:about us}</th>
+</tr>
+<tr>
+	<td colspan="15"><b>{lang phpdisk_mini:curr_version}:</b><br /><a href="http://www.phpdisk.com/services_mini.html" target="_blank"><span class="txtblue">PHPDisk v{PHPDISK_VERSION} {VERSION_TXT} {PHPDISK_EDITION} build{PHPDISK_RELEASE}</span></a></td>
+</tr>
+<tr>
+	<td colspan="15"><b>{lang phpdisk_mini:official_site}:</b><br /><a href="http://www.phpdisk.com/" target="_blank">http://www.phpdisk.com/</a></td>
+</tr>
+<tr>
+	<td colspan="15"><b>{lang phpdisk_mini:forum_feedback}:</b><br /><a href="http://bbs.phpdisk.com/" target="_blank">http://bbs.phpdisk.com/</a></td>
+</tr>
+</table>
+<script language="javascript">
+$('#phpdisk_news').html('<img src="{PHPDISK_PLUGIN_DIR}/images/ajax_loading.gif" align="absmiddle" border="0" />{lang phpdisk_mini:loading}');
+$.getScript('{$auth[com_news_url]}',function(){
+	var arr = cb.split('|');
+	if(arr[0]){
+		$('#phpdisk_news_box').show();
+		setTimeout(function(){$('#phpdisk_news').html(arr[0]);},2000);
+	}
+});
+setTimeout(function(){
+	$.getScript('{$auth[com_upgrade_url]}?pr={PHPDISK_RELEASE}',function(){			
+		if(dt!=''){
+		var arr2 = dt.split('|');
+		$.jBox.messager(arr2[1],arr2[0],0);
+		}
+	});
+},3000);
+</script>
